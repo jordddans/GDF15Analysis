@@ -1,0 +1,39 @@
+Figure 3.  A GDF15-only diagnostic classifier for PVOD, built from the present cohort.
+
+A binary logistic regression model was fitted with log10-transformed plasma GDF15 concentration as
+the sole predictor and pulmonary veno-occlusive disease (PVOD, n = 26) versus pulmonary arterial
+hypertension (PAH = IPAH + HPAH, n = 140; 166 patients in total) as the outcome. The model was
+fitted by unpenalized maximum likelihood with default settings; no regularization, class weighting,
+recalibration or variable selection was applied. Because the model is monotone in GDF15, its
+decision rule is equivalent to a threshold on the concentration itself, and the cutoff was therefore
+selected directly on the GDF15 scale by maximizing Youden's J (sensitivity + specificity − 1); where
+several thresholds tie, the highest is taken. On the full cohort this gives 1,659 pg/mL, at which
+the fitted model returns a probability of 0.32. Sensitivity, specificity and predictive values were
+estimated by nested leave-one-out cross-validation: in each of the 166 folds the cutoff was re-
+selected from the remaining 165 patients and then applied to the held-out patient, so that no
+patient contributed either to the model or to the threshold used to classify them. The area under
+the ROC curve is that of GDF15 itself and involves no fitted parameter. Uncertainty was estimated by
+a stratified bootstrap (B = 2,000 replicates, resampling PVOD and PAH patients separately at their
+observed sizes) in which the whole procedure, nested cross-validation included, was repeated within
+each replicate; intervals are percentile intervals. Wilson score intervals are shown alongside them
+for sensitivity and specificity.
+
+(A) Plasma GDF15 for each of the 166 patients by diagnostic group (logarithmic axis); the right-hand
+axis gives the probability of PVOD returned by the model fitted to the full cohort. The dashed line
+is the full-cohort selected cutoff and the shaded band its bootstrap 95% confidence interval (978–2,551 pg/mL).
+Open symbols mark the patients misclassified under nested cross-validation. (B) ROC curve for GDF15
+with the pointwise bootstrap 95% band. The circle shows cross-validated sensitivity and specificity
+from fold-specific cutoffs (bootstrap 95% intervals), not a single-threshold ROC operating point;
+the square is the apparent operating point of the cutoff applied to the patients used to choose it. (C) Distribution of the Youden-selected
+cutoff across the 2,000 bootstrap replicates, with its 95% percentile interval. (D) Cross-validated
+sensitivity, specificity and predictive values at the selected cutoff, with bootstrap 95% percentile
+intervals (coloured) and Wilson 95% intervals for sensitivity and specificity (grey); predictive
+values are evaluated at the prevalence of PVOD in this cohort (15.7%), which is determined by the
+sampling of the study. (E) Probability of PVOD after a positive and after a negative test result as
+a function of the pre-test probability, with bootstrap 95% bands; the dotted line marks equality
+between post-test and pre-test probability. (F) Calibration of the leave-one-out predicted
+probabilities from the logistic model: observed proportion of PVOD within quintiles of predicted
+probability (Wilson 95% intervals; quintile sizes given in the panel), the logistic recalibration
+curve with its slope and intercept, and the dotted line of perfect calibration.
+
+Source data: plasma GDF15 concentrations, one value per patient, from Figure 1a of this study.

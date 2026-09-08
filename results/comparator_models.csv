@@ -1,0 +1,6 @@
+comparator,n,n_pvod,gdf15_at_lr10,ci_low,ci_high,ci_method,comparator_max_gdf15
+IPAH+HPAH,166,26,2155.8861765279185,1922.6361693009383,2356.9690364388275,"stratified case bootstrap, 4,000 replicates, seed 1; PVOD and comparator patients resampled separately at their observed sample sizes, both quantities recomputed in every replicate",1809.46
+IPAH,124,26,2263.2824768933356,1851.3288633042528,2676.722877085001,parametric bootstrap,1809.46
+HPAH,68,26,2049.6591871544306,1465.577750930898,2623.0887883528585,parametric bootstrap,1681.51042
+Other PH,78,26,1854.7170416383653,1393.480429477993,2351.047764866671,parametric bootstrap,1415.24
+COPD,62,26,2232.0385726009567,1568.087112382855,2929.4718239106824,parametric bootstrap,1689.401709

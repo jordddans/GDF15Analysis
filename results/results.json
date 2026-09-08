@@ -1,0 +1,1132 @@
+{
+  "source_workbook": "Supporting data values_Prabhakar et al 2025_CLEANED.xlsx",
+  "patient_identifier": {
+    "source": "Reconstructed_per_patient_Prabhakar_2025_2.xlsx",
+    "column": "Patient_ID",
+    "range": "1-166, unique",
+    "joined_on": "age-adjusted GDF15, which is distinct across all 166 patients in both files; the join is one-to-one and exact, and the diagnosis label agrees on every row",
+    "provenance": "Patient_ID was created for this per-patient reconstruction. It is not a clinical identifier from the contributing centres, and anything reaching the supplement that uses it needs a line saying so",
+    "caution": "the ids are blocked by diagnosis (1-26 PVOD, 27-124 IPAH, 125-166 HPAH), so an id implies a group; ordering a figure by Patient_ID would manufacture a pattern that is only that blocking",
+    "not_available_for": "raw GDF15. Sheet GDF15-1 is anonymous group-level concentrations with no patient identifier, so no output derived from it carries a Patient_ID"
+  },
+  "seed": 1,
+  "n_bootstrap": 4000,
+  "cohort_counts": {
+    "IPAH": 98,
+    "Ctrl": 68,
+    "Other PH": 52,
+    "HPAH": 42,
+    "COPD": 36,
+    "PVOD": 26
+  },
+  "models": {
+    "IPAH+HPAH": {
+      "comparator": "IPAH+HPAH",
+      "n": 166,
+      "n_pvod": 26,
+      "n_comparator": 140,
+      "sampling_prevalence": 0.1566265060240964,
+      "sampling_log_odds": -1.6835458845878222,
+      "intercept": -39.24678678240761,
+      "intercept_se": 7.757306365094696,
+      "intercept_ci": [
+        -54.45082787503654,
+        -24.042745689778688
+      ],
+      "slope_log10_gdf15": 11.958698441144076,
+      "slope_se": 2.4224224085844654,
+      "slope_ci": [
+        7.210837764975753,
+        16.7065591173124
+      ],
+      "n_predictors": 1,
+      "events_per_variable": 26,
+      "auc": 0.9560439560439561,
+      "bootstrap_replicates_kept": 4000,
+      "bootstrap_replicates_discarded": 0,
+      "gdf15_at_lr": {
+        "1": {
+          "gdf15": 1383.8245682963097,
+          "ci_low": 1260.648158357949,
+          "ci_high": 1575.9238152644648
+        },
+        "2": {
+          "gdf15": 1581.403859517222,
+          "ci_low": 1458.1326534089533,
+          "ci_high": 1763.0749953644586
+        },
+        "5": {
+          "gdf15": 1886.5315394136646,
+          "ci_low": 1669.687925419315,
+          "ci_high": 2116.8416195978493
+        },
+        "10": {
+          "gdf15": 2155.8861765279185,
+          "ci_low": 1922.6361693009383,
+          "ci_high": 2356.9690364388275,
+          "ci_method": "stratified case bootstrap, 4,000 replicates, seed 1; PVOD and comparator patients resampled separately at their observed sample sizes, both quantities recomputed in every replicate",
+          "ci_low_parametric": 1803.1282084308853,
+          "ci_high_parametric": 2494.8051849830013,
+          "ci_method_parametric": "parametric bootstrap, supplementary sensitivity analysis"
+        }
+      },
+      "comparator_max_gdf15": 1809.46,
+      "lr_at_reference_gdf15": [
+        {
+          "gdf15": 500,
+          "lr": 0.005056541566370772,
+          "lr_ci_low": 1.7219327052867436e-05,
+          "lr_ci_high": 0.02788971741260566,
+          "post_test_from_10pct": 0.0005615224671861105,
+          "post_test_from_20pct": 0.0012625393708906708
+        },
+        {
+          "gdf15": 861,
+          "lr": 0.08505788231974865,
+          "lr_ci_low": 0.003548147865413205,
+          "lr_ci_high": 0.219753441726005,
+          "post_test_from_10pct": 0.009362392999749414,
+          "post_test_from_20pct": 0.02082170798310635
+        },
+        {
+          "gdf15": 1000,
+          "lr": 0.18504697367308026,
+          "lr_ci_low": 0.015393959829788334,
+          "lr_ci_high": 0.3930405205784158,
+          "post_test_from_10pct": 0.02014654625104006,
+          "post_test_from_20pct": 0.044216223817117754
+        },
+        {
+          "gdf15": 1200,
+          "lr": 0.4769989779731716,
+          "lr_ci_low": 0.09140935168960519,
+          "lr_ci_high": 0.8072319099286824,
+          "post_test_from_10pct": 0.05033228125082973,
+          "post_test_from_20pct": 0.10654435712851529
+        },
+        {
+          "gdf15": 1658,
+          "lr": 2.556910150238083,
+          "lr_ci_low": 1.397719575154189,
+          "lr_ci_high": 4.74091039118619,
+          "post_test_from_10pct": 0.22124513533450016,
+          "post_test_from_20pct": 0.38995656363313763
+        },
+        {
+          "gdf15": 1700,
+          "lr": 2.9116606323725382,
+          "lr_ci_low": 1.6478475007252291,
+          "lr_ci_high": 5.876679794868367,
+          "post_test_from_10pct": 0.24443784307113864,
+          "post_test_from_20pct": 0.42126788151823136
+        },
+        {
+          "gdf15": 2000,
+          "lr": 6.771897751874443,
+          "lr_ci_low": 3.8192189525501443,
+          "lr_ci_high": 27.945349293868397,
+          "post_test_from_10pct": 0.4293648017766044,
+          "post_test_from_20pct": 0.6286633894845548
+        },
+        {
+          "gdf15": 2500,
+          "lr": 21.57853319591306,
+          "lr_ci_low": 10.068524374047483,
+          "lr_ci_high": 248.27053588762277,
+          "post_test_from_10pct": 0.7056758758721989,
+          "post_test_from_20pct": 0.8436188670647025
+        },
+        {
+          "gdf15": 3000,
+          "lr": 55.62338078976174,
+          "lr_ci_low": 20.94509605033711,
+          "lr_ci_high": 1563.2132110611778,
+          "post_test_from_10pct": 0.8607315202329082,
+          "post_test_from_20pct": 0.9329122242479939
+        }
+      ],
+      "worked_example": {
+        "1200": {
+          "10%": {
+            "pre_test_probability": 0.1,
+            "pre_test_odds": 0.11111111111111112,
+            "likelihood_ratio": 0.4769989779731716,
+            "post_test_odds": 0.052999886441463515,
+            "post_test_probability": 0.05033228125082973
+          },
+          "20%": {
+            "pre_test_probability": 0.2,
+            "pre_test_odds": 0.25,
+            "likelihood_ratio": 0.4769989779731716,
+            "post_test_odds": 0.1192497444932929,
+            "post_test_probability": 0.10654435712851529
+          }
+        },
+        "1700": {
+          "10%": {
+            "pre_test_probability": 0.1,
+            "pre_test_odds": 0.11111111111111112,
+            "likelihood_ratio": 2.9116606323725382,
+            "post_test_odds": 0.32351784804139316,
+            "post_test_probability": 0.24443784307113864
+          },
+          "20%": {
+            "pre_test_probability": 0.2,
+            "pre_test_odds": 0.25,
+            "likelihood_ratio": 2.9116606323725382,
+            "post_test_odds": 0.7279151580931346,
+            "post_test_probability": 0.42126788151823136
+          }
+        }
+      },
+      "support": {
+        "pvod_min_gdf15": 860.513,
+        "pvod_max_gdf15": 5986.41,
+        "comparator_min_gdf15": 91.0416667,
+        "comparator_max_gdf15": 1809.46,
+        "pvod_above_comparator_max": 20,
+        "pvod_above_comparator_max_fraction": 0.7692307692307693,
+        "note": "below the lowest observed PVOD value the curve is the fitted model form rather than observed PVOD data; above the highest comparator value no comparator patient was observed"
+      },
+      "auc_ci": [
+        0.912081043956044,
+        0.989010989010989
+      ],
+      "auc_ci_method": "stratified percentile bootstrap, 4,000 replicates, seed 1; PVOD and comparator patients resampled separately at their observed sample sizes",
+      "auc_ci_asymptotic_secondary": [
+        0.9160510978171128,
+        0.9960368142707994
+      ],
+      "auc_ci_asymptotic_method": "asymptotic C-statistic interval from the structural-component variance; secondary output, not combined with the bootstrap interval",
+      "auc_ci_published_panel_e": [
+        0.9164,
+        0.9956999999999999
+      ],
+      "auc_ci_published_panel_e_source": "Figure 1E of the source study, as reported by a co-author; quoted for comparison and not computed here",
+      "functional_form": {
+        "linear_loglikelihood": -25.162326553479467,
+        "quadratic_loglikelihood": -24.240432207165632,
+        "lr_statistic": 1.843788692627669,
+        "df": 1,
+        "p_value": 0.17450753774285582,
+        "linear_aic": 54.324653106958934,
+        "quadratic_aic": 54.480864414331265,
+        "aic_difference": 0.15621130737233102,
+        "quadratic_coefficient": 8.362613929317844,
+        "quadratic_coefficient_se": 4.093996298672372,
+        "preferred": "linear",
+        "method": "likelihood-ratio test of log10(GDF15) against log10(GDF15) + log10(GDF15)^2, one degree of freedom, with the AIC of each model"
+      },
+      "threshold_comparison": {
+        "method": "stratified case bootstrap, 4,000 replicates, seed 1; PVOD and comparator patients resampled separately at their observed sample sizes, both quantities recomputed in every replicate",
+        "n_replicates": 3995,
+        "n_replicates_dropped": 5,
+        "youden_cutoff": 1658.81,
+        "youden_ci_low": 978.462,
+        "youden_ci_high": 2551.46,
+        "youden_ci_width": 1572.998,
+        "lr10_gdf15": 2155.8861765279185,
+        "lr10_ci_low": 1922.6361693009383,
+        "lr10_ci_high": 2356.9690364388275,
+        "lr10_ci_width": 434.33286713788925,
+        "width_ratio": 3.6216416463380714,
+        "seed_sensitivity": {
+          "n_seeds": 10,
+          "lr10_ci_low_range": [
+            1911.2365610198935,
+            1924.4217169357307
+          ],
+          "lr10_ci_high_range": [
+            2350.0595025010807,
+            2366.0000255889145
+          ],
+          "youden_ci_low_range": [
+            978.462,
+            978.462
+          ],
+          "youden_ci_high_range": [
+            2551.46,
+            2551.46
+          ],
+          "width_ratio_range": [
+            3.486988846219534,
+            3.636515974667339
+          ],
+          "note": "the LR = 10 endpoints move by a few pg/mL between seeds while the Youden endpoints do not move at all, because a selected cutoff is a discrete choice among observed values and the percentile lands on the same two of them in every seed"
+        },
+        "published_cutoff": 1658.0,
+        "lr_at_published_cutoff": 2.556910150238083,
+        "lr10_ci_parametric_supplementary": [
+          1803.1282084308853,
+          2494.8051849830013
+        ],
+        "lr10_ci_width_parametric_supplementary": 691.676976552116,
+        "note": "the stratified case bootstrap is the reported uncertainty for the LR = 10 landmark, because it is the scheme under which the landmark and a selected threshold can be compared on identical footing; the parametric-bootstrap interval is retained as a supplementary sensitivity analysis, and the pointwise band on the fitted curve itself remains parametric"
+      },
+      "internal_validation": {
+        "apparent_auc": 0.9560439560439561,
+        "auc_optimism": -0.0001236183078147715,
+        "corrected_auc": 0.9561675743517709,
+        "apparent_calibration_slope": 1.0,
+        "calibration_slope_optimism": 0.032362701129156166,
+        "corrected_calibration_slope": 0.9676372988708438,
+        "n_replicates": 3991,
+        "n_dropped": 9,
+        "method": "bootstrap optimism correction, 4,000 replicates, seed 1; patients resampled with replacement, the model refitted in each replicate and scored on both the replicate and the original sample"
+      },
+      "published_cutoff_performance": {
+        "cutoff": 1658.0,
+        "sensitivity": 0.8076923076923077,
+        "sensitivity_ci": [
+          0.6064944720606781,
+          0.9344518912632175
+        ],
+        "sensitivity_counts": [
+          21,
+          26
+        ],
+        "specificity": 0.9714285714285714,
+        "specificity_ci": [
+          0.9284628016714779,
+          0.9921615061089486
+        ],
+        "specificity_counts": [
+          136,
+          140
+        ]
+      },
+      "leave_one_case_out": {
+        "n_refits": 26,
+        "method": "the model refitted once per PVOD case with that case removed, the likelihood ratio read at fixed concentrations in every refit; cases identified by position in the PVOD column of sheet GDF15-1 and by their own GDF15 value. That sheet is anonymous, so these cases have no Patient_ID and a case_id is not a patient",
+        "case_id_definition": "position 1-26 in the PVOD column of sheet GDF15-1, the sheet the model reads. This is a position in a source sheet, not a patient: GDF15-1 is anonymous group-level concentrations, so no Patient_ID exists for these cases and none is reported. Each case is quoted with its own GDF15 value, which distinguishes it within this table only. A case_id here has no relation to the Patient_ID used everywhere else, and the two must never be equated",
+        "patient_id": "not available and not constructed. Attaching one would mean guessing which patient goes with which raw value, which this project refuses to do here as everywhere else",
+        "top_of_observed_range": 5986.41,
+        "at_evaluation_point": [
+          {
+            "gdf15": 1658.0,
+            "full_cohort_lr": 2.556910150238083,
+            "max_absolute_percent_change": 8.11360274632562,
+            "signed_percent_change": -8.11360274632562,
+            "lr_without_that_case": 2.3494526180672874,
+            "case_id": 8,
+            "excluded_gdf15": 1046.15,
+            "median_absolute_percent_change": 3.317102422506197
+          },
+          {
+            "gdf15": 5986.41,
+            "full_cohort_lr": 2011.736848404809,
+            "max_absolute_percent_change": 177.2940059386592,
+            "signed_percent_change": 177.2940059386592,
+            "lr_without_that_case": 5578.425695885827,
+            "case_id": 7,
+            "excluded_gdf15": 860.513,
+            "median_absolute_percent_change": 3.872638293888988
+          }
+        ],
+        "note": "a sensitivity analysis, not a validation procedure: the reported model remains the fit on all 26 cases and nothing here corrects it"
+      },
+      "published_cutoff_example": {
+        "gdf15": 1658.0,
+        "continuous_lr": 2.556910150238083,
+        "continuous_lr_ci": [
+          1.397719575154189,
+          4.74091039118619
+        ],
+        "continuous_lr_ci_method": "parametric bootstrap, 4,000 replicates, seed 1",
+        "cutoff_positive_lr": 28.26923076923076,
+        "cutoff_positive_lr_derivation": "sensitivity / (1 - specificity) = (21/26) / (4/140)",
+        "by_pre_test": [
+          {
+            "pre_test_probability": 0.1,
+            "continuous_post_test": 0.22124513533450016,
+            "continuous_post_test_ci": [
+              0.1344255887121732,
+              0.34502156379879634
+            ],
+            "cutoff_post_test": 0.7585139318885448
+          },
+          {
+            "pre_test_probability": 0.2,
+            "continuous_post_test": 0.38995656363313763,
+            "continuous_post_test_ci": [
+              0.25894631162165593,
+              0.5423817633420244
+            ],
+            "cutoff_post_test": 0.8760429082240763
+          }
+        ],
+        "note": "the dichotomy assigns every value above the cutoff the same weight, so a patient measured at the cutoff itself is handed the average evidence of everyone above it. The curve reads that patient's own value, which at the cutoff carries far less weight. Both readings use the same patients and the same outcome; they differ only in what is done with the measurement"
+      },
+      "calibration_quintiles": [
+        {
+          "quintile": 1,
+          "n": 34,
+          "gdf15_min": 91.0416667,
+          "gdf15_max": 449.457,
+          "predicted_mean": 0.00014898394434379367,
+          "predicted_min": 1.3515761852316107e-07,
+          "predicted_max": 0.0005396288720914652,
+          "observed_events": 0,
+          "observed_proportion": 0.0,
+          "observed_ci_low": 0.0,
+          "observed_ci_high": 0.10281792425901261
+        },
+        {
+          "quintile": 2,
+          "n": 33,
+          "gdf15_min": 452.5521,
+          "gdf15_max": 687.760417,
+          "predicted_mean": 0.0023385033223217275,
+          "predicted_min": 0.0005591983177767344,
+          "predicted_max": 0.004894526299021202,
+          "observed_events": 0,
+          "observed_proportion": 0.0,
+          "observed_ci_low": 0.0,
+          "observed_ci_high": 0.10576281007457927
+        },
+        {
+          "quintile": 3,
+          "n": 33,
+          "gdf15_min": 689.2188,
+          "gdf15_max": 953.333,
+          "predicted_mean": 0.012808258002297783,
+          "predicted_min": 0.004948401629097804,
+          "predicted_max": 0.02611206656394218,
+          "observed_events": 1,
+          "observed_proportion": 0.030303030303030304,
+          "observed_ci_low": 0.0007669120750481093,
+          "observed_ci_high": 0.15759397227249683
+        },
+        {
+          "quintile": 4,
+          "n": 33,
+          "gdf15_min": 957.4479,
+          "gdf15_max": 1509.46,
+          "predicted_mean": 0.09396322178316033,
+          "predicted_min": 0.026686986661035264,
+          "predicted_max": 0.2257935010144462,
+          "observed_events": 4,
+          "observed_proportion": 0.12121212121212122,
+          "observed_ci_low": 0.0340328814229787,
+          "observed_ci_high": 0.2820162285372203
+        },
+        {
+          "quintile": 5,
+          "n": 33,
+          "gdf15_min": 1526.82,
+          "gdf15_max": 5986.41,
+          "predicted_mean": 0.6786153061616848,
+          "predicted_min": 0.23634417221224813,
+          "predicted_max": 0.9973305447979817,
+          "observed_events": 21,
+          "observed_proportion": 0.6363636363636364,
+          "observed_ci_low": 0.4512453552173484,
+          "observed_ci_high": 0.79599692554488
+        }
+      ]
+    },
+    "IPAH": {
+      "comparator": "IPAH",
+      "n": 124,
+      "n_pvod": 26,
+      "n_comparator": 98,
+      "sampling_prevalence": 0.20967741935483872,
+      "sampling_log_odds": -1.3268709406490897,
+      "intercept": -37.24511740497419,
+      "intercept_se": 7.668927706455944,
+      "intercept_ci": [
+        -52.2759395096692,
+        -22.21429530027918
+      ],
+      "slope_log10_gdf15": 11.393087295460342,
+      "slope_se": 2.396470488986688,
+      "slope_ci": [
+        6.696091447033341,
+        16.09008314388734
+      ],
+      "n_predictors": 1,
+      "events_per_variable": 26,
+      "auc": 0.9493720565149136,
+      "bootstrap_replicates_kept": 4000,
+      "bootstrap_replicates_discarded": 0,
+      "gdf15_at_lr": {
+        "1": {
+          "gdf15": 1421.1341028917989,
+          "ci_low": 1298.8784981041254,
+          "ci_high": 1620.3001490298238
+        },
+        "2": {
+          "gdf15": 1634.8365443240575,
+          "ci_low": 1486.574893026771,
+          "ci_high": 1830.724362683767
+        },
+        "5": {
+          "gdf15": 1967.4308869333495,
+          "ci_low": 1703.7747210242683,
+          "ci_high": 2233.120021807468
+        },
+        "10": {
+          "gdf15": 2263.2824768933356,
+          "ci_low": 1851.3288633042528,
+          "ci_high": 2676.722877085001
+        }
+      },
+      "comparator_max_gdf15": 1809.46
+    },
+    "HPAH": {
+      "comparator": "HPAH",
+      "n": 68,
+      "n_pvod": 26,
+      "n_comparator": 42,
+      "sampling_prevalence": 0.38235294117647056,
+      "sampling_log_odds": -0.4795730802618864,
+      "intercept": -33.562510772120596,
+      "intercept_se": 8.79725476416927,
+      "intercept_ci": [
+        -50.804813272715776,
+        -16.32020827152542
+      ],
+      "slope_log10_gdf15": 10.685061695834975,
+      "slope_se": 2.82430235673001,
+      "slope_ci": [
+        5.149530795192559,
+        16.22059259647739
+      ],
+      "n_predictors": 1,
+      "events_per_variable": 26,
+      "auc": 0.9716117216117216,
+      "bootstrap_replicates_kept": 3974,
+      "bootstrap_replicates_discarded": 26,
+      "gdf15_at_lr": {
+        "1": {
+          "gdf15": 1247.9176601225759,
+          "ci_low": 1074.4788541093992,
+          "ci_high": 1480.4853007227714
+        },
+        "2": {
+          "gdf15": 1448.9607031130836,
+          "ci_low": 1217.6140373159672,
+          "ci_high": 1710.0193571152856
+        },
+        "5": {
+          "gdf15": 1765.2693350392956,
+          "ci_low": 1378.4442428994032,
+          "ci_high": 2146.5167197708506
+        },
+        "10": {
+          "gdf15": 2049.6591871544306,
+          "ci_low": 1465.577750930898,
+          "ci_high": 2623.0887883528585
+        }
+      },
+      "comparator_max_gdf15": 1681.51042
+    },
+    "Other PH": {
+      "comparator": "Other PH",
+      "n": 78,
+      "n_pvod": 26,
+      "n_comparator": 52,
+      "sampling_prevalence": 0.3333333333333333,
+      "sampling_log_odds": -0.6931471805599454,
+      "intercept": -38.59814400107231,
+      "intercept_se": 11.16714235734255,
+      "intercept_ci": [
+        -60.48534083169543,
+        -16.710947170449195
+      ],
+      "slope_log10_gdf15": 12.302376378875135,
+      "slope_se": 3.607180738170333,
+      "slope_ci": [
+        5.232432046334676,
+        19.372320711415593
+      ],
+      "n_predictors": 1,
+      "events_per_variable": 26,
+      "auc": 0.9726331360946746,
+      "bootstrap_replicates_kept": 3976,
+      "bootstrap_replicates_discarded": 24,
+      "gdf15_at_lr": {
+        "1": {
+          "gdf15": 1205.3461444838802,
+          "ci_low": 1062.0867211476325,
+          "ci_high": 1404.6119902834344
+        },
+        "2": {
+          "gdf15": 1372.3166320987893,
+          "ci_low": 1187.231322267688,
+          "ci_high": 1590.8741569606202
+        },
+        "5": {
+          "gdf15": 1629.0526420482977,
+          "ci_low": 1310.7585814535603,
+          "ci_high": 1969.70700401516
+        },
+        "10": {
+          "gdf15": 1854.7170416383653,
+          "ci_low": 1393.480429477993,
+          "ci_high": 2351.047764866671
+        }
+      },
+      "comparator_max_gdf15": 1415.24
+    },
+    "COPD": {
+      "comparator": "COPD",
+      "n": 62,
+      "n_pvod": 26,
+      "n_comparator": 36,
+      "sampling_prevalence": 0.41935483870967744,
+      "sampling_log_odds": -0.32542240043462783,
+      "intercept": -33.86851707757742,
+      "intercept_se": 9.215117622664733,
+      "intercept_ci": [
+        -51.929815731300664,
+        -15.80721842385418
+      ],
+      "slope_log10_gdf15": 10.704351426141088,
+      "slope_se": 2.9392371676947153,
+      "slope_ci": [
+        4.9435524354379305,
+        16.465150416844246
+      ],
+      "n_predictors": 1,
+      "events_per_variable": 26,
+      "auc": 0.9519230769230769,
+      "bootstrap_replicates_kept": 3989,
+      "bootstrap_replicates_discarded": 11,
+      "gdf15_at_lr": {
+        "1": {
+          "gdf15": 1360.173489252008,
+          "ci_low": 1197.8447891090104,
+          "ci_high": 1580.4610691442379
+        },
+        "2": {
+          "gdf15": 1578.87621536874,
+          "ci_low": 1328.9773660818578,
+          "ci_high": 1841.3987456902544
+        },
+        "5": {
+          "gdf15": 1922.8611235559542,
+          "ci_low": 1471.4919082450813,
+          "ci_high": 2370.9296090747466
+        },
+        "10": {
+          "gdf15": 2232.0385726009567,
+          "ci_low": 1568.087112382855,
+          "ci_high": 2929.4718239106824
+        }
+      },
+      "comparator_max_gdf15": 1689.401709
+    }
+  },
+  "auc_ci_provenance": {
+    "function": "model.auc_ci_asymptotic, in analysis/model.py",
+    "statistic": "the C statistic computed from the Mann-Whitney statistic with midranks, so tied GDF15 values contribute one half each",
+    "variance": "the structural-component estimate. v10 is, for each case, the probability that it outranks a random comparator; v01 is the complement for each comparator; the variance of the C statistic is v10.var(ddof=1) / m + v01.var(ddof=1) / n",
+    "interval": "area +/- 1.959964 * sqrt(variance): a normal interval formed on the AUC scale, with no transformation",
+    "bounded": "not by construction. The normal interval is formed first and then clipped to [0, 1], so an endpoint reported as 1.000 has been truncated rather than held below 1 by the method itself. For this comparison no clipping occurs -- the upper endpoint is 0.99604 -- but three comparator rows in auc_reconciliation.csv do reach 1.0 and are truncated there",
+    "independently_computed": true,
+    "computed_interval": [
+      0.9160510978171128,
+      0.9960368142707994
+    ],
+    "published_panel_e_interval": [
+      0.9164,
+      0.9956999999999999
+    ],
+    "difference_from_published": [
+      -0.00034890218288718966,
+      0.00033681427079945703
+    ],
+    "evidence_it_was_computed": "the two intervals disagree in the fourth decimal place (0.91605 against 0.9164, 0.99604 against 0.9957). A transcribed interval would agree exactly; these agree only as closely as the same data and the same family of calculation force them to",
+    "verification": "verify.py recomputes the variance from the definition of the two structural components and requires it to match",
+    "other_calculations": "a different asymptotic calculation, reported during review, returns 0.900 to 1.012 for the same comparison. That interval is unbounded and crosses 1, which an AUC cannot exceed. It is neither the calculation used here nor reproduced here, and is recorded only to note that asymptotic AUC intervals differ by estimator",
+    "reported_primary": "neither. The reported interval is the stratified percentile bootstrap, which cannot leave [0, 1]"
+  },
+  "healthy_controls": {
+    "n_controls": 68,
+    "n_pvod": 26,
+    "control_max_gdf15": 684.065,
+    "pvod_min_gdf15": 860.513,
+    "perfectly_separated": true,
+    "gap_pg_ml": 176.44799999999998,
+    "note": "GDF15 separates PVOD from healthy controls completely, so the maximum-likelihood estimate of the log10(GDF15) coefficient is unbounded and no finite curve can be fitted"
+  },
+  "auc_reconciliation": [
+    {
+      "comparison": "PVOD vs IPAH",
+      "n_comparator": 98,
+      "auc": 94.93720565149137,
+      "ci_low": 90.31736203771716,
+      "ci_high": 99.55704926526556,
+      "method": "C statistic, asymptotic 95% CI",
+      "reported_primary": false,
+      "published_auc": 94.94,
+      "published_ci_low": 90.35,
+      "published_ci_high": 99.52,
+      "published_source": "Figure 1D",
+      "published_provenance": "read from the published figure",
+      "auc_difference": -0.002794348508629696,
+      "ci_low_difference": -0.03263796228283411
+    },
+    {
+      "comparison": "PVOD vs HPAH",
+      "n_comparator": 42,
+      "auc": 97.16117216117216,
+      "ci_low": 94.06168438125442,
+      "ci_high": 100.0,
+      "method": "C statistic, asymptotic 95% CI",
+      "reported_primary": false
+    },
+    {
+      "comparison": "PVOD vs Other PH",
+      "n_comparator": 52,
+      "auc": 97.26331360946746,
+      "ci_low": 94.17903833652133,
+      "ci_high": 100.0,
+      "method": "C statistic, asymptotic 95% CI",
+      "reported_primary": false,
+      "published_auc": 97.26,
+      "published_ci_low": 94.14,
+      "published_ci_high": 100.0,
+      "published_source": "Figure 1D",
+      "published_provenance": "read from the published figure",
+      "auc_difference": 0.0033136094674546257,
+      "ci_low_difference": 0.0390383365213296
+    },
+    {
+      "comparison": "PVOD vs COPD",
+      "n_comparator": 36,
+      "auc": 95.1923076923077,
+      "ci_low": 90.21752014324751,
+      "ci_high": 100.0,
+      "method": "C statistic, asymptotic 95% CI",
+      "reported_primary": false,
+      "published_auc": 95.19,
+      "published_ci_low": 90.19,
+      "published_ci_high": 100.0,
+      "published_source": "Figure 1D",
+      "published_provenance": "read from the published figure",
+      "auc_difference": 0.0023076923076956746,
+      "ci_low_difference": 0.027520143247514284
+    },
+    {
+      "comparison": "PVOD vs IPAH+HPAH",
+      "n_comparator": 140,
+      "auc": 95.6043956043956,
+      "ci_low": 91.60510978171128,
+      "ci_high": 99.60368142707993,
+      "method": "C statistic, asymptotic 95% CI",
+      "reported_primary": false,
+      "published_auc": 95.6,
+      "published_ci_low": 91.64,
+      "published_ci_high": 99.57,
+      "published_source": "Figure 1E",
+      "published_provenance": "reported by a co-author of the source study from the 600-dpi source render; local verification pending",
+      "auc_difference": 0.004395604395611485,
+      "ci_low_difference": -0.03489021828872296
+    },
+    {
+      "comparison": "PVOD vs IPAH+HPAH+Other PH",
+      "n_comparator": 192,
+      "auc": 96.0536858974359,
+      "ci_low": 92.41007795844229,
+      "ci_high": 99.6972938364295,
+      "method": "C statistic, asymptotic 95% CI",
+      "reported_primary": false,
+      "published_auc": 96.05,
+      "published_ci_low": 92.45,
+      "published_ci_high": 99.66,
+      "published_source": "Figure 1E",
+      "published_provenance": "reported by a co-author of the source study from the 600-dpi source render; local verification pending",
+      "auc_difference": 0.0036858974359006424,
+      "ci_low_difference": -0.03992204155771617
+    },
+    {
+      "comparison": "PVOD vs IPAH+HPAH",
+      "n_comparator": 140,
+      "auc": 95.6043956043956,
+      "ci_low": 91.2081043956044,
+      "ci_high": 98.9010989010989,
+      "method": "stratified percentile bootstrap, 4000 replicates, seed 1",
+      "reported_primary": true
+    }
+  ],
+  "auc_bootstrap_seed_sensitivity": {
+    "n_seeds": 10,
+    "ci_low_range": [
+      91.0157967032967,
+      91.20879120879121
+    ],
+    "ci_high_range": [
+      98.9010989010989,
+      99.03846153846155
+    ]
+  },
+  "source_figure_verification": {
+    "status": "pending local verification",
+    "panel_d": {
+      "provenance": "read from the published figure",
+      "values": [
+        "PVOD vs IPAH 94.94",
+        "PVOD vs Other PH 97.26",
+        "PVOD vs COPD 95.19"
+      ],
+      "reproduced": "all three reproduce from the supporting data to two decimal places"
+    },
+    "panel_e": {
+      "provenance": "reported by a co-author of the source study from the 600-dpi source render; local verification pending",
+      "values": [
+        "PVOD vs IPAH+HPAH 95.60 (91.64-99.57)",
+        "PVOD vs IPAH+HPAH+Other PH 96.05 (92.45-99.66)"
+      ],
+      "reproduced": "both reproduce from the supporting data: 95.60 and 96.05 by C statistic",
+      "note": "these panel E values are those a co-author of the source study reports from the 600-dpi source render. This analysis has not inspected that render and records them as reported, pending local verification. No claim is made here about any other value for panel E"
+    }
+  },
+  "ntprobnp_denominator": {
+    "primary_source": "NT-proBNP",
+    "primary_n": 63,
+    "primary_n_by_group": {
+      "HPAH": 15,
+      "IPAH": 33,
+      "PVOD": 15
+    },
+    "correlation_source": "6MWD PVR mPAP NT-proBNP",
+    "correlation_n_pvod": 17,
+    "pvod_ids_in_correlation_sheet_only": [
+      24,
+      26
+    ],
+    "pvod_values_in_correlation_sheet_only": [
+      2974.0,
+      4296.0
+    ],
+    "median_offset_ng_l": 1264.0,
+    "note": "the analysis uses the NT-proBNP distribution sheet, which records 63 measurements across the 166 group-1 patients (PVOD 15, IPAH 33, HPAH 15). The PVOD-only correlation sheet records 17 NT-proBNP measurements for the same 26 PVOD patients: the 15 of the distribution sheet, which agree exactly once the distribution sheet's median centring is added back, and two further patients, PVOD ids 24 and 26, which the distribution sheet records as NA. The two sheets therefore support different denominators for PVOD. This analysis states both and uses the distribution sheet, whose denominator matches the one published for this variable"
+  },
+  "marker_auc": [
+    {
+      "marker": "Age-adjusted GDF15",
+      "key": "gdf15_ageadj",
+      "n": 166,
+      "n_pvod": 26,
+      "auc": 0.967032967032967,
+      "auc_ci_low": 0.9325625191729721,
+      "auc_ci_high": 1.0
+    },
+    {
+      "marker": "6MWD",
+      "key": "sixmwd",
+      "n": 112,
+      "n_pvod": 22,
+      "auc": 0.6727272727272727,
+      "auc_ci_low": 0.5412081997812841,
+      "auc_ci_high": 0.8042463456732614
+    },
+    {
+      "marker": "mPAP",
+      "key": "mpap",
+      "n": 157,
+      "n_pvod": 24,
+      "auc": 0.6171679197994988,
+      "auc_ci_low": 0.5074965015538816,
+      "auc_ci_high": 0.7268393380451158
+    },
+    {
+      "marker": "PVR",
+      "key": "pvr",
+      "n": 142,
+      "n_pvod": 23,
+      "auc": 0.6019364267446109,
+      "auc_ci_low": 0.4834071573220684,
+      "auc_ci_high": 0.7204656961671534
+    },
+    {
+      "marker": "Cardiac index",
+      "key": "ci",
+      "n": 82,
+      "n_pvod": 25,
+      "auc": 0.5670175438596491,
+      "auc_ci_low": 0.43067212577653796,
+      "auc_ci_high": 0.7033629619427602
+    },
+    {
+      "marker": "NT-proBNP",
+      "key": "ntprobnp",
+      "n": 63,
+      "n_pvod": 15,
+      "auc": 0.5277777777777778,
+      "auc_ci_low": 0.35540957069854223,
+      "auc_ci_high": 0.7001459848570133
+    },
+    {
+      "marker": "Age",
+      "key": "age",
+      "n": 166,
+      "n_pvod": 26,
+      "auc": 0.5217032967032966,
+      "auc_ci_low": 0.40347590692699953,
+      "auc_ci_high": 0.639930686479594
+    }
+  ],
+  "marker_auc_complete_case": {
+    "n": 23,
+    "n_pvod": 10,
+    "n_by_group": {
+      "PVOD": 10,
+      "IPAH": 7,
+      "HPAH": 6
+    },
+    "pvod_fraction": 0.43478260869565216,
+    "full_cohort_pvod_fraction": 0.1566265060240964,
+    "case_enrichment": 2.7759197324414715,
+    "required_columns": [
+      "sixmwd_m",
+      "mpap",
+      "pvr",
+      "ci",
+      "ntprobnp"
+    ],
+    "ntprobnp_source": "NT-proBNP distribution sheet",
+    "patient_ids": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      10,
+      16,
+      22,
+      25,
+      47,
+      58,
+      99,
+      107,
+      110,
+      111,
+      117,
+      130,
+      159,
+      160,
+      161,
+      164,
+      165
+    ],
+    "patient_ids_by_group": {
+      "HPAH": [
+        130,
+        159,
+        160,
+        161,
+        164,
+        165
+      ],
+      "IPAH": [
+        47,
+        58,
+        99,
+        107,
+        110,
+        111,
+        117
+      ],
+      "PVOD": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        16,
+        22,
+        25
+      ]
+    },
+    "markers": [
+      {
+        "marker": "6MWD",
+        "key": "sixmwd",
+        "n": 23,
+        "n_pvod": 10,
+        "auc": 0.7115384615384616,
+        "auc_ci_low": 0.47874378511557225,
+        "auc_ci_high": 0.9443331379613509
+      },
+      {
+        "marker": "mPAP",
+        "key": "mpap",
+        "n": 23,
+        "n_pvod": 10,
+        "auc": 0.7038461538461538,
+        "auc_ci_low": 0.45971877883937873,
+        "auc_ci_high": 0.9479735288529291
+      },
+      {
+        "marker": "PVR",
+        "key": "pvr",
+        "n": 23,
+        "n_pvod": 10,
+        "auc": 0.7230769230769231,
+        "auc_ci_low": 0.5099794363403621,
+        "auc_ci_high": 0.936174409813484
+      },
+      {
+        "marker": "Cardiac index",
+        "key": "ci",
+        "n": 23,
+        "n_pvod": 10,
+        "auc": 0.7923076923076923,
+        "auc_ci_low": 0.6042017342288045,
+        "auc_ci_high": 0.98041365038658
+      },
+      {
+        "marker": "NT-proBNP",
+        "key": "ntprobnp",
+        "n": 23,
+        "n_pvod": 10,
+        "auc": 0.5384615384615384,
+        "auc_ci_low": 0.2915183286615697,
+        "auc_ci_high": 0.7854047482615072
+      },
+      {
+        "marker": "Age",
+        "key": "age",
+        "n": 23,
+        "n_pvod": 10,
+        "auc": 0.5692307692307692,
+        "auc_ci_low": 0.3128292654023746,
+        "auc_ci_high": 0.8256322730591639
+      }
+    ],
+    "ageadj_gdf15_separation": {
+      "pvod_n": 10,
+      "pvod_min": 1.04799709,
+      "pvod_max": 2.64294164,
+      "comparator_n": 13,
+      "comparator_min": -0.0563536,
+      "comparator_max": 1.00024356,
+      "gap": 0.047753530000000044,
+      "complete_separation": true,
+      "note": "age-adjusted GDF15 separates the two groups completely on this subset: every PVOD patient sits above every IPAH and HPAH patient, with a clean gap between them. This is reported as complete separation and as the two ranges, deliberately not as an AUC. The AUC would be 1.00, which measures the absence of overlap in 10 cases against 13 comparators rather than the performance of the marker, and beside the full-cohort 0.956 of Table 1 it would read as the marker improving on the subset when what changed is both the patients and the variable"
+    },
+    "raw_gdf15": "raw GDF15 is not in this table and cannot be. It is published in sheet GDF15-1 as six anonymous cohort columns of unequal length, with no patient identifier, no age and no row order shared with the per-patient sheets, so there is no key to attach it to a clinical row and none can be constructed without guessing which patient goes with which value",
+    "note": "the patients complete on all five clinical measurements are a small and strongly case-enriched subset: PVOD is 43.5% of them against 15.7% of the full cohort, about three times enriched. This is not a smaller version of the study but a different group of patients, because whether a patient has a measurement depends on their diagnosis and depends on it most for the variables missing most often. A complete-case comparison therefore cannot confirm the full-cohort comparator ranking, and the rankings among the clinical variables do move substantially at this sample size. These rows are not an unbiased re-estimate of any AUC: they are conditional on the measurement being available, and availability is associated with diagnosis"
+  },
+  "clinical_completeness": {
+    "ntprobnp": {
+      "n": 63,
+      "HPAH": 15,
+      "IPAH": 33,
+      "PVOD": 15
+    },
+    "pvr": {
+      "n": 142,
+      "HPAH": 35,
+      "IPAH": 84,
+      "PVOD": 23
+    },
+    "mpap": {
+      "n": 157,
+      "HPAH": 40,
+      "IPAH": 93,
+      "PVOD": 24
+    },
+    "ci": {
+      "n": 82,
+      "HPAH": 15,
+      "IPAH": 42,
+      "PVOD": 25
+    },
+    "sixmwd_m": {
+      "n": 112,
+      "HPAH": 27,
+      "IPAH": 63,
+      "PVOD": 22
+    }
+  },
+  "clinical_completeness_by_diagnosis": {
+    "source": "Reconstructed_per_patient_Prabhakar_2025_2.xlsx",
+    "rows": [
+      {
+        "variable": "Cardiac index",
+        "column": "CI_distFromMedian",
+        "n_present": 82,
+        "n_total": 166,
+        "PVOD_present": 25,
+        "PVOD_total": 26,
+        "PVOD_percent": 96.15384615384616,
+        "IPAH_present": 42,
+        "IPAH_total": 98,
+        "IPAH_percent": 42.857142857142854,
+        "HPAH_present": 15,
+        "HPAH_total": 42,
+        "HPAH_percent": 35.714285714285715
+      },
+      {
+        "variable": "NT-proBNP",
+        "column": "NTproBNP_ng_L",
+        "n_present": 65,
+        "n_total": 166,
+        "PVOD_present": 17,
+        "PVOD_total": 26,
+        "PVOD_percent": 65.38461538461539,
+        "IPAH_present": 33,
+        "IPAH_total": 98,
+        "IPAH_percent": 33.673469387755105,
+        "HPAH_present": 15,
+        "HPAH_total": 42,
+        "HPAH_percent": 35.714285714285715
+      },
+      {
+        "variable": "6MWD",
+        "column": "6MWD_m",
+        "n_present": 112,
+        "n_total": 166,
+        "PVOD_present": 22,
+        "PVOD_total": 26,
+        "PVOD_percent": 84.61538461538461,
+        "IPAH_present": 63,
+        "IPAH_total": 98,
+        "IPAH_percent": 64.28571428571429,
+        "HPAH_present": 27,
+        "HPAH_total": 42,
+        "HPAH_percent": 64.28571428571429
+      },
+      {
+        "variable": "PVR",
+        "column": "PVR_dyn_s_cm5",
+        "n_present": 142,
+        "n_total": 166,
+        "PVOD_present": 23,
+        "PVOD_total": 26,
+        "PVOD_percent": 88.46153846153847,
+        "IPAH_present": 84,
+        "IPAH_total": 98,
+        "IPAH_percent": 85.71428571428571,
+        "HPAH_present": 35,
+        "HPAH_total": 42,
+        "HPAH_percent": 83.33333333333333
+      },
+      {
+        "variable": "mPAP",
+        "column": "mPAP_mmHg",
+        "n_present": 157,
+        "n_total": 166,
+        "PVOD_present": 24,
+        "PVOD_total": 26,
+        "PVOD_percent": 92.3076923076923,
+        "IPAH_present": 93,
+        "IPAH_total": 98,
+        "IPAH_percent": 94.89795918367346,
+        "HPAH_present": 40,
+        "HPAH_total": 42,
+        "HPAH_percent": 95.23809523809524
+      }
+    ],
+    "ntprobnp_source": "either source sheet counts as measured here, 17 of 26 PVOD. The complete-case subset uses the distribution sheet alone, 15 of 26. The two answer different questions -- whether the patient was measured at all, against which patients share one consistent analysable set -- and are reported separately",
+    "values_not_used": "only the presence or absence of a measurement is read from the reconstruction. Its numeric values are recovered by adding a median back to a published deviation, which leaves NT-proBNP negative for Patient_ID 38 and 58; they are not interpreted as concentrations and no AUC is estimated from them. Every AUC in this project is computed from the original workbook",
+    "note": "whether a patient has a measurement depends on their diagnosis, and it depends on it most for cardiac index and NT-proBNP, the two variables missing most often. PVOD patients are investigated more thoroughly and arrive with fuller data. This is why the complete-case subset is case-enriched and why comparator AUCs on it are conditional on the measurement being available"
+  }
+}
