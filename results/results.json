@@ -1,7 +1,7 @@
 {
-  "source_workbook": "Supporting data values_Prabhakar et al 2025_CLEANED.xlsx",
+  "source_workbook": "jci-136-199159-s068.xlsx",
   "patient_identifier": {
-    "source": "Reconstructed_per_patient_Prabhakar_2025_2.xlsx",
+    "source": "patients_166.csv",
     "column": "Patient_ID",
     "range": "1-166, unique",
     "joined_on": "age-adjusted GDF15, which is distinct across all 166 patients in both files; the join is one-to-one and exact, and the diagnosis label agrees on every row",
@@ -721,7 +721,7 @@
       "published_ci_low": 91.64,
       "published_ci_high": 99.57,
       "published_source": "Figure 1E",
-      "published_provenance": "reported by a co-author of the source study from the 600-dpi source render; local verification pending",
+      "published_provenance": "independently verified from supplied full figure; confirmed in first-author QC brief",
       "auc_difference": 0.004395604395611485,
       "ci_low_difference": -0.03489021828872296
     },
@@ -737,7 +737,7 @@
       "published_ci_low": 92.45,
       "published_ci_high": 99.66,
       "published_source": "Figure 1E",
-      "published_provenance": "reported by a co-author of the source study from the 600-dpi source render; local verification pending",
+      "published_provenance": "independently verified from supplied full figure; confirmed in first-author QC brief",
       "auc_difference": 0.0036858974359006424,
       "ci_low_difference": -0.03992204155771617
     },
@@ -763,7 +763,7 @@
     ]
   },
   "source_figure_verification": {
-    "status": "pending local verification",
+    "status": "closed; independent full-figure verification confirmed",
     "panel_d": {
       "provenance": "read from the published figure",
       "values": [
@@ -774,13 +774,13 @@
       "reproduced": "all three reproduce from the supporting data to two decimal places"
     },
     "panel_e": {
-      "provenance": "reported by a co-author of the source study from the 600-dpi source render; local verification pending",
+      "provenance": "independently verified from supplied full figure; confirmed in first-author QC brief",
       "values": [
         "PVOD vs IPAH+HPAH 95.60 (91.64-99.57)",
         "PVOD vs IPAH+HPAH+Other PH 96.05 (92.45-99.66)"
       ],
       "reproduced": "both reproduce from the supporting data: 95.60 and 96.05 by C statistic",
-      "note": "these panel E values are those a co-author of the source study reports from the 600-dpi source render. This analysis has not inspected that render and records them as reported, pending local verification. No claim is made here about any other value for panel E"
+      "note": "Published Figure 1E values independently verified from the supplied full figure, as confirmed in the first-author QC brief. Published intervals remain distinct from our recomputed intervals."
     }
   },
   "ntprobnp_denominator": {
@@ -1047,7 +1047,7 @@
     }
   },
   "clinical_completeness_by_diagnosis": {
-    "source": "Reconstructed_per_patient_Prabhakar_2025_2.xlsx",
+    "source": "patients_166.csv",
     "rows": [
       {
         "variable": "Cardiac index",

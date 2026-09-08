@@ -1,0 +1,194 @@
+[
+  {
+    "body_block": 2,
+    "before": "Methods and Results are complete and the numbers in them are final. Introduction and Discussion are drafted so there is something concrete to react to, and those are the sections most likely to change on your advice.",
+    "after": "QC revision for author review. Verified mechanical corrections are logged in qc/manuscript_changes.json. Scientific framing is preserved; unresolved issues in qc/hostile_review.md and the missing Figure 1 script prevent submission-ready status.",
+    "reason": "QC status"
+  },
+  {
+    "body_block": 14,
+    "before": "0.990",
+    "after": "0.989",
+    "reason": "Final 4000-replicate AUC CI independently reproduced"
+  },
+  {
+    "body_block": 40,
+    "before": "0.990",
+    "after": "0.989",
+    "reason": "Final 4000-replicate AUC CI independently reproduced"
+  },
+  {
+    "body_block": 41,
+    "before": "0.965",
+    "after": "0.968",
+    "reason": "Final bootstrap calibration slope"
+  },
+  {
+    "body_block": 42,
+    "before": "0.000 against 0.000, 0.002 against 0.000, 0.012 against 0.030, 0.088 against 0.121 and 0.665 against 0.618",
+    "after": "0.000 against 0.000, 0.002 against 0.000, 0.013 against 0.030, 0.094 against 0.121 and 0.679 against 0.636",
+    "reason": "Independent calibration quintiles"
+  },
+  {
+    "body_block": 14,
+    "before": "440 pg/mL",
+    "after": "430 pg/mL",
+    "reason": "Width rounded from unrounded interval"
+  },
+  {
+    "body_block": 56,
+    "before": "1,910 to 2,350",
+    "after": "1,920 to 2,360",
+    "reason": "Final stratified bootstrap interval"
+  },
+  {
+    "body_block": 56,
+    "before": "440",
+    "after": "430",
+    "reason": "Width rounded from unrounded interval"
+  },
+  {
+    "body_block": 58,
+    "before": "Interval endpoints are rounded to the nearest 10 pg/mL because bootstrap variation between seeds exceeds the final digit.",
+    "after": "Interval endpoints and widths are rounded separately to the nearest 10 pg/mL because bootstrap variation between seeds exceeds the final digit. Widths and the width ratio are calculated from unrounded endpoints.",
+    "reason": "Explain rounded endpoints versus rounded widths"
+  },
+  {
+    "body_block": 47,
+    "before": "PatientDiagnosisMeasured GDF15Likelihood ratio from the measured valuePost-test probability at 10% pre-testLikelihood ratio assigned by the rulePost-test probability implied by the label1IPAH1,657.81 pg/mL2.5622%0.202%2PVOD1,658.81 pg/mL2.5622%28.376%",
+    "after": "RowDiagnosisMeasured GDF15Likelihood ratio from the measured valuePost-test probability at 10% pre-testLikelihood ratio assigned by the rulePost-test probability implied by the label1IPAH1,657.81 pg/mL2.5622%0.202%2PVOD1,658.81 pg/mL2.5622%28.376%",
+    "reason": "Programmatic verified Table 1; row numbers are not clinical IDs"
+  },
+  {
+    "body_block": 49,
+    "before": "Post-test probabilities assume a pre-test probability of 10%.",
+    "after": "Post-test probabilities assume a pre-test probability of 10%. Table row numbers are not reconstructed Patient_IDs. The observed values are from Fig_1a!C36 and Fig_1a!B27; their full-precision gap is 0.9975 pg/mL.",
+    "reason": "Source provenance"
+  },
+  {
+    "body_block": 87,
+    "before": "[A3: AKIKO OR AMIT. The study approval and consent paragraph from the JCI supplemental material, with approving bodies named.]",
+    "after": "The original study reported approval of the UK National Cohort Study protocol (13/EE/0203) by the East of England Research Ethics Committee and of the UCSF PH Biobank and Lung Transplant Registry protocols (22-36931 and 13-10738, respectively) by the UCSF Institutional Review Board. The NCS gene-identification protocol (08/H0802/32) was approved by the UK Research Ethics Committee; the supplement reports written informed consent for whole-blood collection for those gene-identification studies [1].",
+    "reason": "Verified supplement pp 5–6; consent scoped to source"
+  },
+  {
+    "body_block": 88,
+    "before": "[funding list to be lifted verbatim from the source letter]",
+    "after": "NIH (T32HL007731 to JTD; R01AG058659 to MAS; K24HL174231 to JPS; HL151552, VA CX002011, and CFF HAYS19AB3 to JRG; and R01HL164581 and R01HL153915 to AH); Gates Cambridge Trust (OPP1144 to EMDDDB); National Institute for Health and Care Research (NIHR) (NIHR203321 to DGK); United Kingdom National Cohort Study of Idiopathic and Heritable Pulmonary Arterial Hypertension Consortium grant to LSH; Cardiorespiratory NIHR Cambridge Bioresource Centre to MT; British Heart Foundation (SP/12/12/29836 and SP/18/10/33975 to the UK Pulmonary Arterial Hypertension Cohort Study Consortium); and Nina Ireland Program for Lung Health to PJW [1]",
+    "reason": "Published original-cohort funding, separately attributed"
+  },
+  {
+    "body_block": 88,
+    "before": "This secondary analysis received no specific funding [A10: GIORGIO to confirm student support].",
+    "after": "Jordan’s secondary-analysis work was supported through the 2026 Responsible AI Summer Research Program at Santa Clara University under the award “Transparent AI for Rare Disease Diagnosis”. The programme had no role in the analysis.",
+    "reason": "Giorgio funding confirmation"
+  },
+  {
+    "body_block": 77,
+    "before": "[A8: this sentence rests on a citation we have not yet been able to verify against PubMed. Either the source is confirmed and cited, or the sentence is deleted. Do not submit with it unverified.]",
+    "after": "[6]",
+    "reason": "A8 verified, PMID 42275164; exact Discussion limitation"
+  },
+  {
+    "body_block": 115,
+    "before": "1. Prabhakar A, De Bie EMDD, DesJardin JT, et al. J Clin Invest. 2026;136(2):e199159. doi:10.1172/JCI199159",
+    "after": "1. Prabhakar A, De Bie EMDD, DesJardin JT, et al. GDF15 is a putative biomarker for distinguishing pulmonary veno-occlusive disease and pulmonary arterial hypertension. J Clin Invest. 2026;136(2):e199159. doi:10.1172/JCI199159.",
+    "reason": "Verified reference identity"
+  },
+  {
+    "body_block": 116,
+    "before": "2. Aguado B, et al. Pulmonary veno-occlusive disease: a paradigm of diagnosis and therapeutic challenges in pulmonary hypertension. Curr Opin Pulm Med. 2025;31(5):443-455.",
+    "after": "2. Aguado B, Grynblat J, Budhram B, et al. Pulmonary veno-occlusive disease: a paradigm of diagnosis and therapeutic challenges in pulmonary hypertension. Curr Opin Pulm Med. 2025;31(5):443–455. doi:10.1097/MCP.0000000000001184.",
+    "reason": "Verified reference identity"
+  },
+  {
+    "body_block": 120,
+    "before": "6. [A8: the 2026 PVOD/PCH diagnostic score. Not yet verified. Supply the citation or the sentence citing it is deleted.]",
+    "after": "6. Andruska AM, Cruz-Utrilla A, Nossent EJ, et al. Identification of pulmonary arterial hypertension patients with venous or capillary involvement. Am J Respir Crit Care Med. 2026;212(9):2199–2210. doi:10.1093/ajrccm/aamag289.",
+    "reason": "Verified reference identity"
+  },
+  {
+    "body_block": 121,
+    "before": "7. [STARD 2015 reporting guideline. To be added and verified.]",
+    "after": "7. Bossuyt PM, Reitsma JB, Bruns DE, et al.; STARD Group. STARD 2015: an updated list of essential items for reporting diagnostic accuracy studies. BMJ. 2015;351:h5527. doi:10.1136/bmj.h5527.",
+    "reason": "Verified reference identity"
+  },
+  {
+    "body_block": 122,
+    "before": "8. [Reference for bootstrap optimism correction and calibration slope. To be added and verified.]",
+    "after": "8. Steyerberg EW, Harrell FE Jr, Borsboom GJ, Eijkemans MJC, Vergouwe Y, Habbema JDF. Internal validation of predictive models: efficiency of some procedures for logistic regression analysis. J Clin Epidemiol. 2001;54(8):774–781. doi:10.1016/S0895-4356(01)00341-9.",
+    "reason": "Verified reference identity"
+  },
+  {
+    "body_block": 124,
+    "before": "Every reference above was verified against PubMed except where marked. Jordan: verify the remainder the same way and do not carry any citation into the submitted version that has not been checked against the record.",
+    "after": "Bibliographic identities have been checked against published records. Sentence-level support and limits of full-text access are recorded in qc/reference_audit.csv. Author-owned and scientific interpretation issues remain open.",
+    "reason": "Avoid blanket unsupported reference-verification claim"
+  },
+  {
+    "body_block": 37,
+    "before": "[A9: JORDAN, version and package versions]",
+    "after": "3.14.6; package versions are specified in requirements-lock.txt",
+    "reason": "Recorded environment; URL/DOI remain pending"
+  },
+  {
+    "body_block": 16,
+    "before": "genotyping.",
+    "after": "genotyping [2,4].",
+    "reason": "Explicit reference call with support recorded in audit"
+  },
+  {
+    "body_block": 17,
+    "before": "specificity.",
+    "after": "specificity [1].",
+    "reason": "Explicit reference call with support recorded in audit"
+  },
+  {
+    "body_block": 18,
+    "before": "two decades.",
+    "after": "two decades [3].",
+    "reason": "Explicit reference call with support recorded in audit"
+  },
+  {
+    "body_block": 22,
+    "before": "senior author,",
+    "after": "senior author [1],",
+    "reason": "Explicit reference call with support recorded in audit"
+  },
+  {
+    "body_block": 33,
+    "before": "standard bootstrap correction.",
+    "after": "standard bootstrap correction [8].",
+    "reason": "Explicit reference call with support recorded in audit"
+  },
+  {
+    "body_block": 36,
+    "before": "diagnostic accuracy components;",
+    "after": "diagnostic accuracy components [5,7];",
+    "reason": "Explicit reference call with support recorded in audit"
+  },
+  {
+    "body_block": 36,
+    "before": "the completed checklists are provided as supplementary material.",
+    "after": "reporting mappings accompany this QC revision, with outstanding author items identified.",
+    "reason": "Checklists are not submission-complete"
+  },
+  {
+    "body_block": 6,
+    "before": "The study approval and consent paragraph from the JCI supplemental material, with approving bodies named",
+    "after": "A3 source passage verified; see Declarations and qc/sources.md",
+    "reason": "Resolve only confirmed A3/A8/A10 item"
+  },
+  {
+    "body_block": 6,
+    "before": "We could not retrieve this citation from PubMed. Until it is verified the sentence that rests on it is unsupported and has been marked.",
+    "after": "VERIFIED: Andruska et al. 2026; PMID 42275164; Discussion explicitly identifies dichotomization information loss.",
+    "reason": "Resolve only confirmed A3/A8/A10 item"
+  },
+  {
+    "body_block": 6,
+    "before": "Expected to be \"no specific funding\". Confirm student support arrangements.",
+    "after": "Confirmed: 2026 Responsible AI Summer Research Program at Santa Clara University; “Transparent AI for Rare Disease Diagnosis”; programme had no role in analysis.",
+    "reason": "Resolve only confirmed A3/A8/A10 item"
+  }
+]

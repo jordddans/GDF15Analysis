@@ -1,0 +1,395 @@
+file,location,match,quantity,wrong_cutoff_lr_minus,action
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Patients_166!D8,.24371529,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Patients_166!G11,.2441,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Patients_166!I11,0.245309,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Patients_166!C20,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Patients_166!C98,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Patients_166!D101,0.24940089,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Patients_166!D149,0.2467794,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Source_values!D8,.24371529,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Source_values!H11,.2441,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Source_values!L11,0.245309,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Source_values!C20,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Source_values!I72,.245832,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Source_values!C98,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Source_values!D101,0.24940089,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Reconstructed_per_patient_Prabhakar_2025_2.xlsx,Source_values!D149,0.2467794,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-1!F9,.247863,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-1!E28,.24,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-2!N9,.247863,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-2!K28,.24,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-3!B5,.24,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-3!C5,.24,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-4!J9,.247863,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-4!G28,.24,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-5!A168,.24,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,6MWD-1!B10,.24371529,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,6MWD-1!B103,0.24940089,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,6MWD-1!B151,0.2467794,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,Age-GDF15!C9,0.2474467,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,Age-GDF15!C67,0.2499104,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,Age-GDF15!B117,.2465228,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,Age-GDF15!C130,0.2477799,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,Age-GDF15!B163,.2491512,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,NT-proBNP!B117,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,NT-proBNP!B163,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,PVR!C91,.245832,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,PVR!B117,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,PVR!B163,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,mPAP!B117,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,mPAP!B163,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,CI!B117,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,CI!C154,0.245309,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,CI!B163,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,6MWD-2!B117,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,6MWD-2!B163,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-7!P9,.24,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-7!N22,.245,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-7!B26,.24,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-8!E5,.245,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,GDF15-10!Q8,.247863,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,6MWD PVR mPAP NT-proBNP!A11,.24371529,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,6MWD PVR mPAP NT-proBNP!D11,.24371529,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,6MWD PVR mPAP NT-proBNP!G11,.24371529,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,6MWD PVR mPAP NT-proBNP!J11,.24371529,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+Supporting data values_Prabhakar et al 2025_CLEANED.xlsx,6MWD PVR mPAP NT-proBNP!E14,.2441,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+TRIPOD-AI_mapping.md,line 121,.247,Fitted coefficient substring; not LR−,False,Unchanged
+TRIPOD-AI_mapping.md,line 121,.247,Fitted coefficient substring; not LR−,False,Unchanged
+archive/figures 2/figure1/Figure1_auc_comparison.svg,line 333,.243536,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure1/Figure1_auc_comparison.svg,line 334,.243536,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure1/Figure1_auc_comparison.svg,line 335,.243536,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure1/Figure1_auc_comparison.svg,line 336,.243536,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure1/Figure1_auc_comparison.svg,line 1087,.247185,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure1/Figure1_auc_comparison.svg,line 1127,.247185,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure1/Figure1_auc_comparison.svg,line 1190,.247185,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure1/Figure1_auc_comparison.svg,line 1550,.24093,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure1/Figure1_auc_comparison.svg,line 1606,.24093,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure1/Figure1_auc_comparison.svg,line 1685,.24093,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure1/Figure1_auc_comparison.svg,line 1820,.24782,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure2/Fig4_gdf15_cutoffs_scatter_linear_revised.svg,line 306,.241531,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure2/Fig4_gdf15_cutoffs_scatter_linear_revised.svg,line 316,.246229,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure2/Fig4_gdf15_cutoffs_scatter_linear_revised.svg,line 379,.242649,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure2/Fig4_gdf15_cutoffs_scatter_linear_revised.svg,line 430,.248057,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure2/Fig4_gdf15_cutoffs_scatter_linear_revised.svg,line 473,.24841,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/figures 2/figure3/figure_gdf15_classifier.pdf,PDF page 1,0.24,Cross-validated reselected-cutoff LR−; (6/26)/(136/140)=0.23755656,False,Unchanged; distinct estimand annotated
+archive/figures 2/figure3/figure_gdf15_classifier_captioned.pdf,PDF page 1,0.24,Cross-validated reselected-cutoff LR−; (6/26)/(136/140)=0.23755656,False,Unchanged; distinct estimand annotated
+archive/gdfdiscrim/.ipynb_checkpoints/04_honesty-checkpoint.ipynb,cell 18 output 1,.24,Historical continuous-LR LOO envelope lower bound 24.24; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/04_honesty.ipynb,cell 18 output 1,.24,Historical continuous-LR LOO envelope lower bound 24.24; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/GitHub_scripts_PVOD_project.R,line 133,.2422,Numerical coefficient/measurement/output; not fixed-cutoff LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure1/Figure1_auc_comparison.svg,line 333,.243536,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure1/Figure1_auc_comparison.svg,line 334,.243536,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure1/Figure1_auc_comparison.svg,line 335,.243536,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure1/Figure1_auc_comparison.svg,line 336,.243536,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure1/Figure1_auc_comparison.svg,line 1087,.247185,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure1/Figure1_auc_comparison.svg,line 1127,.247185,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure1/Figure1_auc_comparison.svg,line 1190,.247185,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure1/Figure1_auc_comparison.svg,line 1550,.24093,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure1/Figure1_auc_comparison.svg,line 1606,.24093,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure1/Figure1_auc_comparison.svg,line 1685,.24093,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure1/Figure1_auc_comparison.svg,line 1820,.24782,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure2/Fig4_gdf15_cutoffs_scatter_linear.svg,line 304,.241531,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure2/Fig4_gdf15_cutoffs_scatter_linear.svg,line 314,.246229,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure2/Fig4_gdf15_cutoffs_scatter_linear.svg,line 377,.242649,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure2/Fig4_gdf15_cutoffs_scatter_linear.svg,line 428,.248057,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure2/Fig4_gdf15_cutoffs_scatter_linear.svg,line 471,.24841,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 49,.248031,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 282,.242354,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 603,.244123,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 674,.242482,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 724,.249012,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 738,.245387,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 740,0.241394,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 832,0.241394,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 848,.249012,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 969,.244123,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 1010,.244434,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 1014,.244123,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 1020,.247757,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 1135,.249012,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 1151,0.241394,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 1190,.244232,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 1243,0.241394,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 1259,.249012,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 1310,.243219,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 1380,.244123,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg,line 1526,.245581,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/data/df_all.csv,line 37,.247863,Observed concentration (including1415.24); not LR−,False,Unchanged
+archive/gdfdiscrim/data/df_all.csv,line 150,.24,Observed concentration (including1415.24); not LR−,False,Unchanged
+archive/gdfdiscrim/data/df_g1.csv,line 8,.244,Historical clinical measurement; private export excluded from git,False,Unchanged
+archive/gdfdiscrim/data/df_g1.csv,line 11,0.245,Historical clinical measurement; private export excluded from git,False,Unchanged
+archive/gdfdiscrim/data/df_g1.csv,line 101,0.249,Historical clinical measurement; private export excluded from git,False,Unchanged
+archive/gdfdiscrim/data/df_g1.csv,line 149,0.247,Historical clinical measurement; private export excluded from git,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 35,0.24,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 36,0.24,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 174,0.24,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 344,.248,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 347,.248,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 351,.248,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 353,.248,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 355,.248,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 358,.248,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 368,.248,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 474,.24042,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 475,.240742,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 498,.24659,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 503,.243619,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 507,.245828,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg,line 628,0.24,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 35,0.24,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 36,0.24,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 155,.240212,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 155,.240212,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 322,0.24,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 377,.244539,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 490,.248,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 501,.248,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 516,.248,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 520,.248,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 649,.245402,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 760,.241139,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 761,.241139,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg,line 776,0.24,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_linear.svg,line 201,.243316,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_linear.svg,line 432,.241775,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_linear.svg,line 439,.243008,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_linear.svg,line 467,0.242573,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_log.svg,line 107,.242486,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_log.svg,line 184,.245534,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_log.svg,line 198,0.24401,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_log.svg,line 318,.247242,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_log.svg,line 464,.243938,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_log.svg,line 509,.245927,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_log.svg,line 578,.248218,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_linear.svg,line 172,.241419,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_linear.svg,line 173,.241062,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_linear.svg,line 183,0.249464,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_linear.svg,line 276,.248137,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_linear.svg,line 323,.248433,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_linear.svg,line 365,.2464,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_linear.svg,line 413,.242153,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_linear.svg,line 523,.247492,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_log.svg,line 321,.241062,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_log.svg,line 513,.2464,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_log.svg,line 555,.249697,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_log.svg,line 561,.242153,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_log.svg,line 671,.247492,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear.svg,line 304,.241531,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear.svg,line 314,.246229,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear.svg,line 377,.242649,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear.svg,line 428,.248057,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear.svg,line 471,.24841,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.svg,line 345,.240566,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.svg,line 350,.2474,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.svg,line 422,.242649,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.svg,line 430,.24521,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.svg,line 470,.242103,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.svg,line 473,.248057,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.svg,line 475,.241728,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.svg,line 682,.244633,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.svg,line 682,.244633,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.svg,line 697,.244633,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.svg,line 697,.244633,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_log.svg,line 392,.240753,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_log.svg,line 525,.242649,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_log.svg,line 554,.240522,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_log.svg,line 558,.240522,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_log.svg,line 576,.248057,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_log.svg,line 667,.244784,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 33,.24,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 34,.24,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 57,.24,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 184,.241954,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 640,.246389,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 1444,0.240657,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 1739,.24,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 2015,0.240657,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 2033,.241954,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 2309,.244836,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 2309,.244836,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 2402,.244433,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 2402,.244433,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 2993,.246427,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 2993,.246427,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 3131,0.249203,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg,line 3131,0.249203,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 762,.240902,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 763,.240902,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 927,.241861,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 928,.241861,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 1142,.248048,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 1143,.248048,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 1182,.245053,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 1387,.245661,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 1388,.245661,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 1965,.240902,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 2110,.245661,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 2139,.248048,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 2140,.241861,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg,line 2240,.245053,SVG geometry (coordinate/path); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/gdf15_ladder_points.csv,line 42,.240,Observed concentration (including1415.24); not LR−,False,Unchanged
+archive/gdfdiscrim/gdf15_charts/gdf15_ladder_points.csv,line 79,.248,Observed concentration (including1415.24); not LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1a!F9,.247863,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1a!E28,.24,Biomarker/source measurement; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1b!N9,.247863,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1b!K28,.24,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1c!B5,.24,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1c!C5,.24,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1d!J9,.247863,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1d!G28,.24,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1e!A168,.24,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1g!B10,.24371529,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1g!B103,0.24940089,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1g!B151,0.2467794,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1h!C9,0.2474467,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1h!C67,0.2499104,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1h!B117,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1h!C130,0.2477799,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1h!B163,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1i!B117,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1i!B163,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1j!C91,.245832,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1j!B117,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1j!B163,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1k!B117,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1k!B163,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1l!B117,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1l!C154,0.245309,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1l!B163,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1m!B117,.2465228,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_1m!B163,.2491512,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_S1a!P9,.24,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_S1a!N22,.245,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_S1a!B26,.24,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_S1b!E5,.245,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_S2a!Q8,.247863,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_S2b!A11,.24371529,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_S2b!D11,.24371529,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_S2b!G11,.24371529,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_S2b!J11,.24371529,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/jci-136-199159-s068.xlsx,Fig_S2b!E14,.2441,Clinical measurement/deviation; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/pvod_166.csv,line 8,.244,Historical clinical measurement; private export excluded from git,False,Unchanged
+archive/gdfdiscrim/pvod_166.csv,line 11,0.245,Historical clinical measurement; private export excluded from git,False,Unchanged
+archive/gdfdiscrim/pvod_166.csv,line 101,0.249,Historical clinical measurement; private export excluded from git,False,Unchanged
+archive/gdfdiscrim/pvod_166.csv,line 149,0.247,Historical clinical measurement; private export excluded from git,False,Unchanged
+archive/gdfdiscrim/untitled.chat,line 1623,.2468,Logistic-model intercept coefficient; not LR−,False,Unchanged
+archive/gdfdiscrim/untitled.chat,line 1623,.240,Quadratic-model log-likelihood; not LR−,False,Unchanged
+archive/gdfdiscrim/untitled.chat,line 1623,.24678678240736,Logistic-model intercept coefficient; not LR−,False,Unchanged
+archive/gdfdiscrim/untitled.chat,line 3368,.246083,Historical continuous-LR LOO result; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/untitled.chat,line 3584,.24,Historical continuous-LR LOO envelope lower bound 24.24; not cutoff LR−,False,Unchanged
+archive/gdfdiscrim/untitled.chat,line 5167,.2407281,Timestamp fractional seconds,False,Unchanged
+archive/gdfdiscrim/untitled.chat,line 6127,0.24706908071711947,Historical curve/probability numerical tuple; not fixed-cutoff LR−,False,Unchanged
+archive/gdfdiscrim/untitled.chat,line 6127,0.24706908071711947,Historical curve/probability numerical tuple; not fixed-cutoff LR−,False,Unchanged
+archive/gdfdiscrim/untitled.chat,line 7197,0.246942,Timestamp fractional seconds,False,Unchanged
+archive/gdfdiscrim/untitled.chat,line 8452,.240188,Timestamp fractional seconds,False,Unchanged
+figures/figure1_caption.md,line 11,.247,Numerical coefficient/measurement/output; not fixed-cutoff LR−,False,Unchanged
+results/comparator_models.csv,line 5,.24,Observed concentration (including1415.24); not LR−,False,Unchanged
+results/functional_form.csv,line 3,.240432207165632,Numerical coefficient/measurement/output; not fixed-cutoff LR−,False,Unchanged
+results/lr_curves.csv,line 27,.242466093295941,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 36,.24513121028,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 73,.2494548908183,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 146,0.24353495176033105,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 170,0.24930090705646304,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 181,0.2476456764552,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 186,.2492770629274,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 187,.2495664386697,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 200,0.24334114598636694,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 261,.2465928360302,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 264,.248157662269763,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 284,.247237510011516,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 285,0.241254780605695,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 288,.2439100627858,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 291,.2499249498932,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 302,.2465221476027,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 305,.243164882175,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 359,.243681804401,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 368,.249180307592,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 436,.24513121028,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 473,.2494548908183,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 481,.2431238790934854,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 549,0.24460865953022315,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 571,0.2422267912838929,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 581,0.2476456764552,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 586,.2492770629274,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 587,.2495664386697,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 602,0.24059886747733317,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 615,.2419813272267821,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 661,.2465928360302,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 702,.2465221476027,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 705,.243164882175,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 729,.24726277663689,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 733,.247795908534194,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 759,.243681804401,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 762,.24484447670767,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 768,.249180307592,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 836,.24513121028,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 873,.2494548908183,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 878,.2457233191910671,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 924,0.24277186243447438,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 925,0.2496610479181442,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 951,0.24088749995975461,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 952,0.24942819706399894,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 977,.2407528702487085,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 981,0.2476456764552,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 986,.2492770629274,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 987,.2495664386697,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1056,.2422193172836,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1061,.2465928360302,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1066,.240726976051201,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1066,.24697675778745,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1083,.243261744422147,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1102,.2465221476027,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1105,.243164882175,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1107,.24518611962594,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1133,.24698796,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1159,.243681804401,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1168,.249180307592,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1236,.24513121028,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1273,.2494548908183,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1328,0.2459888128626797,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1352,0.24333515600579386,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1381,0.2476456764552,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1386,.2492770629274,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1386,0.24130334945011764,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1387,.2495664386697,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1433,0.24133276122242,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1447,.242049489875767,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1461,.2465928360302,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1491,.24000515064377,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1502,.2465221476027,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1505,.243164882175,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1509,.24953328619046,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1555,.2455703,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1559,.243681804401,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1568,.249180307592,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1584,.2499758370404,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1636,.24513121028,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1673,.2494548908183,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1737,0.24361027607237531,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1738,0.2498561133004791,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1763,0.24473488074692631,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1781,0.2476456764552,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1786,.2492770629274,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1787,.2495664386697,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1839,.245159193855706,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1861,.2465928360302,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1870,0.248635241081212,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1874,.244812711616,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1901,0.240058453152763,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1902,.2465221476027,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1905,.243164882175,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1937,.24101582093371,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1950,.24533404678445,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1959,.243681804401,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1959,.2460687333,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1962,.2478015783414,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_curves.csv,line 1968,.249180307592,"Continuous LR, confidence limit, or curve-grid concentration; not fixed-cutoff LR−",False,Unchanged
+results/lr_reference.csv,line 7,0.24443784307113864,Post-test probability at 1700 pg/mL (about24.4%); not LR−,False,Unchanged
+results/model_coefficients.csv,line 2,.24678678240761,Fitted coefficient substring; not LR−,False,Unchanged
+results/model_coefficients.csv,line 3,.24511740497419,Fitted coefficient substring; not LR−,False,Unchanged
+results/ntprobnp_sources.csv,line 8,.24371529,Numerical coefficient/measurement/output; not fixed-cutoff LR−,False,Unchanged
+results/results.json,line 30,.24678678240761,Logistic-model intercept coefficient; not LR−,False,Unchanged
+results/results.json,line 120,0.24443784307113864,Post-test probability at 1700 pg/mL (about24.4%); not LR−,False,Unchanged
+results/results.json,line 171,0.24443784307113864,Post-test probability at 1700 pg/mL (about24.4%); not LR−,False,Unchanged
+results/results.json,line 208,.240432207165632,Quadratic-model log-likelihood; not LR−,False,Unchanged
+results/results.json,line 435,.24511740497419,Logistic-model intercept coefficient; not LR−,False,Unchanged
+results/results.json,line 570,.24,Observed concentration (including1415.24); not LR−,False,Unchanged

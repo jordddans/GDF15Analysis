@@ -1,4 +1,4 @@
-# TRIPOD+AI checklist — completed
+# TRIPOD+AI checklist — QC revision; author items pending
 
 Checklist: TRIPOD+AI (Collins et al., *BMJ* 2024;385:e078378), 27 items. This study
 **develops** a diagnostic prediction model and does not evaluate it on separate data, so
@@ -22,8 +22,7 @@ each with a page number at submission. The section scheme is the one used in the
 | Results §3.4 | Sensitivity analyses |
 | Discussion §4.1–§4.3 | Interpretation, limitations, implications |
 
-Four items are outstanding because only an author can supply them; they are listed at the
-end and are **deliberately blank rather than filled in with guesses**.
+Funding, protocol, registration and patient/public involvement are confirmed below. Author-owned assay, accrual, blinding, COI and publication items remain pending; see qc/hostile_review.md.
 
 ---
 
@@ -71,10 +70,10 @@ requires the clinician's own pre-test probability.
 | 6a | Study setting, number and location of centres | Three recruitment sources: the UK National Cohort Study of Idiopathic and Heritable PAH, eight participating centres (ClinicalTrials.gov NCT01907295); the UCSF PH Biobank; the UCSF Lung Transplant Registry. | Methods §2.1 |
 | 6b | Eligibility criteria | IPAH, HPAH and PVOD diagnosed by contemporary international guidelines, with resting mPAP and pulmonary arterial wedge pressure from routine clinical visits and the diagnosis date taken as confirmatory right heart catheterisation; COPD by GOLD criteria, excluding COPD patients with clinical evidence of PH; healthy volunteers self-declared free of cardiovascular and respiratory disease. This analysis uses those cohort labels as published and applies no further exclusion. | Methods §2.1 |
 | 6c | Treatments received and how handled | All PVOD patients were treated with either vasodilators or calcium channel blockers. Treatment is not a variable in the model and is not adjusted for; GDF15 was measured on samples collected in the course of routine care. | Methods §2.1 |
-| 7 | Data pre-processing and quality checking | Implemented in `analysis/data.py`: sheet parsing, normalisation of non-breaking spaces in headers, `"NA"` to missing. The clinical sheets of the source workbook carry no patient identifier, so each row is keyed to its cohort label through the age-adjusted GDF15 value, and the keying is checked end to end by requiring raw and median-centred 6MWD to differ by exactly 294 m on all 112 patients with that measurement. `Patient_ID` is then joined on that same value from the per-patient reconstruction `Reconstructed_per_patient_Prabhakar_2025_2.xlsx`, one-to-one and exactly, with the diagnosis label required to agree on every row; it is carried through every patient-level output. The join is by key and never by position, since the two files order their patients differently. Sheet `GDF15-1` stands outside this: it is anonymous group-level concentrations, so no output derived from it carries a `Patient_ID`. Cohort counts and both NT-proBNP denominators are asserted at load time. Independent QA of the source workbook is in `QA_note_Prabhakar_et_al_2025_supporting_data.md`. | Methods §2.1; Supplement S2 |
+| 7 | Data pre-processing and quality checking | Implemented in `analysis/data.py`: sheet parsing, normalisation of non-breaking spaces in headers, `"NA"` to missing. The clinical sheets of the source workbook carry no patient identifier, so each row is keyed to its cohort label through the age-adjusted GDF15 value, and the keying is checked end to end by requiring raw and median-centred 6MWD to differ by exactly 294 m on all 112 patients with that measurement. `Patient_ID` is then joined on that same value from the per-patient reconstruction the source-only generated reconstruction (`analysis/reconstruct.py`), one-to-one and exactly, with the diagnosis label required to agree on every row; it is carried through every patient-level output. The join is by key and never by position, since the two files order their patients differently. Sheet `GDF15-1` stands outside this: it is anonymous group-level concentrations, so no output derived from it carries a `Patient_ID`. Cohort counts and both NT-proBNP denominators are asserted at load time. Independent QA of the source workbook is in `QA_note_Prabhakar_et_al_2025_supporting_data.md`. | Methods §2.1; Supplement S2 |
 | 8a | Outcome definition, time horizon, how and when assessed | The outcome is the diagnosis of PVOD versus the comparator diagnosis. Diagnosis was made by a multidisciplinary specialist team and dated to confirmatory right heart catheterisation. Cross-sectional; no time horizon. | Methods §2.2 |
 | 8b | Qualifications of outcome assessors, if subjective | A multidisciplinary team of radiologists, cardiologists and cardiothoracic surgeons at the contributing centres. | Methods §2.2 |
-| 8c | Actions to blind outcome assessment | **Diagnoses of PVOD, IPAH and HPAH were established at the contributing centres according to ESC/ERS diagnostic criteria for pulmonary hypertension, before and independently of GDF15 measurement. Diagnostic labels accompanied the samples but were withheld from the investigator performing the GDF15 assay, who was blinded to group throughout. GDF15 does not form part of the ESC/ERS criteria, so the index test could not have contributed to the reference standard.** Both directions are therefore closed: the reference standard could not have been influenced by the index test, and the index test was not measured with knowledge of the reference standard. | Methods §2.2 |
+| 8c | Actions to blind outcome assessment | **PROVISIONAL AUTHOR WORDING; A4/A5 pending.** **Diagnoses of PVOD, IPAH and HPAH were established at the contributing centres according to ESC/ERS diagnostic criteria for pulmonary hypertension, before and independently of GDF15 measurement. Diagnostic labels accompanied the samples but were withheld from the investigator performing the GDF15 assay, who was blinded to group throughout. GDF15 does not form part of the ESC/ERS criteria, so the index test could not have contributed to the reference standard.** Amit must confirm the blinding statement (A5), and Akiko/Amit must confirm diagnostic timing (A4). Neither direction is treated as closed by this QC. | Methods §2.2 |
 | 9a | Choice of initial predictors and any pre-selection | One pre-specified predictor, log10(GDF15). No selection, screening, or comparison of candidate predictors was performed, so no selection bias enters the reported model. | Methods §2.3 |
 | 9b | Definition and measurement of all predictors | Plasma GDF15 in pg/mL by ELISA (R&D Systems Quantikine DGD150 and DuoSet DY957), plasma diluted 1:10 in PBS, absorbance read at 450 nm, total protein by Bradford assay used to adjust sample volume. This analysis applies a base-10 logarithm and nothing else. | Methods §2.2 |
 | 9c | Qualifications of predictor assessors, if subjective | N/A — a quantitative laboratory assay with no subjective interpretation. | — |
@@ -97,9 +96,9 @@ requires the clinician's own pre-test probability.
 
 | Item | Checklist item | How this study addresses it | Location |
 |---|---|---|---|
-| 18a | Funding and role of funders | *Outstanding — author to supply.* | Declarations |
+| 18a | Funding and role of funders | Jordan’s secondary work: 2026 Responsible AI Summer Research Program at Santa Clara University, award “Transparent AI for Rare Disease Diagnosis”. The programme had no role in analysis. Original-cohort funding is separate (qc/sources.md). | Declarations |
 | 18b | Conflicts of interest | *Outstanding — author to supply.* | Declarations |
-| 18c | Protocol availability | *Outstanding — author to supply.* No prospective protocol was registered for this secondary analysis; state this or cite one if it exists. | Declarations |
+| 18c | Protocol availability | No prospective protocol; post hoc secondary analysis; no registration; model form selected after data were seen. | Declarations |
 | 18d | Registration | The source cohort is registered as ClinicalTrials.gov NCT01907295. This secondary analysis is not itself registered. | Declarations |
 | 18e | Data availability | The analysis reads only the published supporting data values of Prabhakar et al. 2026 (DOI 10.1172/JCI199159). No additional participant data were used, and no data beyond the published file are required to reproduce any reported number. | Data and code availability |
 | 18f | Code availability | The full analysis code is in the accompanying repository. One command reproduces every table, figure and caption from the published workbook; `README.md` documents dependencies, the entry point, the fixed seeds and every generated output, and `analysis/verify.py` runs numerical checks on the implementation. | Data and code availability |
@@ -108,7 +107,7 @@ requires the clinician's own pre-test probability.
 
 | Item | Checklist item | How this study addresses it | Location |
 |---|---|---|---|
-| 19 | Patient and public involvement in design, conduct, reporting, interpretation or dissemination | *Outstanding — author to supply.* This is a secondary analysis of published data; if there was no patient or public involvement, TRIPOD+AI requires that to be stated explicitly rather than omitted. | Declarations |
+| 19 | Patient and public involvement in design, conduct, reporting, interpretation or dissemination | None. The proposed presentation has not been tested with clinicians or patients; this remains a limitation. | Declarations |
 
 ## Results
 
@@ -128,7 +127,7 @@ requires the clinician's own pre-test probability.
 | Item | Checklist item | How this study addresses it | Location |
 |---|---|---|---|
 | 25 | Overall interpretation, including fairness, in the context of objectives and previous studies | The model reproduces the source study's discrimination and reinterprets its cutoff: at 1,658 pg/mL the measurement carries a likelihood ratio of 2.56, taking a 20% pre-test probability to 39.0% (25.9–54.2%), where treating the cutoff as a positive test would give 87.6%. Aggregate discrimination is high and stable, and that is not the same claim as support for an individual patient's estimate. No fairness analysis was performed (item 14). | Discussion §4.1 |
-| 26 | Limitations and their effect on bias, statistical uncertainty and generalisability | 26 events, one cohort, no external validation set. No PVOD patient was measured below 860.5 pg/mL and no IPAH or HPAH patient above 1,809.5 pg/mL, while 20 of 26 PVOD patients lie above that value, so the curve's upper region rests on the model's form rather than on observed comparators. Leave-one-case-out refitting quantifies that directly: removing one PVOD case moves the likelihood ratio by at most 8.1% at 1,658 pg/mL but by 177.3% at 5,986 pg/mL. Recruitment-source heterogeneity is not estimable. No fairness or subgroup analysis. The two Figure 1E values from the source study are carried as reported by a co-author, pending local verification of that render. | Discussion §4.2 |
+| 26 | Limitations and their effect on bias, statistical uncertainty and generalisability | 26 events, one cohort, no external validation set. No PVOD patient was measured below 860.5 pg/mL and no IPAH or HPAH patient above 1,809.5 pg/mL, while 20 of 26 PVOD patients lie above that value, so the curve's upper region rests on the model's form rather than on observed comparators. Leave-one-case-out refitting quantifies that directly: removing one PVOD case moves the likelihood ratio by at most 8.1% at 1,658 pg/mL but by 177.3% at 5,986 pg/mL. Recruitment-source heterogeneity is not estimable. No fairness or subgroup analysis. The two source Figure 1E values are independently verified from the supplied full figure, as confirmed in the first-author QC brief; this item is closed. | Discussion §4.2 |
 | 27a | How poor quality or unavailable input data should be handled in implementation | The model takes one input and returns a likelihood ratio; with no GDF15 measurement there is no output and pre-test suspicion is unchanged. Above 1,809.5 pg/mL and below 860.5 pg/mL the returned value reflects the fitted model form rather than observation of both groups, and both regions are marked on Figure 1 and should be treated as such. | Discussion §4.3 |
 | 27b | Whether users interact with the input data or model, and the expertise required | The intended users are clinicians making the pre-treatment safety assessment. They supply their own pre-test probability and combine the returned likelihood ratio with HRCT, DLCO, EIF2AK4 genotyping and the rest of the clinical picture. It is an add-on test, not a stand-alone one, and it requires no interaction with the underlying data. | Discussion §4.3 |
 | 27c | Next steps for future research, applicability and generalisability | External validation in an independent cohort with comparator patients measured across the full GDF15 range is the necessary next step; the upper region of the curve cannot be settled by these data at any sample size, because the comparator observations are absent rather than sparse. Joint modelling of GDF15 with the clinical variables is blocked twice over. Raw GDF15 cannot enter a patient-level model at all: the source sheet `GDF15-1` contains anonymous group-level concentrations without a patient identifier, so it cannot be joined to a clinical row and no combined model can be built. Age-adjusted GDF15 can be joined, but only 23 patients have every clinical measurement and they are strongly case-enriched, with availability associated with diagnosis, so a complete-case multivariable fit would estimate a different population from the one of interest. | Discussion §4.3 |
@@ -137,28 +136,17 @@ requires the clinician's own pre-test probability.
 
 ## Outstanding items
 
-Only these require an author and are deliberately left blank above:
+A1 author list/order/corresponding author; A2 assay details; A4 accrual/guideline timing; A5 final blinding confirmation; A6 COI (Giorgio and counsel); A7 Akiko's framing approval; separate SCU determination; A9 repository/Zenodo details. No COI wording is finalized.
 
-1. **Funding and role of funders (18a).**
-2. **Conflicts of interest (18b).**
-3. **Protocol availability (18c).** If no protocol exists, state that.
-4. **Patient and public involvement (19).** If there was none, TRIPOD+AI requires that to
-   be stated explicitly.
+Funding (18a), protocol (18c), registration and patient/public involvement (19) are confirmed. A3 has verified source wording, with consent scoped to what the supplement states. A8 is verified (qc/sources.md). Abstract checklist and final manuscript page mapping still need submission assembly.
 
-Item 2, the abstract, follows the separate TRIPOD+AI for Abstracts checklist and is
-completed with the final abstract.
+## Closed source Figure 1E item
 
-## One analysis item still open
-
-**Local verification of the Figure 1E values (items 23a, 26).** The source study's
-95.60 (91.64–99.57) and 96.05 (92.45–99.66) are carried as a co-author reports them from
-the 600-dpi source render. Both point estimates reproduce from the supporting data. This
-analysis has not inspected that render, so those two intervals are quoted as published
-values pending that check, and nothing here is presented as correcting the source study.
+Independent verification of the supplied full figure was confirmed in the first-author QC brief: PVOD vs IPAH+HPAH+Other PH **96.05% (92.45–99.66)**; PVOD vs IPAH+HPAH **95.60% (91.64–99.57)**. These are published values; our computed intervals are separate.
 
 ## Positions recorded rather than left open
 
-- **Blinding (8c)** is resolved in both directions and stated in full above.
+- **Blinding (8c)**: A5 remains pending Amit’s final confirmation. Prior project wording is not a substitute for that confirmation.
 - **Fairness (14) and health inequalities (3c).** No fairness analysis was performed;
   with 26 events, subgroup estimates could not be made with useful precision.
 - **Subgroup performance (23a).** None reported, for the same reason.

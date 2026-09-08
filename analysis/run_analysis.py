@@ -37,6 +37,8 @@ import pandas as pd
 import data
 import make_figures
 import model
+import verify_centerpiece
+import audit_numbers
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
@@ -58,13 +60,10 @@ PUBLISHED_CUTOFF = 1658.0
 # Figure 1, panels D and E), as percentages with their 95% confidence intervals.  The legend
 # states the method: "C statistics to calculate the AUC, followed by Z tests".
 #
-# Provenance differs between the two panels and is recorded per value.  The panel D values were
-# read from the published figure directly.  The panel E values are those a co-author of the source
-# study reports from the 600-dpi source render; this analysis has not inspected that render, so
-# they are carried as reported and their local verification is pending.
+# Source Figure 1E was independently checked from the supplied full figure;
+# this confirmation was provided by the first author in the September 2026 QC brief.
 PANEL_D = "read from the published figure"
-PANEL_E = ("reported by a co-author of the source study from the 600-dpi source render; "
-           "local verification pending")
+PANEL_E = "independently verified from supplied full figure; confirmed in first-author QC brief"
 PUBLISHED_AUC = {
     "IPAH": (94.94, 90.35, 99.52, "Figure 1D", PANEL_D),
     "Other PH": (97.26, 94.14, 100.00, "Figure 1D", PANEL_D),
@@ -365,7 +364,7 @@ def completeness_by_diagnosis(patients):
 
 
 def main():
-    RESULTS.mkdir(exist_ok=True)
+    RESULTS.mkdir(parents=True, exist_ok=True)
     gdf15 = data.load_gdf15()
     clinical = data.load_clinical()
     patients = data.load_patients_166()
@@ -675,7 +674,7 @@ def main():
     out["auc_bootstrap_seed_sensitivity"] = seed_sensitivity
 
     out["source_figure_verification"] = {
-        "status": "pending local verification",
+        "status": "closed; independent full-figure verification confirmed",
         "panel_d": {
             "provenance": PANEL_D,
             "values": ["PVOD vs IPAH 94.94", "PVOD vs Other PH 97.26", "PVOD vs COPD 95.19"],
@@ -687,10 +686,7 @@ def main():
                        "PVOD vs IPAH+HPAH+Other PH 96.05 (92.45-99.66)"],
             "reproduced": ("both reproduce from the supporting data: 95.60 and 96.05 by "
                            "C statistic"),
-            "note": ("these panel E values are those a co-author of the source study reports "
-                     "from the 600-dpi source render. This analysis has not inspected that "
-                     "render and records them as reported, pending local verification. No "
-                     "claim is made here about any other value for panel E"),
+            "note": "Published Figure 1E values independently verified from the supplied full figure, as confirmed in the first-author QC brief. Published intervals remain distinct from our recomputed intervals.",
         },
     }
 
@@ -885,8 +881,19 @@ def main():
         print(f"  {row['variable']:<14}"
               + "  ".join(f"{g} {row[f'{g}_percent']:.0f}%" for g in data.GROUP1))
     print(f"wrote {RESULTS}/results.json and 14 tables")
+    verify_centerpiece.verify(data.WORKBOOK, RESULTS)
+    audit_numbers.audit(data.WORKBOOK, RESULTS)
     make_figures.main()
 
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--workbook', type=Path, default=data.WORKBOOK)
+    parser.add_argument('--output-dir', type=Path, default=ROOT)
+    args = parser.parse_args()
+    data.WORKBOOK = args.workbook.resolve()
+    RESULTS = args.output_dir / 'results'
+    make_figures.RESULTS = RESULTS
+    make_figures.FIGURES = args.output_dir / 'figures'
     main()

@@ -1,0 +1,3 @@
+diagnosis,raw_concentration,source_cell,source_column,continuous_lr,continuous_post_test_probability,rule_lr,rule_post_test_probability,absolute_percentage_point_difference,cutoff_positive
+IPAH,1657.8125,Fig_1a!C36,C,2.5554087466205235,0.2211439510841946,0.19796380090497737,0.02152256794982167,19.962138313437293,False
+PVOD,1658.81,Fig_1a!B27,B,2.5634044012059505,0.22168250043547835,28.26923076923076,0.7585139318885449,53.68314314530666,True

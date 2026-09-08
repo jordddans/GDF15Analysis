@@ -57,7 +57,7 @@ def load():
 
 
 def save(fig, name):
-    FIGURES.mkdir(exist_ok=True)
+    FIGURES.mkdir(parents=True, exist_ok=True)
     for suffix in ("pdf", "png"):
         # no creation timestamp, so a rerun reproduces the file byte for byte
         fig.savefig(FIGURES / f"{name}.{suffix}", dpi=400,
@@ -358,7 +358,7 @@ construction, so the corrected value is what the resampling has to say about it.
 {SOURCE}
 """,
     }
-    FIGURES.mkdir(exist_ok=True)
+    FIGURES.mkdir(parents=True, exist_ok=True)
     for name, text in captions.items():
         (FIGURES / name).write_text(text)
         print(f"wrote figures/{name}")
@@ -373,4 +373,12 @@ def main():
 
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--workbook', type=Path, default=data.WORKBOOK)
+    parser.add_argument('--results-dir', type=Path, default=RESULTS)
+    parser.add_argument('--figures-dir', type=Path, default=FIGURES)
+    args = parser.parse_args()
+    data.WORKBOOK = args.workbook.resolve()
+    RESULTS, FIGURES = args.results_dir, args.figures_dir
     main()

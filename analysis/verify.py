@@ -22,9 +22,16 @@ import data
 import make_figures
 import model
 import run_analysis
+import json
+import reconstruct
+import verify_centerpiece
+import audit_numbers
+
+CHECKS = []
 
 
 def check(name, condition, detail=""):
+    CHECKS.append({"name": name, "passed": bool(condition), "detail": detail})
     status = "PASS" if condition else "FAIL"
     print(f"[{status}] {name}{'  ' + detail if detail else ''}")
     if not condition:
@@ -407,7 +414,7 @@ def main():
           "patient_id" not in gdf15_frame.columns
           and set(gdf15_frame.columns) == {"cohort", "gdf15"},
           f"columns {sorted(gdf15_frame.columns)}")
-    check("raw GDF15 has more values than the cohort has patients, so no join could exist",
+    check("raw source covers six cohorts; clinical reconstruction covers group 1 only",
           len(gdf15_frame) == 322 and len(clinical) == 166,
           "322 concentrations over six cohorts against 166 group-1 patients")
 
@@ -464,8 +471,44 @@ def main():
           digests[0] == digests[1] and len(digests[0]) > 0,
           f"{len(digests[0])} files")
 
-    print("\nall checks passed")
+    independent = verify_centerpiece.verify(data.WORKBOOK, run_analysis.RESULTS)
+    for name, passed in independent['checks'].items():
+        check('centerpiece: ' + name, passed)
+    for name, passed in audit_numbers.audit(data.WORKBOOK, run_analysis.RESULTS)['checks'].items():
+        check('manuscript: ' + name, passed)
+    patients, _, provenance = reconstruct.reconstruct(data.WORKBOOK)
+    check('source-only reconstruction has 166 unique keys',
+          len(patients) == 166 and patients.AgeAdj_GDF15.is_unique)
+    check('clinical key residuals below recorded source precision',
+          provenance.key_residual.abs().max() < 1e-6)
+    try:
+        reconstruct.unique_match([1., 1.], 1.)
+        rejected = False
+    except ValueError:
+        rejected = True
+    check('ambiguous clinical keys are rejected', rejected)
+    try:
+        reconstruct.unique_match([1., 2.], 3.)
+        rejected = False
+    except ValueError:
+        rejected = True
+    check('missing clinical keys are rejected', rejected)
+    print(f"\nall {len(CHECKS)} checks passed")
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--workbook', type=Path, default=data.WORKBOOK)
+    parser.add_argument('--results-dir', type=Path, default=run_analysis.RESULTS)
+    parser.add_argument('--report', type=Path)
+    args = parser.parse_args()
+    data.WORKBOOK = args.workbook.resolve()
+    run_analysis.RESULTS = make_figures.RESULTS = args.results_dir
+    try:
+        main()
+    finally:
+        if args.report:
+            args.report.parent.mkdir(parents=True, exist_ok=True)
+            args.report.write_text(json.dumps({'checks': CHECKS, 'count':len(CHECKS),
+                'failures':sum(not c['passed'] for c in CHECKS)}, indent=2) + '\n')

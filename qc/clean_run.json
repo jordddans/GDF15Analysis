@@ -1,0 +1,156 @@
+{
+  "python": "3.14.6",
+  "environment": "fresh venv; requirements-lock.txt installed from package index",
+  "inputs": "isolated code directory and published source workbook only; no private workbook or archived patient CSVs",
+  "workflow_checks": 98,
+  "failures": 0,
+  "artifact_comparison": [
+    {
+      "path": "results/auc_reconciliation.csv",
+      "equal": true
+    },
+    {
+      "path": "results/calibration.csv",
+      "equal": true
+    },
+    {
+      "path": "results/centerpiece_verification.json",
+      "equal": true
+    },
+    {
+      "path": "results/clinical_completeness.csv",
+      "equal": true
+    },
+    {
+      "path": "results/comparator_models.csv",
+      "equal": true
+    },
+    {
+      "path": "results/complete_case_patients.csv",
+      "equal": true
+    },
+    {
+      "path": "results/cross_group_gaps.csv",
+      "equal": true
+    },
+    {
+      "path": "results/cutoff_probability_comparison.csv",
+      "equal": true
+    },
+    {
+      "path": "results/functional_form.csv",
+      "equal": true
+    },
+    {
+      "path": "results/internal_validation.csv",
+      "equal": true
+    },
+    {
+      "path": "results/leave_one_case_out.csv",
+      "equal": true
+    },
+    {
+      "path": "results/loo_manuscript_landmarks.csv",
+      "equal": true
+    },
+    {
+      "path": "results/lr_curves.csv",
+      "equal": true
+    },
+    {
+      "path": "results/lr_reference.csv",
+      "equal": true
+    },
+    {
+      "path": "results/manuscript_number_verification.json",
+      "equal": true
+    },
+    {
+      "path": "results/marker_auc.csv",
+      "equal": true
+    },
+    {
+      "path": "results/marker_auc_complete_case.csv",
+      "equal": true
+    },
+    {
+      "path": "results/model_coefficients.csv",
+      "equal": true
+    },
+    {
+      "path": "results/ntprobnp_sources.csv",
+      "equal": true
+    },
+    {
+      "path": "results/results.json",
+      "equal": true
+    },
+    {
+      "path": "results/table1.csv",
+      "equal": true
+    },
+    {
+      "path": "results/table1.md",
+      "equal": true
+    },
+    {
+      "path": "results/verification.json",
+      "equal": true
+    },
+    {
+      "path": "figures/figure1_caption.md",
+      "equal": true
+    },
+    {
+      "path": "figures/figure1_lr_curve.pdf",
+      "equal": true
+    },
+    {
+      "path": "figures/figure1_lr_curve.png",
+      "equal": true
+    },
+    {
+      "path": "figures/figure2_caption.md",
+      "equal": true
+    },
+    {
+      "path": "figures/figure2_comparators.pdf",
+      "equal": true
+    },
+    {
+      "path": "figures/figure2_comparators.png",
+      "equal": true
+    },
+    {
+      "path": "figures/figure3_calibration.pdf",
+      "equal": true
+    },
+    {
+      "path": "figures/figure3_calibration.png",
+      "equal": true
+    },
+    {
+      "path": "figures/figure3_caption.md",
+      "equal": true
+    }
+  ],
+  "reconstruction_repeat_comparison": [
+    {
+      "path": "generated/patients_166.csv",
+      "equal": true
+    },
+    {
+      "path": "generated/provenance.csv",
+      "equal": true
+    },
+    {
+      "path": "generated/reconstruction_verification.json",
+      "equal": true
+    },
+    {
+      "path": "generated/source_values.csv",
+      "equal": true
+    }
+  ],
+  "figure1_status": "historical figure deterministic; new Figure1 blocked pending script"
+}

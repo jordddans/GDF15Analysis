@@ -1,0 +1,148 @@
+{
+  "text_occurrences": 394,
+  "by_file": {
+    "Reconstructed_per_patient_Prabhakar_2025_2.xlsx": 15,
+    "Supporting data values_Prabhakar et al 2025_CLEANED.xlsx": 39,
+    "TRIPOD-AI_mapping.md": 2,
+    "archive/figures 2/figure1/Figure1_auc_comparison.svg": 11,
+    "archive/figures 2/figure2/Fig4_gdf15_cutoffs_scatter_linear_revised.svg": 5,
+    "archive/figures 2/figure3/figure_gdf15_classifier.pdf": 1,
+    "archive/figures 2/figure3/figure_gdf15_classifier_captioned.pdf": 1,
+    "archive/gdfdiscrim/.ipynb_checkpoints/04_honesty-checkpoint.ipynb": 1,
+    "archive/gdfdiscrim/04_honesty.ipynb": 1,
+    "archive/gdfdiscrim/GitHub_scripts_PVOD_project.R": 1,
+    "archive/gdfdiscrim/JournalFigures/figure1/Figure1_auc_comparison.svg": 11,
+    "archive/gdfdiscrim/JournalFigures/figure2/Fig4_gdf15_cutoffs_scatter_linear.svg": 5,
+    "archive/gdfdiscrim/JournalFigures/figure3/Figure3_classifier.svg": 21,
+    "archive/gdfdiscrim/data/df_all.csv": 2,
+    "archive/gdfdiscrim/data/df_g1.csv": 4,
+    "archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.svg": 16,
+    "archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.svg": 14,
+    "archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_linear.svg": 4,
+    "archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_log.svg": 7,
+    "archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_linear.svg": 8,
+    "archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_log.svg": 5,
+    "archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear.svg": 5,
+    "archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.svg": 11,
+    "archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_log.svg": 6,
+    "archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.svg": 17,
+    "archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.svg": 14,
+    "archive/gdfdiscrim/gdf15_charts/gdf15_ladder_points.csv": 2,
+    "archive/gdfdiscrim/jci-136-199159-s068.xlsx": 39,
+    "archive/gdfdiscrim/pvod_166.csv": 4,
+    "archive/gdfdiscrim/untitled.chat": 10,
+    "figures/figure1_caption.md": 1,
+    "results/comparator_models.csv": 1,
+    "results/functional_form.csv": 1,
+    "results/lr_curves.csv": 99,
+    "results/lr_reference.csv": 1,
+    "results/model_coefficients.csv": 2,
+    "results/ntprobnp_sources.csv": 1,
+    "results/results.json": 6
+  },
+  "displayed_lr_minus_024": 2,
+  "wrong_fixed_cutoff_lr_minus": 0,
+  "numeric_replacements": 0,
+  "extraction_errors": [],
+  "raster_ocr": [
+    {
+      "file": "figures/figure1_lr_curve.png",
+      "hit_count": 0
+    },
+    {
+      "file": "figures/figure2_comparators.png",
+      "hit_count": 0
+    },
+    {
+      "file": "figures/figure3_calibration.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/figures/02_estimator_comparison.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/figures/03_lr_curve_ci.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/figures/04_loo_envelope.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/figures/04_sex_stability.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/figures/05_fagan_nomogram.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/figures/05_headline_thesis.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/figures/06_post_test_ci.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/figures/06_pvr_contrast.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_linear.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/gdf15_charts/Fig1_gdf15_cutoffs_log.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_linear.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/gdf15_charts/Fig2_gdf15_cutoffs_symbols_log.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_linear.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/gdf15_charts/Fig3_gdf15_cutoffs_ranked_log.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_linear_bold.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/gdf15_charts/Fig4_gdf15_cutoffs_scatter_log.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_linear.png",
+      "hit_count": 0
+    },
+    {
+      "file": "archive/gdfdiscrim/gdf15_charts/FigS1_gdf15_cutoffs_labelled_log.png",
+      "hit_count": 0
+    },
+    {
+      "file": "qc/figure1_supplied.png",
+      "hit_count": 0
+    },
+    {
+      "file": "/tmp/gdf15-professor-notes.jpg",
+      "hit_count": 0
+    }
+  ],
+  "ocr_files": 24,
+  "ocr_additional_hits": 0,
+  "scope": "Pre-QC existing project files; environments and machine caches excluded. Notebook source/outputs and decompressed Pages IWA scanned; raster figures OCR checked. Newly written audit explanations intentionally retain the literal being audited."
+}

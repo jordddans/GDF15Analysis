@@ -4,13 +4,10 @@ Source: Prabhakar et al., J Clin Invest 2026;136(2):e199159, Supporting data val
 (``Supporting data values_Prabhakar et al 2025_CLEANED.xlsx``).  Every value analysed here
 is read from that workbook.
 
-A second input, ``Reconstructed_per_patient_Prabhakar_2025_2.xlsx``, supplies the patient
-identifier and nothing else.  It is a per-patient reconstruction of the same study,
-assembled by matching the workbook's figure-panel sheets, and its ``Patients_166`` tab is
-the only place in this project where one row is one patient under a stable name.  It is
-used for exactly two things: to attach ``Patient_ID`` to the clinical frame, and to count
-which measurements exist per diagnosis.  No analysed quantity is taken from it -- see
-:func:`load_patients_166` for why.
+Clinical IDs and measurement availability are reconstructed deterministically from the
+published workbook by reconstruct.py. No private workbook is required. Original Fig_1g
+has unlabeled diagnosis blocks; the existing block convention is explicitly documented
+and verified locally against the historical reconstruction. Raw GDF15 remains anonymous.
 
 Frames produced:
 
@@ -26,7 +23,7 @@ Frames produced:
                   ``6MWD-2``.  Used for the marker-comparison table only.
 
 ``load_patients_166``
-                  the reconstruction's per-patient tab, carrying ``Patient_ID`` 1-166.
+                  the generated clinical frame, carrying ``Patient_ID`` 1-166.
 
 ``load_ntprobnp_correlation``
                   the 26 PVOD rows of the PVOD-only correlation sheet
@@ -60,14 +57,14 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from openpyxl import load_workbook
+from reconstruct import book as source_book, reconstruct, SOURCE
 
 ROOT = Path(__file__).resolve().parents[1]
 
-WORKBOOK = ROOT / "Supporting data values_Prabhakar et al 2025_CLEANED.xlsx"
+WORKBOOK = SOURCE
 
 # the per-patient reconstruction: source of Patient_ID and of the completeness counts only
-RECONSTRUCTED = ROOT / "Reconstructed_per_patient_Prabhakar_2025_2.xlsx"
+RECONSTRUCTED = ROOT / "generated/patients_166.csv"
 
 COHORTS = ["Ctrl", "PVOD", "IPAH", "HPAH", "Other PH", "COPD"]
 GROUP1 = ["PVOD", "IPAH", "HPAH"]
@@ -111,9 +108,9 @@ def _num(value):
         return np.nan
 
 
-def load_gdf15(workbook=WORKBOOK):
+def load_gdf15(workbook=None):
     """322 raw plasma GDF15 values (pg/mL) with cohort labels, from sheet GDF15-1."""
-    sheet = load_workbook(workbook, data_only=True)["GDF15-1"]
+    sheet = source_book(workbook or WORKBOOK)["GDF15-1"]
     headers = {
         cell.column - 1: str(cell.value).replace("\xa0", " ")
         for cell in sheet[3]
@@ -132,8 +129,8 @@ def load_gdf15(workbook=WORKBOOK):
     return df
 
 
-def load_patients_166(reconstructed=RECONSTRUCTED):
-    """The reconstruction's per-patient tab: one row per patient, carrying ``Patient_ID``.
+def load_patients_166(reconstructed=None, workbook=None):
+    """Generated clinical reconstruction: one row per patient, carrying ``Patient_ID``.
 
     Two things this frame is used for, and nothing else.
 
@@ -145,10 +142,10 @@ def load_patients_166(reconstructed=RECONSTRUCTED):
     deviation, which is exact for the join but leaves two NT-proBNP cells negative
     (``Patient_ID`` 38 and 58) where the deviation sat below the median by more than the
     median itself.  A negative concentration is not a concentration, so **no numeric value
-    from this file is analysed**.  Every AUC in this project is computed from the original
+    from this reconstructed frame is analysed**.  Every AUC in this project is computed from the original
     workbook's own distribution values; this file answers only "was this patient measured".
     """
-    frame = pd.read_excel(reconstructed, sheet_name="Patients_166")
+    frame = (pd.read_csv(reconstructed) if reconstructed else reconstruct(workbook or WORKBOOK)[0])
 
     expected = ["Patient_ID", "Group", "Age_years", "AgeAdj_GDF15"]
     missing = [column for column in expected + list(RECONSTRUCTED_MEASUREMENTS)
@@ -168,9 +165,9 @@ def load_patients_166(reconstructed=RECONSTRUCTED):
     return frame
 
 
-def load_clinical(workbook=WORKBOOK, reconstructed=RECONSTRUCTED):
+def load_clinical(workbook=None, reconstructed=None):
     """The 166 group-1 patients with ``Patient_ID``, age, age-adjusted GDF15 and measurements."""
-    book = load_workbook(workbook, data_only=True)
+    book = source_book(workbook or WORKBOOK)
 
     labelled = book["6MWD-1"]
     group, ageadj, sixmwd_raw = [], [], []
@@ -179,6 +176,12 @@ def load_clinical(workbook=WORKBOOK, reconstructed=RECONSTRUCTED):
         label = labelled.cell(row, 1).value
         if label:
             current = str(label).strip()
+        if current is None:
+            current = "PVOD"
+        if row == 30:
+            current = "IPAH"
+        elif row == 128:
+            current = "HPAH"
         group.append(current)
         ageadj.append(_num(labelled.cell(row, 2).value))
         sixmwd_raw.append(_num(labelled.cell(row, 3).value))
@@ -215,14 +218,14 @@ def load_clinical(workbook=WORKBOOK, reconstructed=RECONSTRUCTED):
     assert present.loc["PVOD", "ntprobnp"] == 15, "NT-proBNP PVOD count != 15"
     assert df.ntprobnp.notna().sum() == 63, "NT-proBNP n != 63"
 
-    df.insert(0, "patient_id", _patient_ids_for(df, reconstructed))
+    df.insert(0, "patient_id", _patient_ids_for(df, reconstructed, workbook))
     return df
 
 
-def _patient_ids_for(clinical, reconstructed=RECONSTRUCTED):
+def _patient_ids_for(clinical, reconstructed=None, workbook=None):
     """``Patient_ID`` for each row of the clinical frame, joined on age-adjusted GDF15.
 
-    Age-adjusted GDF15 is distinct across all 166 patients in both files, so it keys the
+    Age-adjusted GDF15 is distinct across all 166 patients in both generated frames, so it keys the
     two to each other exactly -- the join is asserted below to be one-to-one, to match to
     the last bit rather than to a tolerance, and to agree with the ``6MWD-1`` group label
     on every row.
@@ -232,7 +235,7 @@ def _patient_ids_for(clinical, reconstructed=RECONSTRUCTED):
     ``6MWD-1`` order, which runs PVOD first.  Lining the two up by row would silently
     mislabel all 166 patients, which is the whole reason the key is used.
     """
-    patients = load_patients_166(reconstructed)
+    patients = load_patients_166(reconstructed, workbook)
     ids = patients.Patient_ID.to_numpy()
     groups = patients.Group.to_numpy()
     keys = patients.AgeAdj_GDF15.to_numpy()
@@ -254,7 +257,7 @@ def _patient_ids_for(clinical, reconstructed=RECONSTRUCTED):
     return matched
 
 
-def load_ntprobnp_correlation(workbook=WORKBOOK):
+def load_ntprobnp_correlation(workbook=None):
     """The 26 PVOD rows of the correlation sheet, keyed to the ``NT-proBNP`` sheet.
 
     ``6MWD PVR mPAP NT-proBNP`` is a PVOD-only sheet holding the pairs used for the
@@ -270,7 +273,7 @@ def load_ntprobnp_correlation(workbook=WORKBOOK):
     function reports both, per patient, so the denominators can be stated rather than
     reconciled; it takes no position on which sheet a downstream analysis should use.
     """
-    book = load_workbook(workbook, data_only=True)
+    book = source_book(workbook or WORKBOOK)
     clinical = load_clinical(workbook)
     pvod = clinical[clinical.group == "PVOD"].reset_index(drop=True)
 

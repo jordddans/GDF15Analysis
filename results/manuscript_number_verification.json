@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "checks": {
+    "calibration_quintile_1": true,
+    "calibration_quintile_2": true,
+    "calibration_quintile_3": true,
+    "calibration_quintile_4": true,
+    "calibration_quintile_5": true,
+    "auc_pairwise": true,
+    "auc_bootstrap_4000": true,
+    "loo_manuscript_1658": true,
+    "loo_manuscript_2500": true,
+    "loo_manuscript_3000": true,
+    "loo_manuscript_4000": true,
+    "loo_manuscript_5986.41": true,
+    "comparator_support_max": true,
+    "enrichment_435pct_28fold": true
+  },
+  "calibration": [
+    {
+      "quintile": 1,
+      "n": 34,
+      "predicted": 0.0001489839443464409,
+      "observed": 0.0
+    },
+    {
+      "quintile": 2,
+      "n": 33,
+      "predicted": 0.002338503322346579,
+      "observed": 0.0
+    },
+    {
+      "quintile": 3,
+      "n": 33,
+      "predicted": 0.01280825800237057,
+      "observed": 0.030303030303030304
+    },
+    {
+      "quintile": 4,
+      "n": 33,
+      "predicted": 0.09396322178312168,
+      "observed": 0.12121212121212122
+    },
+    {
+      "quintile": 5,
+      "n": 33,
+      "predicted": 0.6786153061608372,
+      "observed": 0.6363636363636364
+    }
+  ],
+  "auc": 0.9560439560439561,
+  "auc_bootstrap_ci": [
+    0.912081043956044,
+    0.989010989010989
+  ],
+  "loo": [
+    {
+      "gdf15": 1658.0,
+      "independent_full_lr": 2.5569101502271097,
+      "max_absolute_percent_change": 8.113602145517962,
+      "signed_percent_change": -8.113602145517962,
+      "excluded_source_cell": "Fig_1a!B11"
+    },
+    {
+      "gdf15": 2500.0,
+      "independent_full_lr": 21.5785331956866,
+      "max_absolute_percent_change": 31.28610029862584,
+      "signed_percent_change": 31.28610029862584,
+      "excluded_source_cell": "Fig_1a!B10"
+    },
+    {
+      "gdf15": 3000.0,
+      "independent_full_lr": 55.62338078902464,
+      "max_absolute_percent_change": 53.468619841977926,
+      "signed_percent_change": 53.468619841977926,
+      "excluded_source_cell": "Fig_1a!B10"
+    },
+    {
+      "gdf15": 4000.0,
+      "independent_full_lr": 247.8213950261771,
+      "max_absolute_percent_change": 96.33664899794118,
+      "signed_percent_change": 96.33664899794118,
+      "excluded_source_cell": "Fig_1a!B10"
+    },
+    {
+      "gdf15": 5986.41,
+      "independent_full_lr": 2011.736848357152,
+      "max_absolute_percent_change": 177.2940059421545,
+      "signed_percent_change": 177.2940059421545,
+      "excluded_source_cell": "Fig_1a!B10"
+    }
+  ],
+  "maximum_observed_concentration": 5986.41,
+  "note": "5986 in the manuscript labels the observed maximum 5986.41; no clinical Patient_ID is assigned."
+}

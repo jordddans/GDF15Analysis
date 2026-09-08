@@ -1,0 +1,15 @@
+{
+  "qc_docx": "GDF15_evidence_curve_QC.docx",
+  "docx_sha256": "c230cf7978534b8fd4e602bcf0f3743452a95ff5013961afe0edf08fc56fbb2a",
+  "logged_mechanical_edits": 32,
+  "docx_repeat_byte_identical": true,
+  "renderer": "Microsoft Word local PDF export",
+  "pdf": "qc/manuscript_QC.pdf",
+  "pages": 13,
+  "table1_and_table2_layout_checked": true,
+  "resolved_source_text_black_external_placeholders_red": true,
+  "original_docx_unchanged": true,
+  "figure1_image": "supplied image retained; script reproduction BLOCKED",
+  "pagination_note": "Audit identifies original sections/body blocks; PDF page numbers refer to QC revision, not original draft.",
+  "layout_note": "QC PDF has a blank cover-separator page 2. Remove it during final submission assembly; table layout and source/placeholder formatting were checked."
+}

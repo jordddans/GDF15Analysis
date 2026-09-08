@@ -147,3 +147,11 @@ The argument is therefore available in the form the abstract intended, with the 
 curve supplied. One qualification the abstract does not anticipate: the calibration slope moves
 by 3.2% under the same correction, so "the standard diagnostic barely moves" is true of
 discrimination and not of calibration.
+
+## September 2026 first-author QC addendum
+
+The submitted root PDF and archived submission PDF remain byte-for-byte unchanged. Neither submitted PDF contains the newly confirmed summer-program acknowledgement. The editable `archive/gdfdiscrim/baylearn_abstract.tex` now carries a clearly marked post-submission acknowledgement: Jordan's work was supported through the 2026 Responsible AI Summer Research Program at Santa Clara University, award “Transparent AI for Rare Disease Diagnosis”; the programme had no role in the analysis. This edit does not retrospectively change what was submitted. Original-cohort funding is separate.
+
+The fixed 1,658 pg/mL rule has LR− (5/26)/(136/140) = 0.1979638009 (display 0.20). The archived six-panel classifier figures display LR− 0.24 for nested leave-one-out, reselected thresholds, with six false negatives: (6/26)/(136/140) = 0.2375565611. That is a different estimand, not a stale fixed-cutoff value. No blind replacement was made.
+
+Source Figure 1E is closed: independent verification from the supplied full figure confirmed 96.05 (92.45–99.66) for PVOD vs IPAH+HPAH+Other PH and 95.60 (91.64–99.57) for PVOD vs IPAH+HPAH. The independent centerpiece reproduces the unique 0.9975 pg/mL pair and the 157/166, 34/166 and 11/166 counts. New Figure 1 integration remains gated on Giorgio's script.

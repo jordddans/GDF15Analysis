@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "source_sha256": "51d6eeea289c6d2129b4c35be9b4405d26d118c7a592107125d4ca4aec1248a6",
+  "source_sheet": "Fig_1a",
+  "cutoff": "1658",
+  "pre_test_probability": 0.1,
+  "sampling_prevalence": 0.1566265060240964,
+  "sampling_log_odds": -1.6835458845878222,
+  "final_coefficients": [
+    -39.24678678240761,
+    11.958698441144076
+  ],
+  "independent_coefficients": [
+    -39.24678678229985,
+    11.95869844110927
+  ],
+  "absolute_gap": "0.9975",
+  "gap_percent_of_cutoff": 0.060162846803377565,
+  "number_of_pairs_evaluated": 3640,
+  "global_minimum_pairs": [
+    {
+      "pvod_source_cell": "Fig_1a!B27",
+      "comparator_source_cell": "Fig_1a!C36",
+      "absolute_gap": "0.9975"
+    }
+  ],
+  "adjacent_observations": [
+    {
+      "diagnosis": "IPAH",
+      "raw_concentration": "1657.8125",
+      "source_cell": "Fig_1a!C36",
+      "source_column": "C",
+      "continuous_lr": 2.5554087466205235,
+      "continuous_post_test_probability": 0.2211439510841946,
+      "rule_lr": 0.19796380090497737,
+      "rule_post_test_probability": 0.02152256794982167,
+      "absolute_percentage_point_difference": 19.962138313437293,
+      "cutoff_positive": false,
+      "duplicate_source_cells": []
+    },
+    {
+      "diagnosis": "PVOD",
+      "raw_concentration": "1658.81",
+      "source_cell": "Fig_1a!B27",
+      "source_column": "B",
+      "continuous_lr": 2.5634044012059505,
+      "continuous_post_test_probability": 0.22168250043547835,
+      "rule_lr": 28.26923076923076,
+      "rule_post_test_probability": 0.7585139318885449,
+      "absolute_percentage_point_difference": 53.68314314530666,
+      "cutoff_positive": true,
+      "duplicate_source_cells": []
+    }
+  ],
+  "confusion_matrix": {
+    "tp": 21,
+    "fn": 5,
+    "fp": 4,
+    "tn": 136
+  },
+  "correctly_classified": 157,
+  "sensitivity": 0.8076923076923077,
+  "specificity": 0.9714285714285714,
+  "lr_plus": 28.26923076923076,
+  "lr_minus": 0.19796380090497737,
+  "continuous_lr_at_cutoff": 2.556910150238083,
+  "difference_over_10_pp": 34,
+  "difference_over_20_pp": 11,
+  "checks": {
+    "cohort_counts": true,
+    "all_cross_group_pairs_evaluated": true,
+    "unique_global_minimum": true,
+    "distinct_concentrations": true,
+    "no_cross_column_duplicates_for_pair": true,
+    "cutoff_between_observations": true,
+    "pair_classified_correctly": true,
+    "coefficients_independently_reproduce": true,
+    "counts_match_manuscript": true,
+    "correct_157": true,
+    "difference_over_10_is_34": true,
+    "difference_over_20_is_11": true,
+    "both_continuous_probabilities_round_to_22_percent": true,
+    "rule_lr_minus_rounds_to_020": true,
+    "rule_lr_plus_rounds_to_283": true,
+    "rule_probabilities_round_to_2_and_76": true,
+    "raw_observations_have_no_patient_id": true
+  }
+}

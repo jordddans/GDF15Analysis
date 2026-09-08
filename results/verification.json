@@ -1,0 +1,497 @@
+{
+  "count": 98,
+  "failures": 0,
+  "checks": [
+    {
+      "name": "LR(500) equals fitted odds / sampling odds",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "LR(1,200) equals fitted odds / sampling odds",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "LR(1,700) equals fitted odds / sampling odds",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "LR(3,000) equals fitted odds / sampling odds",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "doubling the comparator group halves the sampling odds",
+      "passed": true,
+      "detail": "odds ratio 2.000"
+    },
+    {
+      "name": "the fitted odds at 1,000 pg/mL move with the sampling odds",
+      "passed": true,
+      "detail": "fitted odds ratio 2.524"
+    },
+    {
+      "name": "the likelihood ratio at 1,000 pg/mL does not",
+      "passed": true,
+      "detail": "LR ratio 1.262"
+    },
+    {
+      "name": "post-test probability inverts to the likelihood ratio",
+      "passed": true,
+      "detail": "post-test 0.2444 from a 10% pre-test probability"
+    },
+    {
+      "name": "closed-form GDF15 at LR = 10 matches a numerical root",
+      "passed": true,
+      "detail": "2,155.89 pg/mL"
+    },
+    {
+      "name": "AUC matches the direct Mann-Whitney computation",
+      "passed": true,
+      "detail": "0.956044"
+    },
+    {
+      "name": "asymptotic variance matches the structural components computed directly",
+      "passed": true,
+      "detail": "95% CI 0.9161-0.9960"
+    },
+    {
+      "name": "exact binomial interval brackets the observed proportion",
+      "passed": true,
+      "detail": "0.6065-0.9345"
+    },
+    {
+      "name": "exact binomial interval for zero events starts at zero",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "the parametric bootstrap repeats exactly for a fixed seed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "apparent AUC in the optimism correction is the C statistic itself",
+      "passed": true,
+      "detail": "0.956044"
+    },
+    {
+      "name": "corrected AUC = apparent - optimism",
+      "passed": true,
+      "detail": "0.9560 - (-0.0016) = 0.9576"
+    },
+    {
+      "name": "corrected calibration slope = apparent - optimism",
+      "passed": true,
+      "detail": "0.9853"
+    },
+    {
+      "name": "optimism recomputed independently from the definition matches",
+      "passed": true,
+      "detail": "AUC optimism -0.001603, slope optimism +0.014680"
+    },
+    {
+      "name": "optimism of a model scored on its own fitting sample is zero",
+      "passed": true,
+      "detail": "apparent calibration slope 1.00000000"
+    },
+    {
+      "name": "both stability quantities come from one shared stratified replicate",
+      "passed": true,
+      "detail": "LR = 10 at 1,991.1, Youden 1,046.15 in that replicate"
+    },
+    {
+      "name": "the stability bootstrap repeats exactly for a fixed seed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "the NT-proBNP denominators differ by exactly two PVOD patients",
+      "passed": true,
+      "detail": "PVOD ids [24, 26] (2,974, 4,296 ng/L)"
+    },
+    {
+      "name": "no distribution-sheet value is absent from the correlation sheet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "the sheets agree on every patient they share, to the recorded rounding",
+      "passed": true,
+      "detail": "largest difference 0.2 ng/L beyond the 1,264 ng/L median centring"
+    },
+    {
+      "name": "leave-one-case-out refits the model once per PVOD case",
+      "passed": true,
+      "detail": "26 refits"
+    },
+    {
+      "name": "each refit drops exactly one PVOD case, and the 26 are all of them",
+      "passed": true,
+      "detail": "26 distinct excluded values"
+    },
+    {
+      "name": "every refit keeps one fewer patient and one fewer case",
+      "passed": true,
+      "detail": "n 165, events 25"
+    },
+    {
+      "name": "the reported percentage change is the change between those two fits",
+      "passed": true,
+      "detail": "-8.11% at 1,658 pg/mL, PVOD case 8"
+    },
+    {
+      "name": "a case's influence differs by where on the curve it is read",
+      "passed": true,
+      "detail": "8.1% at 1,658 against 177.3% at 5,986 pg/mL"
+    },
+    {
+      "name": "the bootstrap AUC interval repeats exactly for a fixed seed",
+      "passed": true,
+      "detail": "0.9121-0.9890"
+    },
+    {
+      "name": "the bootstrap AUC interval brackets the point estimate and stays in [0, 1]",
+      "passed": true,
+      "detail": "AUC 0.9560"
+    },
+    {
+      "name": "the asymptotic interval is the normal interval, clipped to [0, 1]",
+      "passed": true,
+      "detail": "0.91605-0.99604, no clipping applied here"
+    },
+    {
+      "name": "the quadratic LR statistic is twice the log-likelihood difference",
+      "passed": true,
+      "detail": "1.8438 on 1 df"
+    },
+    {
+      "name": "its p-value is the chi-square upper tail on one degree of freedom",
+      "passed": true,
+      "detail": "p = 0.1745"
+    },
+    {
+      "name": "both AICs are -2 x log-likelihood + 2 x parameters",
+      "passed": true,
+      "detail": "54.325 linear, 54.481 quadratic"
+    },
+    {
+      "name": "the linear model is the one the AIC prefers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "the 1,658 pg/mL chain inverts to the likelihood ratio at a 10% pre-test probability",
+      "passed": true,
+      "detail": "LR 2.557 -> 22.1%"
+    },
+    {
+      "name": "the 1,658 pg/mL chain inverts to the likelihood ratio at a 20% pre-test probability",
+      "passed": true,
+      "detail": "LR 2.557 -> 39.0%"
+    },
+    {
+      "name": "the cutoff's likelihood ratio is sensitivity / (1 - specificity) from its counts",
+      "passed": true,
+      "detail": "(21/26) / (4/140) = 28.27"
+    },
+    {
+      "name": "the dichotomy claims more at the cutoff than the curve does there",
+      "passed": true,
+      "detail": "LR 28.3 against 2.56 at the same concentration"
+    },
+    {
+      "name": "the complete-case subset is the patients with every clinical measurement present",
+      "passed": true,
+      "detail": "n = 23 of 166"
+    },
+    {
+      "name": "every marker in the complete-case table uses that same subset",
+      "passed": true,
+      "detail": "6 markers, all at n = 23 (10 PVOD)"
+    },
+    {
+      "name": "the per-marker table does not use one subset, which is why the check is needed",
+      "passed": true,
+      "detail": "denominators [63, 82, 112, 142, 157, 166]"
+    },
+    {
+      "name": "Patients_166 gives one row per patient, Patient_ID 1-166 unique",
+      "passed": true,
+      "detail": "166 patients"
+    },
+    {
+      "name": "the clinical frame carries a valid unique Patient_ID on every row",
+      "passed": true,
+      "detail": "166 distinct ids over 166 rows"
+    },
+    {
+      "name": "Patient_ID is joined on age-adjusted GDF15 exactly, group agreeing on every row",
+      "passed": true,
+      "detail": "166 of 166 exact, zero residual"
+    },
+    {
+      "name": "that join is not positional, so the key is doing real work",
+      "passed": true,
+      "detail": "frame order starts [125, 126, 127]"
+    },
+    {
+      "name": "the NT-proBNP per-patient table carries Patient_ID",
+      "passed": true,
+      "detail": "26 PVOD patients"
+    },
+    {
+      "name": "the complete-case subset is n = 23, PVOD 10, IPAH 7, HPAH 6",
+      "passed": true,
+      "detail": "n = 23 {'PVOD': 10, 'IPAH': 7, 'HPAH': 6}"
+    },
+    {
+      "name": "the reported Patient_IDs are the actual intersection of the five measurements",
+      "passed": true,
+      "detail": "23 ids: [1, 3, 4, 5]...[164, 165]"
+    },
+    {
+      "name": "those ids are unique and inside the cohort",
+      "passed": true,
+      "detail": "23 distinct ids in 1-166"
+    },
+    {
+      "name": "the subset is case-enriched against the full cohort, computed not asserted",
+      "passed": true,
+      "detail": "PVOD 43.5% against 15.7%, 2.8x"
+    },
+    {
+      "name": "the complete-case table carries the clinical comparators only, no GDF15 row",
+      "passed": true,
+      "detail": "['6MWD', 'mPAP', 'PVR', 'Cardiac index', 'NT-proBNP', 'Age']"
+    },
+    {
+      "name": "no AUC of 1.00 is reported in the complete-case table",
+      "passed": true,
+      "detail": "largest 0.7923"
+    },
+    {
+      "name": "age-adjusted GDF15 separates the subset completely, ranges recomputed",
+      "passed": true,
+      "detail": "PVOD 1.05-2.64 against -0.06-1.00"
+    },
+    {
+      "name": "that separation is exactly what an AUC of 1.00 would have been reporting",
+      "passed": true,
+      "detail": "complete separation, reported as two ranges instead"
+    },
+    {
+      "name": "no Patient_ID is attached to the raw-GDF15 leave-one-out cases",
+      "passed": true,
+      "detail": "26 refits, identified by source-sheet position only"
+    },
+    {
+      "name": "the raw-GDF15 frame carries no patient identifier to join on",
+      "passed": true,
+      "detail": "columns ['cohort', 'gdf15']"
+    },
+    {
+      "name": "raw source covers six cohorts; clinical reconstruction covers group 1 only",
+      "passed": true,
+      "detail": "322 concentrations over six cohorts against 166 group-1 patients"
+    },
+    {
+      "name": "completeness percentages recompute from the reconstructed workbook",
+      "passed": true,
+      "detail": "5 variables over 3 diagnoses"
+    },
+    {
+      "name": "measurement availability is associated with diagnosis, most for cardiac index",
+      "passed": true,
+      "detail": "cardiac index PVOD 96% against IPAH 43%"
+    },
+    {
+      "name": "NT-proBNP availability counts both sources; the subset uses the distribution sheet",
+      "passed": true,
+      "detail": "17 of 26 PVOD measured in either sheet, 15 of 26 in the distribution sheet"
+    },
+    {
+      "name": "two clean runs produce every output file byte for byte identical",
+      "passed": true,
+      "detail": "31 files"
+    },
+    {
+      "name": "centerpiece: cohort_counts",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: all_cross_group_pairs_evaluated",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: unique_global_minimum",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: distinct_concentrations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: no_cross_column_duplicates_for_pair",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: cutoff_between_observations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: pair_classified_correctly",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: coefficients_independently_reproduce",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: counts_match_manuscript",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: correct_157",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: difference_over_10_is_34",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: difference_over_20_is_11",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: both_continuous_probabilities_round_to_22_percent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: rule_lr_minus_rounds_to_020",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: rule_lr_plus_rounds_to_283",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: rule_probabilities_round_to_2_and_76",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "centerpiece: raw_observations_have_no_patient_id",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: calibration_quintile_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: calibration_quintile_2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: calibration_quintile_3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: calibration_quintile_4",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: calibration_quintile_5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: auc_pairwise",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: auc_bootstrap_4000",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: loo_manuscript_1658",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: loo_manuscript_2500",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: loo_manuscript_3000",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: loo_manuscript_4000",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: loo_manuscript_5986.41",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: comparator_support_max",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "manuscript: enrichment_435pct_28fold",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "source-only reconstruction has 166 unique keys",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "clinical key residuals below recorded source precision",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "ambiguous clinical keys are rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "missing clinical keys are rejected",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "figure1_integration": "BLOCKED: Giorgio script absent; historical figure reproduced"
+}
