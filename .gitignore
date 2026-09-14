@@ -33,3 +33,5 @@ results/cutoff_probability_comparison.csv
 make_figure1_v2.py.txt
 make_figure1_v2.zip
 qc/manuscript_QC_render.pdf
+# Regenerated pairwise QC diagnostic; historical copy remains in the freeze.
+results/cross_group_gaps.csv

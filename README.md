@@ -28,7 +28,7 @@ venv/bin/python -m pip install -r requirements-lock.txt
 venv/bin/python analysis/workflow.py --verify
 ```
 
-This reconstructs clinical records into ignored `generated/`, fits the existing models, writes `results/`, generates Table 1 and existing figures/captions, and runs independent checks plus two deterministic temporary reruns. No network is required after environment installation. The new Figure 1 remains gated; this command does not claim to regenerate Giorgio's PNG.
+This reconstructs clinical records into ignored `generated/`, fits the existing models, writes `results/`, generates Table 1 and Figures 1–3 with captions, and runs independent checks plus two deterministic temporary reruns. Figure 1 uses the integrated three-panel production code and validated finite-fit band. No network is required after environment installation.
 
 A separate source workbook and output directory can be supplied:
 
@@ -45,7 +45,7 @@ venv/bin/python analysis/make_figures.py --workbook path/to/published.xlsx --res
 venv/bin/python analysis/verify.py --workbook path/to/published.xlsx --results-dir output/results --report output/results/verification.json
 ```
 
-The `requirements.txt` compatibility ranges remain available; the lock file is the tested environment for exact reproduction. PDF/PNG byte determinism is tested within that environment; different fonts, platforms, or library versions may change figure bytes without changing numbers.
+`requirements-lock.txt` is the tested environment for exact reproduction. PDF/PNG byte determinism is tested within that environment; different fonts, platforms, or library versions may change figure bytes without changing numbers.
 
 ## Repository layout
 
@@ -56,11 +56,18 @@ The `requirements.txt` compatibility ranges remain available; the lock file is t
 | `analysis/` | Reconstruction, analysis, figure/table generation and independent verification |
 | `generated/` | Ignored local clinical records and provenance; do not publish |
 | `results/` | Model outputs, generated Table 1, anonymous source-cell verification |
-| `figures/` | Reproducible existing figures and captions; new Figure 1 pending |
-| `qc/` | Baseline, audits, source determinations, QC report and supplied figure |
+| `figures/` | Reproducible Figures 1–3 and captions |
+| `qc/` | Required baseline/bootstrap evidence, manuscript checks and reporting/provenance |
 | `TRIPOD-AI_mapping.md` | Reporting checklist with author-owned items still pending |
-| `BayLearn_reconciliation.md` | Submitted abstract versus current analysis and post-submission notes |
-| `archive/` | Historical exploratory material; clinical exports/notebooks stay local |
+| `archive/gdfdiscrim/` | Published source workbook, paper and supplement; original paths retained for compatibility |
+
+`main` retains the audit's required reproducibility/reporting files. Development,
+correspondence, BayLearn and superseded QC material remains only in the permanent
+`analysis-v1.0-published-data` history, not the current tree. Retrieve a historical
+file without switching branches with `git show analysis-v1.0-published-data:path/to/file`.
+The repository and frozen history must remain private: retained manuscript drafts
+and internal reporting evidence are not cleared for public circulation. This is not
+a public submission package. Removing files from `main` does not remove them from history.
 
 ## Intended use
 
@@ -106,11 +113,11 @@ A `case_id` there is not a patient and has no relation to a `Patient_ID`.
 
 ## Dependencies
 
-Python 3.9 or newer and the packages in `requirements.txt`:
+Use Python 3.14.6 and the pinned packages:
 
 ```
-python -m venv venv
-venv/bin/pip install -r requirements.txt
+python3.14 -m venv venv
+venv/bin/python -m pip install -r requirements-lock.txt
 ```
 
 ## Running it
@@ -124,7 +131,8 @@ venv/bin/python analysis/verify.py        # optional: numerical checks on the im
 every reported value, writes them to `results/`, and then calls `make_figures.py`, which draws
 the figures and writes their captions. It takes about a minute, most of it the bootstraps and
 the seed-sensitivity records described below. `make_figures.py` can also
-be run on its own to redraw the figures from the values already in `results/`.
+be run on its own: it regenerates Figure 1's deterministic band from the public workbook
+and draws the figures using the verified point estimates and outputs in `results/`.
 
 ## What is generated
 
@@ -322,9 +330,9 @@ calibration quintile — use exact (Clopper–Pearson) binomial limits instead.
 
 ## Reproducibility notes
 
-- **Verified environments.** The workflow was run from a clean checkout on Python 3.14.6
+- **Historical environment comparisons (before the final Figure 1 integration).** The workflow was run from a clean checkout on Python 3.14.6
   (numpy 2.5.1, pandas 3.0.5, scipy 1.18.0, statsmodels 0.14.6, matplotlib 3.11.1) and, from a
-  fresh virtual environment built from `requirements.txt`, on Python 3.9.6 (numpy 2.0.2,
+  fresh virtual environment built from the historical compatibility requirements (preserved in `analysis-v1.0-published-data:requirements.txt`), on Python 3.9.6 (numpy 2.0.2,
   pandas 2.3.3, scipy 1.13.1, statsmodels 0.14.6, matplotlib 3.9.4). Tables, captions and
   figures agree between them, with one exception: a single exact-binomial limit differs in the
   17th significant digit between scipy versions. On Python 3.14.6 with statsmodels 0.15.0
@@ -412,11 +420,13 @@ A1, A2, A4–A7, the separate SCU determination, and A9 publication details rema
 
 ## Negative likelihood ratios
 
-At the fixed published cutoff, LR− = (5/26)/(136/140) = 0.1979638009, displayed as 0.20. Two historical cross-validated classifier PDFs display 0.24 correctly for a different procedure: (6/26)/(136/140) = 0.2375565611. Do not substitute one for the other. The complete occurrence ledger is `qc/audit_024.csv`.
+At the fixed published cutoff, LR− = (5/26)/(136/140) = 0.1979638009, displayed as 0.20. Two historical cross-validated classifier PDFs display 0.24 correctly for a different procedure: (6/26)/(136/140) = 0.2375565611. Do not substitute one for the other. The historical private occurrence ledger is retained only at `analysis-v1.0-published-data:qc/audit_024.csv`.
 
 ## Published-data freeze and future validation
 
-Run a fresh environment with `requirements-lock.txt`, then `python analysis/freeze_reproduce.py --python /absolute/path/to/fresh/venv/bin/python`. This copies only analysis code and the original published workbook into an isolated directory, runs the full workflow with verification, repeats it, compares all artifact bytes, and promotes successful outputs. The exact supplied Figure 1 script is preserved in `qc/figure1_bootstrap/giorgio_original.py`; root `make_figure1_v2.py` now delegates to production and accepts either workbook.
+Run a fresh environment with `requirements-lock.txt`, then `python analysis/freeze_reproduce.py --python /absolute/path/to/fresh/venv/bin/python`. This copies only analysis code and the original published workbook into an isolated directory, runs the full workflow with verification, repeats it, compares all artifact bytes, and promotes successful outputs. The exact supplied Figure 1 script is preserved in `qc/figure1_bootstrap/giorgio_original.py`; production runs through `analysis/make_figures.py` and accepts either workbook. The retired root compatibility wrapper remains only in frozen history.
+
+For all 211 checks, follow clean reproduction with `venv/bin/python analysis/verify_figure1_audit.py` and `venv/bin/python analysis/verify_published_freeze.py`. These additional checks use the retained QC evidence, both manuscript DOCX files, the cleaned workbook, and baseline commits in Git history; use a full clone rather than a source ZIP or shallow clone. They rebuild the QC DOCX and verification reports. `results/cross_group_gaps.csv` is regenerated as an ignored local diagnostic, not tracked on `main`.
 
 Patient-level reconstructions and exports remain ignored local artifacts. The five previously tracked exports have now been removed from every reachable commit and tag, and their obsolete Git blobs pruned. The private reconstructed workbook was never tracked. Jordan approved the private repository `https://github.com/jordddans/GDF15Analysis`; pushing is conditional on the repeated verification and privacy checks. No public repository or Zenodo release is authorized.
 

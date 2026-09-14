@@ -1,12 +1,14 @@
 # Published-data analysis freeze
 
+The permanent full historical record is the unchanged `analysis-v1.0-published-data` tag. Current `main` retains the audit's required code, public sources, manuscript inputs and verification/reporting evidence; superseded development material is available through that tag. This report's scientific conclusions are unchanged by the branch cleanup.
+
 The approved Figure 1 bootstrap is integrated. All 211 verification checks pass, with zero failures: 109 full-workflow checks, 84 independent bootstrap-audit checks, and 18 freeze/document/privacy checks. Separately, all 685 baseline numerical/Boolean fields are unchanged.
 
 ## Bootstrap and Figure 1
 
 4,000 stratified resamples requested, seed 20260907; 3,991 finite ordinary logistic maximum-likelihood fits; 9 complete-separation exclusions. The nine are not replaced. Non-separation fitting failures stop the pipeline. No penalization or second estimator was added.
 
-Giorgio's three-panel script is adapted in `analysis/make_figure1.py`, called by the production workflow. The exact supplied script is archived unchanged. The root compatibility entry point now delegates to production. The percentile band is generated deterministically from all and only the accepted fits; counts and coefficients are saved separately. The point curve uses the pre-existing verified coefficients. Group counts, medians, both support boundaries and the real adjacent-patient annotations are computed from public observations. There are no hypothetical patients.
+Giorgio's three-panel script is adapted in `analysis/make_figure1.py`, called by the production workflow. The exact supplied script is archived unchanged. The retired root compatibility entry point remains only in frozen history. The percentile band is generated deterministically from all and only the accepted fits; counts and coefficients are saved separately. The point curve uses the pre-existing verified coefficients. Group counts, medians, both support boundaries and the real adjacent-patient annotations are computed from public observations. There are no hypothetical patients.
 
 ## Exact Methods wording used
 
@@ -34,7 +36,7 @@ The note's LR=10 endpoints **1,913–2,365 pg/mL do not reproduce exactly** with
 
 A fresh Python environment installed `requirements-lock.txt`. An isolated directory received only the analysis code and original published supporting workbook, with no private workbook, cached results, or archived patient datasets. The full workflow and its internal repeats passed. A second independent full run reproduced all 38 analysis/figure/reconstruction artifacts byte for byte. The QC DOCX also reproduces byte for byte. The local Word-rendered manuscript PDF is a review derivative.
 
-Table 1, main coefficients, AUC, LR landmarks, calibration, internal validation, complete-case/missingness and LOO results are unchanged. Figures 2 and 3 remain byte-identical; Figure 2's caption only corrects its outdated Figure 1 bootstrap cross-reference. Both original and cleaned public workbook readers agree. The protected original DOCX, published workbooks and submitted PDFs retain their hashes.
+Table 1, main coefficients, AUC, LR landmarks, calibration, internal validation, complete-case/missingness and LOO results are unchanged. Figures 2 and 3 remain byte-identical; Figure 2's caption only corrects its outdated Figure 1 bootstrap cross-reference. Both original and cleaned public workbook readers agree. The protected original DOCX and published workbooks retain their hashes. Historical submitted PDFs remain unchanged in the frozen tag and are intentionally absent from current `main`; the regression checker checks protected files present in the current tree. Historical paths in `baseline_manifest.json` describe the baseline, not additional current reproduction inputs.
 
 Evidence: `published_data_clean_run.json`, `published_data_verification.json`, `baseline_regression.json`, `../results/verification.json`, `figure1_bootstrap/verification.json`, and `figure1_bootstrap/giorgio_note_comparison.json`.
 
@@ -50,4 +52,4 @@ Development loading (`data.py`) is separate from fitting and scoring (`model.py`
 
 Giorgio's note closes COI, corresponding author (Akiko Hata), cohort-date/guideline and ethics/declaration decisions. They were not reopened or rewritten in this narrow pass. Assay methods, blinding confirmation, Amit's author-list position and the participant-count discrepancy remain author-side submission items. The published workbook's internally consistent counts are preserved. The email landmark discrepancy above remains explicitly recorded for authors. The authorized history-cleanup and private-push verification are documented separately in `history_rewrite.json`.
 
-Full changed-file inventory: [published_data_files_changed.txt](published_data_files_changed.txt). Earlier QC reports are historical and superseded for Figure 1/freeze status.
+The original freeze changed-file inventory remains at `analysis-v1.0-published-data:qc/published_data_files_changed.txt`. Earlier QC reports are historical and superseded for Figure 1/freeze status. Historical paths embedded in retained verification/provenance records describe their original runs, rather than current-tree links.

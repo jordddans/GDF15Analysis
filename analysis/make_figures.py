@@ -1,7 +1,8 @@
 """Draw the figures from the values written by ``run_analysis.py``.
 
-Every number shown is read from ``results/`` -- nothing is recomputed here, so the
-figures cannot drift from the analysis.
+Figure 1 regenerates its deterministic finite-fit bootstrap band from the public
+workbook and uses the verified point estimates in ``results/``. Figures 2 and 3
+read the existing analysis outputs; captions use computed values.
 
 Usage:  python analysis/make_figures.py
 """

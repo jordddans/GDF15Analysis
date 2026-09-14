@@ -1,5 +1,0 @@
-# Draft note for Jordan’s summer-program final report
-
-We initially set out to build an explainable diagnostic classifier under the award “Transparent AI for Rare Disease Diagnosis” in the 2026 Responsible AI Summer Research Program at Santa Clara University. During analysis, we found that binary classification discarded clinically meaningful information from the continuous biomarker, especially near the decision boundary. We therefore refined the original goal toward an interpretable continuous evidence model that preserves the measurement’s information while remaining clinically understandable. This scientifically motivated change retained the project’s emphasis on transparent reasoning and made the limitations of the available evidence explicit. Whether this presentation is more useful to clinicians or patients remains to be tested.
-
-This is a standalone draft passage, not a completed programme report. No programme final report was found; the archived exploratory notebook named “06_report” is an analysis notebook. The programme had no role in the analysis.
