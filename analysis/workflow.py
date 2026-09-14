@@ -24,7 +24,7 @@ def main():
     if a.verify:
         verify.main()
         report={'count':len(verify.CHECKS),'failures':sum(not c['passed'] for c in verify.CHECKS),
-                'checks':verify.CHECKS,'figure1_integration':'BLOCKED: Giorgio script absent; historical figure reproduced'}
+                'checks':verify.CHECKS,'figure1_integration':'PASS: Giorgio three-panel figure; 3991 finite fits, 9 separated resamples excluded'}
         (a.output_dir/'results/verification.json').write_text(json.dumps(report,indent=2)+'\n')
 
 if __name__=='__main__': main()

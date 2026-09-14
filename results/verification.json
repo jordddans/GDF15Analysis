@@ -1,5 +1,5 @@
 {
-  "count": 98,
+  "count": 109,
   "failures": 0,
   "checks": [
     {
@@ -315,7 +315,7 @@
     {
       "name": "two clean runs produce every output file byte for byte identical",
       "passed": true,
-      "detail": "31 files"
+      "detail": "34 files"
     },
     {
       "name": "centerpiece: cohort_counts",
@@ -491,7 +491,62 @@
       "name": "missing clinical keys are rejected",
       "passed": true,
       "detail": ""
+    },
+    {
+      "name": "Figure 1: 4000 requested = 3991 finite + 9 separated",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure 1: repeated finite coefficients byte-identical",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure 1: rejected identities match production accounting",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure 1: every excluded sample strictly separated",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure 1: all accepted ordinary MLEs pass score/information validation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure 1: LR-scale percentile band uses exactly finite fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure 1: point curve uses unchanged production coefficients",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure 1: exactly 166 observed group-1 values",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure 1: computed adjacent pair is Table 1 observed pair",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure 1: computed support boundaries match verified model",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure 1: approved Methods reports finite fits and narrows in tail",
+      "passed": true,
+      "detail": ""
     }
   ],
-  "figure1_integration": "BLOCKED: Giorgio script absent; historical figure reproduced"
+  "figure1_integration": "PASS: Giorgio three-panel figure; 3991 finite fits, 9 separated resamples excluded"
 }

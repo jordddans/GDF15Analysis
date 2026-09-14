@@ -23,3 +23,13 @@ archive/gdfdiscrim/data/df_g1.csv
 .ipynb_checkpoints/
 # Temporary workflow outputs
 output/
+# Reproducible patient-level exports remain local, including historical raw export.
+archive/gdfdiscrim/data/df_all.csv
+archive/gdfdiscrim/gdf15_charts/gdf15_ladder_points.csv
+results/complete_case_patients.csv
+results/ntprobnp_sources.csv
+results/cutoff_probability_comparison.csv
+# Redundant supplied attachment containers; exact source archived under qc/.
+make_figure1_v2.py.txt
+make_figure1_v2.zip
+qc/manuscript_QC_render.pdf

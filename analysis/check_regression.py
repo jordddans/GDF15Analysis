@@ -42,7 +42,7 @@ def check(output=ROOT):
                 equal=a.drop(columns='published_provenance').equals(b.drop(columns='published_provenance'))
             else:equal=hashlib.sha256(p.read_bytes()).hexdigest()==entry['sha256']
             output_files.append({'path':path,'science_unchanged':equal})
-        if path.startswith('figures/'):
+        if path.startswith('figures/') and not path.startswith('figures/figure1') and path != 'figures/figure2_caption.md':
             output_files.append({'path':path,'science_unchanged':hashlib.sha256((output/path).read_bytes()).hexdigest()==entry['sha256']})
     forbidden=['Reconstructed_per_patient_Prabhakar_2025_2.xlsx','archive/gdfdiscrim/pvod_166.csv','archive/gdfdiscrim/data/df_g1.csv']
     history=subprocess.check_output(['git','log','--all','--format=','--name-only'],cwd=ROOT,text=True).splitlines()

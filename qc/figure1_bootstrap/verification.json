@@ -1,0 +1,343 @@
+{
+  "scope": "bootstrap reconciliation evidence; finite-fit exclusion approved 2026-09-11",
+  "count": 84,
+  "failures": 0,
+  "checks": [
+    {
+      "name": "59 original warning fits reproduced",
+      "passed": true
+    },
+    {
+      "name": "all 4000 draws accounted for",
+      "passed": true
+    },
+    {
+      "name": "warning 115: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 118: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 149: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 166: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 181: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 338: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 348: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 368: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 404: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 415: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 475: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 531: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 664: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 754: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 765: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 783: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 811: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1021: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1111: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1134: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1198: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1360: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1477: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1533: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1563: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1654: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1847: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1873: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1895: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1907: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1914: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1927: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 1934: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2081: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2105: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2231: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2277: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2282: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2326: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2580: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2598: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2610: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2636: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2777: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2867: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 2873: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3044: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3068: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3153: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3161: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3187: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3234: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3294: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3366: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3377: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3425: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3470: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3534: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "warning 3705: exact sample replays from RNG state",
+      "passed": true
+    },
+    {
+      "name": "rejected 149: strict separation independently confirmed",
+      "passed": true
+    },
+    {
+      "name": "rejected 769: strict separation independently confirmed",
+      "passed": true
+    },
+    {
+      "name": "rejected 1111: strict separation independently confirmed",
+      "passed": true
+    },
+    {
+      "name": "rejected 1134: strict separation independently confirmed",
+      "passed": true
+    },
+    {
+      "name": "rejected 1392: strict separation independently confirmed",
+      "passed": true
+    },
+    {
+      "name": "rejected 1654: strict separation independently confirmed",
+      "passed": true
+    },
+    {
+      "name": "rejected 1873: strict separation independently confirmed",
+      "passed": true
+    },
+    {
+      "name": "rejected 3464: strict separation independently confirmed",
+      "passed": true
+    },
+    {
+      "name": "rejected 3536: strict separation independently confirmed",
+      "passed": true
+    },
+    {
+      "name": "accepted fits meet analytic score/information criteria",
+      "passed": true
+    },
+    {
+      "name": "warning dispositions 54 valid, zero materially different, five unusable",
+      "passed": true
+    },
+    {
+      "name": "3991 accepted, nine rejected",
+      "passed": true
+    },
+    {
+      "name": "four separated fits incorrectly reported original success",
+      "passed": true
+    },
+    {
+      "name": "successful BFGS fit 2296 requires numerical replacement",
+      "passed": true
+    },
+    {
+      "name": "band uses exactly accepted fits, LR-scale percentiles",
+      "passed": true
+    },
+    {
+      "name": "repeat independent fits byte-identical coefficients",
+      "passed": true
+    },
+    {
+      "name": "repeat accepted/rejected sample identities identical",
+      "passed": true
+    },
+    {
+      "name": "shared reader returns identical 322 source values and diagnoses",
+      "passed": true
+    },
+    {
+      "name": "archived Giorgio script unchanged",
+      "passed": true
+    },
+    {
+      "name": "historical band difference retained transparently after approval",
+      "passed": true
+    },
+    {
+      "name": "upper edge effectively unchanged at 1000 and cutoff",
+      "passed": true
+    },
+    {
+      "name": "upper edge narrows approximately 2%, 6%, 17% in tail",
+      "passed": true
+    },
+    {
+      "name": "same-seed LR10 interval effectively stable within 1 pg/mL",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "count": 18,
+  "failures": 0,
+  "checks": [
+    {
+      "name": "685 baseline numerical/Boolean fields unchanged",
+      "passed": true
+    },
+    {
+      "name": "baseline scientific CSV outputs and Figures 2/3 unchanged",
+      "passed": true
+    },
+    {
+      "name": "Table 1 CSV and Markdown byte-identical to prior verified QC",
+      "passed": true
+    },
+    {
+      "name": "Figure 2 caption changes only the outdated Figure 1 bootstrap cross-reference",
+      "passed": true
+    },
+    {
+      "name": "original DOCX, workbooks and protected PDFs unchanged",
+      "passed": true
+    },
+    {
+      "name": "private reconstructed workbooks absent from all Git history",
+      "passed": true
+    },
+    {
+      "name": "QC manuscript changes confined to status, bootstrap Methods and Figure 1 caption",
+      "passed": true
+    },
+    {
+      "name": "approved Methods wording present exactly",
+      "passed": true
+    },
+    {
+      "name": "QC DOCX embeds exactly the reproduced Figure 1",
+      "passed": true
+    },
+    {
+      "name": "other DOCX package entries unchanged",
+      "passed": true
+    },
+    {
+      "name": "QC DOCX repeated generation byte-identical",
+      "passed": true
+    },
+    {
+      "name": "private workbook and patient-level exports untracked",
+      "passed": true
+    },
+    {
+      "name": "private workbook and generated patient exports ignored",
+      "passed": true
+    },
+    {
+      "name": "published and cleaned workbook readers agree",
+      "passed": true
+    },
+    {
+      "name": "loader input is explicit and fitting independent of data loading",
+      "passed": true
+    },
+    {
+      "name": "scoring uses frozen coefficients without fitting",
+      "passed": true
+    },
+    {
+      "name": "clean public-input reproduction and repeat artifact comparisons pass",
+      "passed": true
+    },
+    {
+      "name": "independent bootstrap audit passes",
+      "passed": true
+    }
+  ],
+  "workflow_checks": 109,
+  "bootstrap_audit_checks": 84,
+  "total_checks": 211,
+  "numeric_fields_compared_separately": 685,
+  "qc_docx_sha256": "f1e8c1e2355de54cba523ef1f1f2ba1952fdd247d4dddd4c1787b2dacf3eb78a",
+  "qc_changed_body_blocks": [
+    2,
+    33,
+    98
+  ],
+  "history_note": "Private reconstruction absent throughout. Five published-source patient-level exports were tracked in earlier local commits; removed from frozen tree, retained locally and ignored. History was not rewritten."
+}

@@ -1,5 +1,7 @@
 # First-author QC completion report
 
+> Historical QC report (7 September 2026). For the approved bootstrap integration and published-data freeze, use [the current freeze report](published_data_freeze.md). The Figure 1 gate below is closed. Giorgio's 11 September note also closes corresponding-author, conflict-of-interest, cohort-date/guideline and ethics/declaration decisions; this narrow pass does not redraft those manuscript sections. Assay details, blinding, author order and the participant-count discrepancy remain author-side items.
+
 7 September 2026. **The numerical centerpiece passes; the draft is not submission-ready.** The agreed missing-script gate prevents new Figure 1 integration and the `analysis-v1.0` release. The original manuscript, published workbooks and submitted BayLearn PDFs are unchanged. Mechanical corrections are in the separate [QC DOCX](../GDF15_evidence_curve_QC.docx), with a [rendered PDF](manuscript_QC.pdf) and [32-edit log](manuscript_changes.json). Scientific framing concerns are recommendations, not silent rewrites.
 
 ## A. Independent Table 1 — PASS

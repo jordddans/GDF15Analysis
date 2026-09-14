@@ -1,15 +1,15 @@
 {
   "qc_docx": "GDF15_evidence_curve_QC.docx",
-  "docx_sha256": "c230cf7978534b8fd4e602bcf0f3743452a95ff5013961afe0edf08fc56fbb2a",
-  "logged_mechanical_edits": 32,
+  "docx_sha256": "f1e8c1e2355de54cba523ef1f1f2ba1952fdd247d4dddd4c1787b2dacf3eb78a",
+  "logged_mechanical_edits": 35,
   "docx_repeat_byte_identical": true,
-  "renderer": "Microsoft Word local PDF export",
-  "pdf": "qc/manuscript_QC.pdf",
-  "pages": 13,
-  "table1_and_table2_layout_checked": true,
-  "resolved_source_text_black_external_placeholders_red": true,
   "original_docx_unchanged": true,
-  "figure1_image": "supplied image retained; script reproduction BLOCKED",
-  "pagination_note": "Audit identifies original sections/body blocks; PDF page numbers refer to QC revision, not original draft.",
-  "layout_note": "QC PDF has a blank cover-separator page 2. Remove it during final submission assembly; table layout and source/placeholder formatting were checked."
+  "figure1_image": "integrated production PNG; 3991 finite fits, 9 separated exclusions",
+  "changed_body_blocks_from_previous_qc": [
+    2,
+    33,
+    98
+  ],
+  "pdf": "qc/manuscript_QC.pdf",
+  "pdf_note": "Local Microsoft Word rendering is a review derivative; analysis figure PDF/PNG and QC DOCX byte determinism are checked separately."
 }

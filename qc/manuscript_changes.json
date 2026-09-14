@@ -2,7 +2,7 @@
   {
     "body_block": 2,
     "before": "Methods and Results are complete and the numbers in them are final. Introduction and Discussion are drafted so there is something concrete to react to, and those are the sections most likely to change on your advice.",
-    "after": "QC revision for author review. Verified mechanical corrections are logged in qc/manuscript_changes.json. Scientific framing is preserved; unresolved issues in qc/hostile_review.md and the missing Figure 1 script prevent submission-ready status.",
+    "after": "QC revision for author review. Verified mechanical corrections are logged in qc/manuscript_changes.json. Figure 1 uses the approved finite-fit bootstrap handling. Scientific framing is preserved; remaining author items are recorded in qc/published_data_freeze.md.",
     "reason": "QC status"
   },
   {
@@ -166,6 +166,24 @@
     "before": "diagnostic accuracy components;",
     "after": "diagnostic accuracy components [5,7];",
     "reason": "Explicit reference call with support recorded in audit"
+  },
+  {
+    "body_block": 33,
+    "before": "Uncertainty was estimated by stratified case bootstrap with 4,000 replicates, resampling PVOD and comparator patients separately at their observed group sizes and re-deriving every quantity inside each replicate, so that quantities derived under different procedures remain comparable.",
+    "after": "The Figure 1 band was estimated by stratified case bootstrap, resampling PVOD and comparator patients separately at their observed group sizes. Nine of 4,000 stratified bootstrap resamples produced complete separation, for which the maximum likelihood estimate is not finite. Percentile intervals for the Figure 1 band were computed from the 3,991 resamples with finite fits. Excluding the nine leaves the upper edge effectively unchanged at and below the published cutoff and narrows it within the extrapolated tail, by approximately 2% at 2,156 pg/mL and 17% at 5,000 pg/mL. The existing AUC and paired threshold/landmark comparisons use stratified case resampling; comparator-specific bands and the retained supplementary intervals use the original parametric bootstrap.",
+    "reason": "Approved Figure 1 finite-fit accounting and explicit scope; existing estimators unchanged"
+  },
+  {
+    "body_block": 98,
+    "before": "the band is a 95% stratified case bootstrap interval over 4,000 replicates.",
+    "after": "the band is a pointwise 95% stratified case bootstrap interval from 3,991 finite fits out of 4,000 requested resamples; 9 resamples with complete separation were excluded. With these exclusions the band narrows in the tail, with its upper edge effectively unchanged at and below the published cutoff.",
+    "reason": "Approved finite-fit Figure 1 caption"
+  },
+  {
+    "body_block": 98,
+    "before": "it is drawn broken there and should not be read as evidence.",
+    "after": "it is drawn broken there and should not be read as evidence. The upper comparator support limit is also marked at 1,809.5 pg/mL; beyond it the curve is broken and the band is lighter.",
+    "reason": "Caption matches both observed support markers in integrated Figure 1"
   },
   {
     "body_block": 36,

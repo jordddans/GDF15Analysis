@@ -26,6 +26,7 @@ import json
 import reconstruct
 import verify_centerpiece
 import audit_numbers
+import verify_figure1
 
 CHECKS = []
 
@@ -493,6 +494,7 @@ def main():
     except ValueError:
         rejected = True
     check('missing clinical keys are rejected', rejected)
+    verify_figure1.verify(run_analysis.RESULTS, check)
     print(f"\nall {len(CHECKS)} checks passed")
 
 

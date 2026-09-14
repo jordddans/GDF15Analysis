@@ -16,7 +16,7 @@ given disease status, so a clinician can combine it with their own pre-test prob
 
 ## QC status
 
-The centerpiece and cohort counts reproduce. The new three-panel Figure 1 is supplied only as an image inside the manuscript: its script is missing, and its bootstrap description conflicts with the active method. Integration and `analysis-v1.0` are explicitly blocked. `figures/figure1_lr_curve.pdf` is the historical reproducible Figure 1; `qc/figure1_supplied.png` is Giorgio's supplied image. See [QC report](qc/final_report.md) and [integration gate](qc/figure1_integration.md).
+The published-data analysis uses Giorgio's integrated three-panel Figure 1 with 4,000 requested stratified resamples: 3,991 finite ordinary logistic fits and 9 separated resamples excluded. The upper edge is effectively unchanged near/below the cutoff and narrows in the tail. See [freeze report](qc/published_data_freeze.md), [clean reproduction](qc/published_data_clean_run.json), and [integration record](qc/figure1_integration.md). The freeze tag is `analysis-v1.0-published-data`; no remote is configured and nothing has been published.
 
 ## Quick start
 
@@ -311,7 +311,9 @@ applied as validation: no cross-validation and no shrinkage. The leave-one-case-
 described above is a sensitivity analysis reported beside it, not a second validation procedure,
 and it does not alter the reported model.
 
-Uncertainty for the fitted curve comes from a **parametric bootstrap**: outcomes are simulated
+Figure 1 uses a stratified case-bootstrap band (seed 20260907), with 3,991 finite fits from 4,000 requested draws and 9 complete-separation exclusions. These are ordinary logistic MLEs; no second estimator is introduced. `results/figure1_band.csv` and `results/figure1_bootstrap.json` are the production band and accounting. The original parametric intervals in `lr_curves.csv` and `results.json` remain supplementary outputs, and Figure 2 retains its existing parametric bands.
+
+For those retained **parametric bootstrap** intervals: outcomes are simulated
 from the fitted model at the observed GDF15 concentrations and the model is refitted 4,000
 times. Holding the concentrations fixed and simulating only the outcomes lets the interval be
 defined across the whole measured range, including concentrations at which one class was never
@@ -330,8 +332,9 @@ calibration quintile — use exact (Clopper–Pearson) binomial limits instead.
   and every reported value agrees, with fitted coefficients and their standard errors
   differing in the 12th significant digit and beyond — the optimiser's tolerance, not the
   analysis.
-- **Seeds.** Every stochastic calculation uses seed 1 (`model.SEED`) and 4,000 replicates
-  (`model.N_BOOT`). Two clean runs in the same environment produce all 24 output files
+- **Seeds.** Existing model/validation calculations use seed 1 (`model.SEED`) and 4,000 replicates
+  (`model.N_BOOT`); Figure 1 uses seed 20260907 and the approved 3,991/9 accounting.
+  Two clean runs in the pinned environment reproduce all generated output files
   byte for byte identical, figures included; `verify.py` asserts this by running the whole
   workflow twice into temporary directories and comparing every file. A percentile bootstrap on 26 cases still
   moves in the third decimal between seeds, so any bootstrap interval should be quoted with its
@@ -386,8 +389,7 @@ calibration quintile — use exact (Clopper–Pearson) binomial limits instead.
   comparator patients resampled separately at their observed sample sizes, 4,000 replicates,
   seed 1, with the landmark and the Youden cutoff both recomputed inside every replicate so the
   two are compared on identical footing. The parametric-bootstrap interval for the same landmark
-  is kept beside it as a supplementary sensitivity analysis. The pointwise band on the fitted
-  curve itself remains parametric. Reader-facing text rounds bootstrap endpoints to the nearest
+  is kept beside it as a supplementary sensitivity analysis. Figure 1's pointwise band uses the separately recorded finite-fit stratified bootstrap. Reader-facing text rounds bootstrap endpoints to the nearest
   10 pg/mL; `results/` keeps full precision.
 - **Source-figure values.** The three Figure 1D values (94.94, 97.26, 95.19) were read from the
   published figure and reproduce from these supporting data to two decimal places. The Figure 1E
@@ -411,3 +413,11 @@ A1, A2, A4–A7, the separate SCU determination, and A9 publication details rema
 ## Negative likelihood ratios
 
 At the fixed published cutoff, LR− = (5/26)/(136/140) = 0.1979638009, displayed as 0.20. Two historical cross-validated classifier PDFs display 0.24 correctly for a different procedure: (6/26)/(136/140) = 0.2375565611. Do not substitute one for the other. The complete occurrence ledger is `qc/audit_024.csv`.
+
+## Published-data freeze and future validation
+
+Run a fresh environment with `requirements-lock.txt`, then `python analysis/freeze_reproduce.py --python /absolute/path/to/fresh/venv/bin/python`. This copies only analysis code and the original published workbook into an isolated directory, runs the full workflow with verification, repeats it, compares all artifact bytes, and promotes successful outputs. The exact supplied Figure 1 script is preserved in `qc/figure1_bootstrap/giorgio_original.py`; root `make_figure1_v2.py` now delegates to production and accepts either workbook.
+
+Patient-level reconstructions and exports remain ignored local artifacts. Five older tracked exports have been removed from the frozen tree; they still exist in earlier local history. The private reconstructed workbook was never tracked. Nothing has been pushed. Jordan must create or approve a private remote before any push; no public repository or Zenodo release is authorized.
+
+`data.py` loads development inputs separately from `model.py` fitting/scoring. Its cohort assertions intentionally lock this published development cohort. A future validation source can have its own loader and be scored using frozen coefficients, without altering or pooling into this development fit. No future samples were analyzed or simulated and no v2.0 was created. The participant-count disagreement and assay/blinding/author-order confirmations remain author-side submission items; they do not change this published-workbook analysis.

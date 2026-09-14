@@ -8,6 +8,7 @@ import csv
 import platform
 from copy import deepcopy
 from xml.etree import ElementTree as E
+from figure1_bootstrap import METHODS
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'GDF15_evidence_curve_DRAFT_v0.1_2-1.docx'
@@ -44,7 +45,7 @@ def main():
     def edit(i,old,new,reason):
         original=replacements.get(i,blocks[i].group());updated=replace_text(original,old,new)
         replacements[i]=updated;changes.append({'body_block':i,'before':old,'after':new,'reason':reason})
-    edit(2,plain(blocks[2].group()),'QC revision for author review. Verified mechanical corrections are logged in qc/manuscript_changes.json. Scientific framing is preserved; unresolved issues in qc/hostile_review.md and the missing Figure 1 script prevent submission-ready status.','QC status')
+    edit(2,plain(blocks[2].group()),'QC revision for author review. Verified mechanical corrections are logged in qc/manuscript_changes.json. Figure 1 uses the approved finite-fit bootstrap handling. Scientific framing is preserved; remaining author items are recorded in qc/published_data_freeze.md.','QC status')
     for i in (14,40):edit(i,'0.990',f"{m['auc_ci'][1]:.3f}",'Final 4000-replicate AUC CI independently reproduced')
     edit(41,'0.965',f"{m['internal_validation']['corrected_calibration_slope']:.3f}",'Final bootstrap calibration slope')
     before='0.000 against 0.000, 0.002 against 0.000, 0.012 against 0.030, 0.088 against 0.121 and 0.665 against 0.618'
@@ -90,6 +91,15 @@ def main():
     edit(37,'[A9: JORDAN, version and package versions]',platform.python_version()+'; package versions are specified in requirements-lock.txt','Recorded environment; URL/DOI remain pending')
     for i,old,new in [(16,'genotyping.','genotyping [2,4].'),(17,'specificity.','specificity [1].'),(18,'two decades.','two decades [3].'),(22,'senior author,','senior author [1],'),(33,'standard bootstrap correction.','standard bootstrap correction [8].'),(36,'diagnostic accuracy components;','diagnostic accuracy components [5,7];')]:
         edit(i,old,new,'Explicit reference call with support recorded in audit')
+    edit(33, 'Uncertainty was estimated by stratified case bootstrap with 4,000 replicates, resampling PVOD and comparator patients separately at their observed group sizes and re-deriving every quantity inside each replicate, so that quantities derived under different procedures remain comparable.',
+         'The Figure 1 band was estimated by stratified case bootstrap, resampling PVOD and comparator patients separately at their observed group sizes. ' + METHODS + ' The existing AUC and paired threshold/landmark comparisons use stratified case resampling; comparator-specific bands and the retained supplementary intervals use the original parametric bootstrap.',
+         'Approved Figure 1 finite-fit accounting and explicit scope; existing estimators unchanged')
+    edit(98, 'the band is a 95% stratified case bootstrap interval over 4,000 replicates.',
+         'the band is a pointwise 95% stratified case bootstrap interval from 3,991 finite fits out of 4,000 requested resamples; 9 resamples with complete separation were excluded. With these exclusions the band narrows in the tail, with its upper edge effectively unchanged at and below the published cutoff.',
+         'Approved finite-fit Figure 1 caption')
+    edit(98, 'it is drawn broken there and should not be read as evidence.',
+         'it is drawn broken there and should not be read as evidence. The upper comparator support limit is also marked at 1,809.5 pg/mL; beyond it the curve is broken and the band is lighter.',
+         'Caption matches both observed support markers in integrated Figure 1')
     edit(36,'the completed checklists are provided as supplementary material.','reporting mappings accompany this QC revision, with outstanding author items identified.','Checklists are not submission-complete')
     # Close only source-resolved rows in the author task table.
     for old,new in [('The study approval and consent paragraph from the JCI supplemental material, with approving bodies named','A3 source passage verified; see Declarations and qc/sources.md'),
@@ -118,6 +128,9 @@ def main():
     xml = xml.replace('<w:t>', '<w:t xml:space="preserve">')
     E.fromstring(xml)
     files['word/document.xml']=xml.encode()
+    images = [n for n in files if n.startswith('word/media/') and n.endswith('.png')]
+    assert len(images) == 1, 'Expected exactly one supplied Figure 1 image'
+    files[images[0]] = (ROOT / 'figures/figure1_lr_curve.png').read_bytes()
     with ZipFile(TARGET,'w',compression=ZIP_DEFLATED) as z:
         for name,content in files.items():
             info=ZipInfo(name,(2026,9,7,0,0,0));info.compress_type=ZIP_DEFLATED;z.writestr(info,content)

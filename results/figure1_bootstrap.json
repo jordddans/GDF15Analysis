@@ -1,0 +1,27 @@
+{
+  "seed": 20260907,
+  "requested": 4000,
+  "finite": 3991,
+  "separated": 9,
+  "separated_replicates_zero_based": [
+    149,
+    769,
+    1111,
+    1134,
+    1392,
+    1654,
+    1873,
+    3464,
+    3536
+  ],
+  "estimator": "ordinary unpenalized logistic maximum likelihood",
+  "percentiles": [
+    2.5,
+    97.5
+  ],
+  "percentile_scale": "LR",
+  "methods_wording": "Nine of 4,000 stratified bootstrap resamples produced complete separation, for which the maximum likelihood estimate is not finite. Percentile intervals for the Figure 1 band were computed from the 3,991 resamples with finite fits. Excluding the nine leaves the upper edge effectively unchanged at and below the published cutoff and narrows it within the extrapolated tail, by approximately 2% at 2,156 pg/mL and 17% at 5,000 pg/mL.",
+  "sample_hashes_sha256": "88dcdd951416f80232ff630a20fab41c6daece69ab5e6ec4c0b0fe79994148cd",
+  "max_standardized_score": 1.199040866595169e-14,
+  "min_information_eigenvalue": 0.00020230971667024012
+}

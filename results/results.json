@@ -261,7 +261,7 @@
           2494.8051849830013
         ],
         "lr10_ci_width_parametric_supplementary": 691.676976552116,
-        "note": "the stratified case bootstrap is the reported uncertainty for the LR = 10 landmark, because it is the scheme under which the landmark and a selected threshold can be compared on identical footing; the parametric-bootstrap interval is retained as a supplementary sensitivity analysis, and the pointwise band on the fitted curve itself remains parametric"
+        "note": "the stratified case bootstrap is the reported uncertainty for the LR = 10 landmark, because it is the scheme under which the landmark and a selected threshold can be compared on identical footing; the parametric-bootstrap interval is retained as a supplementary sensitivity analysis, and the historical parametric pointwise intervals are retained here as supplementary outputs; the production Figure 1 band is separately recorded in figure1_band.csv and figure1_bootstrap.json"
       },
       "internal_validation": {
         "apparent_auc": 0.9560439560439561,

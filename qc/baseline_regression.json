@@ -13,6 +13,11 @@
       "after": "patients_166.csv"
     },
     {
+      "path": "results.json/models/IPAH+HPAH/threshold_comparison/note",
+      "before": "the stratified case bootstrap is the reported uncertainty for the LR = 10 landmark, because it is the scheme under which the landmark and a selected threshold can be compared on identical footing; the parametric-bootstrap interval is retained as a supplementary sensitivity analysis, and the pointwise band on the fitted curve itself remains parametric",
+      "after": "the stratified case bootstrap is the reported uncertainty for the LR = 10 landmark, because it is the scheme under which the landmark and a selected threshold can be compared on identical footing; the parametric-bootstrap interval is retained as a supplementary sensitivity analysis, and the historical parametric pointwise intervals are retained here as supplementary outputs; the production Figure 1 band is separately recorded in figure1_band.csv and figure1_bootstrap.json"
+    },
+    {
       "path": "results.json/auc_reconciliation/4/published_provenance",
       "before": "reported by a co-author of the source study from the 600-dpi source render; local verification pending",
       "after": "independently verified from supplied full figure; confirmed in first-author QC brief"
@@ -70,22 +75,6 @@
     }
   ],
   "baseline_artifacts": [
-    {
-      "path": "figures/figure1_caption.md",
-      "science_unchanged": true
-    },
-    {
-      "path": "figures/figure1_lr_curve.pdf",
-      "science_unchanged": true
-    },
-    {
-      "path": "figures/figure1_lr_curve.png",
-      "science_unchanged": true
-    },
-    {
-      "path": "figures/figure2_caption.md",
-      "science_unchanged": true
-    },
     {
       "path": "figures/figure2_comparators.pdf",
       "science_unchanged": true

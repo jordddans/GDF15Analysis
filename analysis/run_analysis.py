@@ -546,7 +546,8 @@ def main():
                  "landmark, because it is the scheme under which the landmark and a selected "
                  "threshold can be compared on identical footing; the parametric-bootstrap "
                  "interval is retained as a supplementary sensitivity analysis, and the "
-                 "pointwise band on the fitted curve itself remains parametric"),
+                 "historical parametric pointwise intervals are retained here as supplementary outputs; "
+                 "the production Figure 1 band is separately recorded in figure1_band.csv and figure1_bootstrap.json"),
     }
     # the landmark's reported interval is the stratified one; the parametric is kept beside it
     main_entry["gdf15_at_lr"]["10"] = {
