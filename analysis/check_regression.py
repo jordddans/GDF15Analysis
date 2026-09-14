@@ -7,7 +7,7 @@ import subprocess
 import pandas as pd
 
 ROOT=Path(__file__).resolve().parents[1]
-BASELINE='c4a5a20dd2024f6a35bb0b898829cdd18e347936'
+BASELINE='540a03f37f175bdde80315fc87798c4cda810786'
 
 def check(output=ROOT):
     output=Path(output)
@@ -44,7 +44,9 @@ def check(output=ROOT):
             output_files.append({'path':path,'science_unchanged':equal})
         if path.startswith('figures/') and not path.startswith('figures/figure1') and path != 'figures/figure2_caption.md':
             output_files.append({'path':path,'science_unchanged':hashlib.sha256((output/path).read_bytes()).hexdigest()==entry['sha256']})
-    forbidden=['Reconstructed_per_patient_Prabhakar_2025_2.xlsx','archive/gdfdiscrim/pvod_166.csv','archive/gdfdiscrim/data/df_g1.csv']
+    forbidden=['Reconstructed_per_patient_Prabhakar_2025_2.xlsx','archive/gdfdiscrim/pvod_166.csv','archive/gdfdiscrim/data/df_g1.csv',
+               'archive/gdfdiscrim/data/df_all.csv', 'archive/gdfdiscrim/gdf15_charts/gdf15_ladder_points.csv',
+               'results/complete_case_patients.csv', 'results/ntprobnp_sources.csv', 'results/cutoff_probability_comparison.csv']
     history=subprocess.check_output(['git','log','--all','--format=','--name-only'],cwd=ROOT,text=True).splitlines()
     tracked=subprocess.check_output(['git','ls-files'],cwd=ROOT,text=True).splitlines()
     private_absent=all(p not in history and p not in tracked for p in forbidden)

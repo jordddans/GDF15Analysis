@@ -15,6 +15,7 @@ from make_qc_manuscript import plain
 from figure1_bootstrap import METHODS
 
 ROOT = Path(__file__).resolve().parents[1]
+PRIOR_QC = 'b91aa228aa0c540a26005a26bd9afad96986e25d'
 
 
 def main():
@@ -27,14 +28,14 @@ def main():
     check('685 baseline numerical/Boolean fields unchanged', regression['numeric_fields_compared'] == 685 and not regression['numeric_differences'])
     check('baseline scientific CSV outputs and Figures 2/3 unchanged', all(r['science_unchanged'] for r in regression['baseline_artifacts']))
     check('Table 1 CSV and Markdown byte-identical to prior verified QC', all(
-          (ROOT / path).read_bytes() == subprocess.check_output(['git','show','ac8339e:' + path], cwd=ROOT)
+          (ROOT / path).read_bytes() == subprocess.check_output(['git','show',PRIOR_QC + ':' + path], cwd=ROOT)
           for path in ['results/table1.csv','results/table1.md']))
-    old_caption = subprocess.check_output(['git','show','ac8339e:figures/figure2_caption.md'], cwd=ROOT, text=True)
+    old_caption = subprocess.check_output(['git','show',PRIOR_QC + ':figures/figure2_caption.md'], cwd=ROOT, text=True)
     expected_caption = old_caption.replace(') as Figure 1. Each', '). Each').replace('the main model in Figure 1:', 'the main-model landmark reported in the analysis:')
     check('Figure 2 caption changes only the outdated Figure 1 bootstrap cross-reference', (ROOT/'figures/figure2_caption.md').read_text() == expected_caption)
     check('original DOCX, workbooks and protected PDFs unchanged', all(r['unchanged'] for r in regression['protected_files']))
     check('private reconstructed workbooks absent from all Git history', regression['private_exports_absent_from_git_history'])
-    before = subprocess.check_output(['git', 'show', 'ac8339e:GDF15_evidence_curve_QC.docx'], cwd=ROOT)
+    before = subprocess.check_output(['git', 'show', PRIOR_QC + ':GDF15_evidence_curve_QC.docx'], cwd=ROOT)
     docx = ROOT / 'GDF15_evidence_curve_QC.docx'
     with ZipFile(io.BytesIO(before)) as z:
         original = {n: z.read(n) for n in z.namelist()}
@@ -75,7 +76,7 @@ def main():
               'total_checks':len(checks) + clean['workflow_checks'] + audit['count'],
               'numeric_fields_compared_separately':685, 'qc_docx_sha256':digest,
               'qc_changed_body_blocks':changed,
-              'history_note':'Private reconstruction absent throughout. Five published-source patient-level exports were tracked in earlier local commits; removed from frozen tree, retained locally and ignored. History was not rewritten.'}
+              'history_note':'The five patient-level exports were removed from all reachable history and tags. Private reconstructed workbook absent throughout. Local ignored copies are preserved. Baseline references use the rewritten history.'}
     (ROOT/'qc/published_data_verification.json').write_text(json.dumps(report, indent=2)+'\n')
     document = {'qc_docx':docx.name, 'docx_sha256':digest,
                 'logged_mechanical_edits':len(json.loads((ROOT/'qc/manuscript_changes.json').read_text())),

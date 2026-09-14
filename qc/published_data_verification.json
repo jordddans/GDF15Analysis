@@ -86,5 +86,5 @@
     33,
     98
   ],
-  "history_note": "Private reconstruction absent throughout. Five published-source patient-level exports were tracked in earlier local commits; removed from frozen tree, retained locally and ignored. History was not rewritten."
+  "history_note": "The five patient-level exports were removed from all reachable history and tags. Private reconstructed workbook absent throughout. Local ignored copies are preserved. Baseline references use the rewritten history."
 }

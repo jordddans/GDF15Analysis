@@ -58,15 +58,15 @@ Evidence: `published_data_clean_run.json`, `published_data_verification.json`, `
 
 ## Privacy, version and remote
 
-The private reconstructed workbook remains ignored and untracked and is absent from all local Git history. Five previously tracked public-source patient-level CSV exports have been removed from the frozen tree and added to ignore rules; local copies remain recoverable. Those exports remain in earlier local commits, which were inspected and not rewritten. No generated patient-level dataset is added in this freeze; the published source workbook and scientific tables/audit summaries remain reproducible.
+The private reconstructed workbook remains ignored and untracked and is absent from all local Git history. Five previously tracked public-source patient-level CSV exports have been removed from the frozen tree and added to ignore rules; local copies remain recoverable. After the subsequent authorized privacy cleanup, those exports are absent from every reachable commit and tag; obsolete backup refs, reflogs and objects were removed. See `history_rewrite.json`. No generated patient-level dataset is added in this freeze; the published source workbook and scientific tables/audit summaries remain reproducible.
 
-The final local commit is to be identified by `git rev-parse analysis-v1.0-published-data^{{commit}}` after the verified commit/tag step. Only `analysis-v1.0-published-data` is authorized; no plain `analysis-v1.0`, v2.0 or Zenodo release. No remote is configured. No push or public publication has occurred. **Jordan must create or approve the private remote before a push.**
+The final local commit is to be identified by `git rev-parse analysis-v1.0-published-data^{{commit}}` after the verified commit/tag step. Only `analysis-v1.0-published-data` is authorized; no plain `analysis-v1.0`, v2.0 or Zenodo release. Jordan has approved `https://github.com/jordddans/GDF15Analysis`, independently confirmed private. Push is conditional on passing the repeated scientific and history checks. No public publication or Zenodo release is authorized.
 
 ## Future validation and remaining author items
 
 Development loading (`data.py`) is separate from fitting and scoring (`model.py`). A future validation dataset can have a separate input loader and be scored with frozen coefficients; the current cohort-count assertions prevent silently changing the development cohort. No future UCSF samples were analyzed or simulated.
 
-Giorgio's note closes COI, corresponding author (Akiko Hata), cohort-date/guideline and ethics/declaration decisions. They were not reopened or rewritten in this narrow pass. Assay methods, blinding confirmation, Amit's author-list position and the participant-count discrepancy remain author-side submission items. The published workbook's internally consistent counts are preserved. The remote is the remaining repository blocker; the email landmark discrepancy above remains explicitly recorded for authors.
+Giorgio's note closes COI, corresponding author (Akiko Hata), cohort-date/guideline and ethics/declaration decisions. They were not reopened or rewritten in this narrow pass. Assay methods, blinding confirmation, Amit's author-list position and the participant-count discrepancy remain author-side submission items. The published workbook's internally consistent counts are preserved. The email landmark discrepancy above remains explicitly recorded for authors. The authorized history-cleanup and private-push verification are documented separately in `history_rewrite.json`.
 
 Full changed-file inventory: [published_data_files_changed.txt](published_data_files_changed.txt). Earlier QC reports are historical and superseded for Figure 1/freeze status.
 '''

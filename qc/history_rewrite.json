@@ -1,0 +1,51 @@
+{
+  "scope": "Authorized history-only privacy cleanup plus verifier reference/documentation maintenance; no scientific changes",
+  "removed_paths": [
+    "archive/gdfdiscrim/data/df_all.csv",
+    "archive/gdfdiscrim/gdf15_charts/gdf15_ladder_points.csv",
+    "results/complete_case_patients.csv",
+    "results/ntprobnp_sources.csv",
+    "results/cutoff_probability_comparison.csv"
+  ],
+  "removed_blob_ids": [
+    "733bf63ea943c7ade9619d18225f895b97c4f319",
+    "85bbdb3dc849584728cc9a123328878b13fb67b4",
+    "98295a60866942c4725ecc0dffba22e22c30bc95",
+    "beb5e2d146b3273a95cdcdf0e3e33a11343afccb",
+    "dae6b1609af1ad89ffe71467a509aba4dbeebd0a"
+  ],
+  "private_workbook_blob_ids": [
+    "e959fd020c2d3ba8a788f0dfcf6beb7a976e19ac"
+  ],
+  "removed_historical_occurrence_count": 9,
+  "rewritten_commits": {
+    "c4a5a20dd2024f6a35bb0b898829cdd18e347936": "540a03f37f175bdde80315fc87798c4cda810786",
+    "ac8339eb5d8b406a96e32ffb274c2522df5cacff": "b91aa228aa0c540a26005a26bd9afad96986e25d",
+    "ad5525fc91dc02ac3fd841c54f25ba1e27d98ac2": "296dd347ff4862d080534e22a738feb25574ce69"
+  },
+  "old_freeze_tag_object": "b769da5f04b8da5199c2e8b89347c5941fa3676e",
+  "unchanged_freeze_tree": "8cf50e347e46f78ba37032bb41782d384cb8c626",
+  "final_tag": "analysis-v1.0-published-data",
+  "tag_note": "The tag is advanced to the cleanup maintenance commit so its verifiers use the rewritten baseline references. Resolve its final target with git rev-parse analysis-v1.0-published-data^{commit}.",
+  "verification_checks": 211,
+  "verification_failures": 0,
+  "repeated_artifacts": 38,
+  "all_artifact_hashes_identical_to_original_freeze": true,
+  "all_original_scientific_and_manuscript_files_byte_identical": true,
+  "preexisting_files_changed_only_for_verifier_references_and_audit_documentation": [
+    "README.md",
+    "analysis/check_regression.py",
+    "analysis/verify_published_freeze.py",
+    "analysis/write_freeze_report.py",
+    "qc/published_data_clean_run.json",
+    "qc/published_data_freeze.md",
+    "qc/published_data_verification.json"
+  ],
+  "local_ignored_exports_preserved_byte_identical": true,
+  "backup_refs_removed_and_obsolete_objects_pruned": true,
+  "private_workbook_absent_from_history_and_object_database": true,
+  "approved_remote": "https://github.com/jordddans/GDF15Analysis.git",
+  "github_visibility_confirmed": "PRIVATE",
+  "push_gate": "After cleanup commit/tag, run verify_history_privacy.py with a report outside the worktree; add origin and push only after PASS. Verify a fresh remote mirror after pushing.",
+  "no_publication_or_zenodo_release": true
+}

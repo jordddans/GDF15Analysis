@@ -2,7 +2,7 @@
   "status": "PASS",
   "python": "Python 3.14.6",
   "fresh_environment_python": "/tmp/gdf15-freeze-P30P2s/venv/bin/python",
-  "isolated_directory": "/var/folders/x_/d1qt147j7bz3nb6vd7n6t95w0000gn/T/gdf15-published-reproduce-rojt2q_k",
+  "isolated_directory": "/var/folders/x_/d1qt147j7bz3nb6vd7n6t95w0000gn/T/gdf15-published-reproduce-rcseknf1",
   "input_files": [
     "analysis/audit_024.py",
     "analysis/audit_figure1_bootstrap.py",
@@ -21,7 +21,9 @@
     "analysis/verify_centerpiece.py",
     "analysis/verify_figure1.py",
     "analysis/verify_figure1_audit.py",
+    "analysis/verify_published_freeze.py",
     "analysis/workflow.py",
+    "analysis/write_freeze_report.py",
     "archive/gdfdiscrim/jci-136-199159-s068.xlsx",
     "requirements-lock.txt"
   ],

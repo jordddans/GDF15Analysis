@@ -16,7 +16,7 @@ given disease status, so a clinician can combine it with their own pre-test prob
 
 ## QC status
 
-The published-data analysis uses Giorgio's integrated three-panel Figure 1 with 4,000 requested stratified resamples: 3,991 finite ordinary logistic fits and 9 separated resamples excluded. The upper edge is effectively unchanged near/below the cutoff and narrows in the tail. See [freeze report](qc/published_data_freeze.md), [clean reproduction](qc/published_data_clean_run.json), and [integration record](qc/figure1_integration.md). The freeze tag is `analysis-v1.0-published-data`; no remote is configured and nothing has been published.
+The published-data analysis uses Giorgio's integrated three-panel Figure 1 with 4,000 requested stratified resamples: 3,991 finite ordinary logistic fits and 9 separated resamples excluded. The upper edge is effectively unchanged near/below the cutoff and narrows in the tail. See [freeze report](qc/published_data_freeze.md), [clean reproduction](qc/published_data_clean_run.json), and [integration record](qc/figure1_integration.md). The freeze tag is `analysis-v1.0-published-data`. The approved GitHub repository is private: `https://github.com/jordddans/GDF15Analysis`. Only history that passes the privacy scan is eligible for push; see [history cleanup](qc/history_rewrite.json).
 
 ## Quick start
 
@@ -408,7 +408,7 @@ calibration quintile — use exact (Clopper–Pearson) binomial limits instead.
 
 Jordan's secondary work was supported through the **2026 Responsible AI Summer Research Program at Santa Clara University**, under **“Transparent AI for Rare Disease Diagnosis”**. The programme had no role in the analysis. Original-cohort funding remains separate; see `qc/sources.md`. The study is a post hoc secondary analysis, with no prospective protocol and no registration; the model form was selected after seeing the data. There was no patient/public involvement, and the proposed presentation has not been tested with clinicians or patients.
 
-A1, A2, A4–A7, the separate SCU determination, and A9 publication details remain author-owned. A3 source text and A8 are verified; neither resolves the other author items. No remote or Zenodo release has been created.
+A1, A2, A4–A7, the separate SCU determination, and A9 publication details remain author-owned. A3 source text and A8 are verified; neither resolves the other author items. Private repository approval is recorded in `qc/history_rewrite.json`; no Zenodo release is authorized.
 
 ## Negative likelihood ratios
 
@@ -418,6 +418,6 @@ At the fixed published cutoff, LR− = (5/26)/(136/140) = 0.1979638009, displaye
 
 Run a fresh environment with `requirements-lock.txt`, then `python analysis/freeze_reproduce.py --python /absolute/path/to/fresh/venv/bin/python`. This copies only analysis code and the original published workbook into an isolated directory, runs the full workflow with verification, repeats it, compares all artifact bytes, and promotes successful outputs. The exact supplied Figure 1 script is preserved in `qc/figure1_bootstrap/giorgio_original.py`; root `make_figure1_v2.py` now delegates to production and accepts either workbook.
 
-Patient-level reconstructions and exports remain ignored local artifacts. Five older tracked exports have been removed from the frozen tree; they still exist in earlier local history. The private reconstructed workbook was never tracked. Nothing has been pushed. Jordan must create or approve a private remote before any push; no public repository or Zenodo release is authorized.
+Patient-level reconstructions and exports remain ignored local artifacts. The five previously tracked exports have now been removed from every reachable commit and tag, and their obsolete Git blobs pruned. The private reconstructed workbook was never tracked. Jordan approved the private repository `https://github.com/jordddans/GDF15Analysis`; pushing is conditional on the repeated verification and privacy checks. No public repository or Zenodo release is authorized.
 
 `data.py` loads development inputs separately from `model.py` fitting/scoring. Its cohort assertions intentionally lock this published development cohort. A future validation source can have its own loader and be scored using frozen coefficients, without altering or pooling into this development fit. No future samples were analyzed or simulated and no v2.0 was created. The participant-count disagreement and assay/blinding/author-order confirmations remain author-side submission items; they do not change this published-workbook analysis.
