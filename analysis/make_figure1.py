@@ -1,163 +1,132 @@
-"""Production adaptation of Giorgio Lagna's supplied three-panel Figure 1.
-
-The unchanged supplied implementation is archived in qc/figure1_bootstrap/giorgio_original.py.
-Public-workbook loading, verified point estimates, validated finite-fit bands and
-computed annotations replace the original standalone input/fitting blocks.
+"""November Figure 1 layout, evaluated from the archived finite bootstrap fits.
+Preserves draw(results_dir, figures_dir, workbook=None) for the existing pipeline.
+No new seed, fit, or resampling is introduced by plotting.
 """
 import json
+from pathlib import Path
+import hashlib
 import numpy as np
 import pandas as pd
-import matplotlib as mpl
-mpl.use("Agg")
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
-import figure1_bootstrap as fb
+import data
 
 def draw(results_dir, figures_dir, workbook=None):
-    with mpl.rc_context():
-        PVOD_C, PAH_C, CUT_C = "#0072B2", "#8A8A85", "#D55E00"
-        INK, INK2, MUTED, GRID = "#0b0b0b", "#52514e", "#898781", "#e1e0d9"
-        mpl.rcParams.update({"font.family": "sans-serif", "font.size": 7.2,
-            "axes.edgecolor": "#c3c2b7", "axes.linewidth": .6,
-            "xtick.color": MUTED, "ytick.color": MUTED, "xtick.labelcolor": INK2,
-            "ytick.labelcolor": INK2, "xtick.major.width": .6, "ytick.major.width": .6,
-            "axes.labelcolor": INK, "text.color": INK, "figure.facecolor": "white",
-            "axes.facecolor": "white", "svg.fonttype": "none", "pdf.fonttype": 42})
-
-        results = json.loads((results_dir / "results.json").read_text())
-        entry = results["models"]["IPAH+HPAH"]
-        x, y, (PV, IP, HP) = fb.cohort(workbook)
-        COMP = np.concatenate([IP, HP])
-        CUT = entry["threshold_comparison"]["published_cutoff"]
-        PRE = .10
-        b = np.array([entry["intercept"], entry["slope_log10_gdf15"]])
-        off = entry["sampling_log_odds"]
-        LR = lambda g: np.exp(b[0] + b[1] * np.log10(g) - off)
-        sens = (PV >= CUT).mean()
-        spec = (COMP < CUT).mean()
-        LRP, LRN = sens / (1 - spec), (1 - sens) / spec
-        post = lambda lr: 100 * (lr * PRE / (1 - PRE)) / (1 + lr * PRE / (1 - PRE))
-        PP_POS, PP_NEG = post(LRP), post(LRN)
-        band = pd.read_csv(results_dir / "figure1_band.csv", float_precision="round_trip")
-        grid, lo, hi = (band[k].to_numpy() for k in ("gdf15", "lr_ci_low", "lr_ci_high"))
-        XLO, XHI = 70., 7000.
-        OBS_LO_PVOD, OBS_HI_COMP = PV.min(), COMP.max()
-
-        fig = plt.figure(figsize=(7.1, 7.9))
-        gs = fig.add_gridspec(3, 1, height_ratios=[.80, 1.25, 1.15], hspace=.42,
-                              left=.115, right=.975, top=.965, bottom=.062)
-        axA, axB, axC = (fig.add_subplot(g) for g in gs)
-
-        # ---------------------------------------------------------------- A
-        groups = [("PVOD", PV, PVOD_C, "D", 2), ("IPAH", IP, PAH_C, "o", 1), ("HPAH", HP, PAH_C, "o", 0)]
-        r = np.random.default_rng(7)
-        for name, v, c, mk, ypos in groups:
-            axA.scatter(v, ypos + r.uniform(-.15, .15, len(v)), s=11, marker=mk, facecolor=c,
-                        edgecolor="white", linewidth=.35, alpha=.95, zorder=4)
-            axA.plot([np.median(v)] * 2, [ypos - .30, ypos + .30], color=INK, lw=1.4, zorder=6)
-            axA.text(XLO * 1.05, ypos, f"{name}\nn = {len(v)}", fontsize=6.8, va="center",
-                     color=PVOD_C if name == "PVOD" else INK2,
-                     fontweight="bold" if name == "PVOD" else "normal", linespacing=1.3)
-        axA.axvline(CUT, color=CUT_C, lw=1.0, ls=(0, (4, 2)), zorder=3)
-        axA.text(CUT * 1.05, 3.25, f"published cutoff\n{CUT:,.0f} pg/mL", fontsize=6.4, color=CUT_C,
-                 ha="left", va="top", linespacing=1.35, fontweight="bold")
-        axA.annotate(f"{int((PV < CUT).sum())} of {len(PV)} PVOD cases fall below the cutoff",
-                     xy=(1560, 2.45), fontsize=6.3, color=INK2, ha="right")
-        axA.annotate(f"{int((COMP >= CUT).sum())} of {len(COMP)} comparators fall at or above it",
-                     xy=(1760, -.42), fontsize=6.3, color=INK2, ha="left", va="center")
-        axA.set_ylim(-.65, 3.35); axA.set_yticks([])
-        axA.set_title("A   Observed plasma GDF15 by diagnosis. Vertical bars are group medians.",
-                      loc="left", fontsize=8, fontweight="bold", pad=4)
-        for s in ("left", "right", "top"): axA.spines[s].set_visible(False)
-
-        # ---------------------------------------------------------------- B
-        sup = (grid >= OBS_LO_PVOD) & (grid <= OBS_HI_COMP)
-        axB.fill_between(grid[sup], lo[sup], hi[sup], color=PVOD_C, alpha=.16, lw=0, zorder=3)
-        for tail in (grid < OBS_LO_PVOD, grid > OBS_HI_COMP):
-            axB.fill_between(grid[tail], lo[tail], hi[tail], color=PVOD_C, alpha=.07, lw=0, zorder=3)
-        axB.plot(grid[sup], LR(grid[sup]), color=PVOD_C, lw=2, zorder=5,
-                 label="evidence from the measured value (model)")
-        for tail in (grid < OBS_LO_PVOD, grid > OBS_HI_COMP):
-            axB.plot(grid[tail], LR(grid[tail]), color=PVOD_C, lw=1.4, ls=(0, (2, 2)), alpha=.55, zorder=5)
-        step_x = np.array([XLO, CUT, CUT, XHI])
-        step_y = np.array([LRN, LRN, LRP, LRP])
-        axB.plot(step_x, step_y, color=CUT_C, lw=1.6, ls=(0, (5, 2)), zorder=6,
-                 label="evidence assigned by the 1,658 pg/mL rule")
-        for L, tx in ((10, "strong evidence for PVOD"), (1, "no information"), (.1, "strong evidence against")):
-            axB.axhline(L, color=GRID, lw=.9, zorder=1)
-            axB.text(XHI * .97, L * 1.30, tx, fontsize=6, color=MUTED, ha="right")
-        ylo, yhi = 3e-4, 4e3
-        axB.set_ylim(ylo, yhi)
-        for v, c, base in ((COMP, PAH_C, ylo * 1.25), (PV, PVOD_C, ylo * 2.6)):
-            axB.scatter(v, np.full(v.size, base), marker="|", s=26, color=c, lw=.7, zorder=4, alpha=.85)
-        axB.text(XLO * 1.10, ylo * 4.6, "observed values", fontsize=6, color=MUTED)
-        axB.axvline(OBS_LO_PVOD, color=INK2, lw=.6, ls=(0, (1.5, 2)), zorder=2)
-        axB.text(OBS_LO_PVOD * .90, .022, f"{OBS_LO_PVOD:,.0f} pg/mL: lowest observed\nPVOD value. Left of this the\ncurve is extrapolation and is\ndrawn broken.",
-                 fontsize=6.1, color=INK2, ha="right", va="top", linespacing=1.4)
-        axB.text(XLO * 1.25, LRN * 1.9, f"the rule treats {x.min():,.1f} and {x[x < CUT].max():,.1f} pg/mL\nas the same measurement",
-                 fontsize=6.3, color=CUT_C, ha="left", va="bottom", linespacing=1.4)
-        axB.annotate(f"the rule assigns every value above the cutoff\nthe same likelihood ratio, {LRP:.1f}",
-                     xy=(3100, LRP), xytext=(1050, 300), fontsize=6.3, color=CUT_C, linespacing=1.4,
-                     arrowprops=dict(arrowstyle="->", color=CUT_C, lw=.6,
-                                     connectionstyle="arc3,rad=-.25"))
-        axB.axvline(OBS_HI_COMP, color=INK2, lw=.6, ls=(0, (1.5, 2)), zorder=2)
-        axB.text(OBS_HI_COMP * 1.07, .018,
-                 f"{OBS_HI_COMP:,.1f} pg/mL: highest comparator\n"
-                 "value. Curve is extrapolated to the right.",
-                 fontsize=6.1, color=INK2, ha="left", va="top", linespacing=1.4)
-        axB.set_yscale("log"); axB.set_ylabel("Likelihood ratio for PVOD", fontsize=7.2)
-        axB.set_yticks([1e-3, 1e-2, .1, 1, 10, 100, 1000])
-        axB.set_yticklabels(["0.001", "0.01", "0.1", "1", "10", "100", "1000"])
-        axB.set_title("B   What a measured value is worth, against what the rule assigns it",
-                      loc="left", fontsize=8, fontweight="bold", pad=4)
-        axB.legend(loc="upper left", fontsize=6.3, frameon=False, borderpad=0, handlelength=2.4,
-                   bbox_to_anchor=(.005, .995))
-
-        # ---------------------------------------------------------------- C
-        own_pp = post(LR(x))
-        cut_pp = np.where(x >= CUT, PP_POS, PP_NEG)
-        is_pv = y == 1
-        for m, c, mk in ((~is_pv, PAH_C, "o"), (is_pv, PVOD_C, "D")):
-            axC.vlines(x[m], np.minimum(own_pp[m], cut_pp[m]), np.maximum(own_pp[m], cut_pp[m]),
-                       color=c, lw=.55, alpha=.55, zorder=3)
-            axC.scatter(x[m], own_pp[m], s=13, marker=mk, facecolor=c, edgecolor="white", lw=.35, zorder=5)
-            axC.scatter(x[m], cut_pp[m], s=15, marker=mk, facecolor="white", edgecolor=CUT_C, lw=.8, zorder=4)
-        axC.plot(grid, post(LR(grid)), color=PVOD_C, lw=1.2, alpha=.65, zorder=2)
-        axC.axvline(CUT, color=CUT_C, lw=1.0, ls=(0, (4, 2)), zorder=1)
-        big = np.abs(own_pp - cut_pp) > 10
-        axC.text(78, 92, f"Filled: probability supported by the patient's own value.\n"
-                         f"Open: probability implied by the cutoff label.\n"
-                         f"The two differ by more than 10 percentage points in\n"
-                         f"{int(big.sum())} of {len(x)} patients.",
-                 fontsize=6.4, color=INK2, va="top", linespacing=1.5)
-        pair = np.array([x[x < CUT].max(), x[x >= CUT].min()])
-        pair_pp = post(LR(pair))
-        axC.annotate(f"two patients {np.diff(pair)[0]:.0f} pg/mL apart:\n"
-                     f"both values support {pair_pp.mean():.0f}%,\n"
-                     f"the rule reports {PP_NEG:.0f}% and {PP_POS:.0f}%",
-                     xy=(1658, 39), xytext=(2350, 45), fontsize=6.4, color=INK, linespacing=1.45,
-                     arrowprops=dict(arrowstyle="->", color=MUTED, lw=.7, connectionstyle="arc3,rad=.2"))
-        axC.set_ylim(-4, 100); axC.set_ylabel("Probability of PVOD after the test (%)\nat 10% pre-test suspicion",
-                                              fontsize=7.2, linespacing=1.5)
-        axC.set_xlabel("Plasma GDF15 (pg/mL)", fontsize=7.8)
-        axC.set_title("C   The consequence for every patient in the cohort",
-                      loc="left", fontsize=8, fontweight="bold", pad=4)
-
-        for ax in (axA, axB, axC):
-            ax.set_xscale("log"); ax.set_xlim(XLO, XHI)
-            ax.set_xticks([100, 200, 500, 1000, 2000, 5000])
-            ax.set_xticklabels(["100", "200", "500", "1,000", "2,000", "5,000"])
-            ax.tick_params(axis="x", length=3)
-        for ax in (axA, axB): ax.set_xticklabels([])
-        for s in ("right", "top"): axB.spines[s].set_visible(False); axC.spines[s].set_visible(False)
-
-        leg = [Line2D([], [], marker="D", ls="", mfc=PVOD_C, mec="white", ms=4.4, label="PVOD"),
-               Line2D([], [], marker="o", ls="", mfc=PAH_C, mec="white", ms=4.4, label="IPAH or HPAH")]
-        axA.legend(handles=leg, loc="lower left", fontsize=6.4, frameon=False, ncol=2,
-                   bbox_to_anchor=(.005, -.06), handletextpad=.3, columnspacing=1.4)
-
-        figures_dir.mkdir(parents=True, exist_ok=True)
-        for suffix in ("pdf", "png"):
-            fig.savefig(figures_dir / f"figure1_lr_curve.{suffix}", dpi=300,
-                        metadata={"CreationDate": None} if suffix == "pdf" else None)
+    results_dir, figures_dir = Path(results_dir), Path(figures_dir)
+    figures_dir.mkdir(parents=True, exist_ok=True)
+    entry=json.loads((results_dir/"results.json").read_text())["models"]["IPAH+HPAH"]
+    meta=json.loads((results_dir/"figure1_bootstrap.json").read_text())
+    assert (meta["seed"],meta["requested"],meta["finite"],meta["separated"])==(20260907,4000,3991,9)
+    coefpath=results_dir/"figure1_bootstrap_coefficients.csv"
+    co=pd.read_csv(coefpath,float_precision="round_trip").to_numpy()
+    assert co.shape==(3991,2) and np.isfinite(co).all()
+    frame=data.load_gdf15(workbook)
+    groups=[frame.loc[frame.cohort==g,"gdf15"].to_numpy() for g in data.GROUP1]
+    pv,ip,hp=groups; comp=np.r_[ip,hp]; x=np.r_[pv,comp]
+    y=np.r_[np.ones(len(pv),bool),np.zeros(len(comp),bool)]
+    assert (len(pv),len(ip),len(hp))==(26,98,42)
+    low,high=pv.min(),comp.max()
+    offset=entry["sampling_log_odds"]
+    b=np.array([entry["intercept"],entry["slope_log10_gdf15"]])
+    lr=lambda v:np.exp(b[0]+b[1]*np.log10(v)-offset)
+    post=lambda v:100*v/(9+v)
+    cut=1658.
+    sens=(pv>=cut).mean();spec=(comp<cut).mean()
+    lp,ln=sens/(1-spec),(1-sens)/spec
+    own=post(lr(x));binary=np.where(x>=cut,post(lp),post(ln))
+    delta=np.abs(own-binary)
+    overlap=(x>=low)&(x<=high)
+    counts=[int((delta>10).sum()),int(((delta>10)&overlap).sum()),int(((delta>10)&(x>high)).sum())]
+    assert counts==[34,17,17]
+    # Exact observed bounds govern classification; labels round to 861 and 1809.5.
+    grid=np.unique(np.r_[np.geomspace(70,7000,900),low,high])
+    bands=np.percentile(np.exp(co[:,0,None]+co[:,1,None]*np.log10(grid)-offset),[2.5,97.5],axis=0)
+    blue,gray,orange="#0072B2","#808080","#D55E00"
+    with plt.rc_context({"font.family":"DejaVu Sans","font.size":8,"axes.spines.top":False,
+                         "axes.spines.right":False,"axes.edgecolor":"#999999","pdf.fonttype":42}):
+        fig,axes=plt.subplots(3,1,figsize=(7.2,9.3),sharex=True,
+                             gridspec_kw={"height_ratios":[1,1.38,1.38]})
+        fig.subplots_adjust(left=.125,right=.985,top=.96,bottom=.065,hspace=.29)
+        a,bb,c=axes
+        for ax in axes:
+            ax.set_xscale("log");ax.set_xlim(70,7000)
+            ax.axvspan(low,high,color="#E7EEF5",zorder=0)
+        rng=np.random.default_rng(7)
+        for name,v,color,mark,row in [("PVOD",pv,blue,"D",2),("IPAH",ip,gray,"o",1),("HPAH",hp,gray,"o",0)]:
+            a.scatter(v,row+rng.uniform(-.16,.16,len(v)),s=18,marker=mark,c=color,edgecolors="white",linewidths=.4,zorder=4)
+            a.vlines(np.median(v),row-.25,row+.25,color="black",lw=2,zorder=5)
+        a.set_yticks([0,1,2],["HPAH\nn = 42","IPAH\nn = 98","PVOD\nn = 26"])
+        a.tick_params(axis="y",length=0,pad=9);a.set_ylim(-.55,2.7)
+        a.axvline(cut,color=orange,lw=1.5,ls=(0,(5,3)))
+        a.text(cut*.96,2.55,"5 of 26 PVOD below",ha="right",va="top",fontsize=7.5)
+        a.text(cut*1.04,2.55,"published cutoff 1,658 pg/ml",color=orange,va="top",fontsize=7.5)
+        a.text(cut*1.04,-.48,"4 of 140 comparators at or above",fontsize=7.3)
+        a.set_title("A  Plasma GDF15 by diagnosis (bars: group medians)",loc="left",fontsize=10,fontweight="bold",pad=9)
+        bb.set_yscale("log");bb.set_ylim(.001,10000)
+        bb.fill_between(grid,bands[0],bands[1],color=blue,alpha=.14,lw=0,zorder=1)
+        for mask,style in [(grid<=low,(0,(5,3))),((grid>=low)&(grid<=high),"-"),(grid>=high,(0,(5,3)))]:
+            bb.plot(grid[mask],lr(grid[mask]),color=blue,lw=2,ls=style,zorder=3)
+        bb.plot([70,cut,cut,7000],[ln,ln,lp,lp],color=orange,lw=1.7,ls=(0,(5,3)),zorder=4)
+        for v,label in [(1,"LR = 1: no information"),(10,"LR = 10")]:
+            bb.axhline(v,color="#CCCCCC",lw=.8)
+            bb.text(6800,v*1.12,label,ha="right",color="#666666",fontsize=7.3)
+        bb.legend(handles=[
+            Line2D([],[],color=blue,lw=2,label="continuous LR (solid within observed overlap)"),
+            Line2D([],[],color=blue,lw=2,ls=(0,(5,3)),label="continuous LR, extrapolated"),
+            Line2D([],[],color=orange,lw=2,ls=(0,(5,3)),label="LR implied by the 1,658 pg/ml cutoff")
+        ],loc="upper left",frameon=False,fontsize=7.1)
+        bb.text(880,2500,"observed overlap of\nboth groups\n861–1,809.5 pg/ml",va="top",color="#527391",fontsize=7.4)
+        bb.text(80,ln*1.35,f"cutoff-implied LR below 1,658 pg/ml: {ln:.2f}",color=orange,fontsize=7.2)
+        bb.text(cut*.95,lp*1.35,f"cutoff-implied LR at or above 1,658 pg/ml: {lp:.1f} →",ha="right",color=orange,fontsize=7.1)
+        bb.vlines(comp,.001,.00165,color=gray,lw=.6)
+        bb.vlines(pv,.00165,.0027,color=blue,lw=.7)
+        bb.set_yticks([.001,.01,.1,1,10,100,1000,10000],["0.001","0.01","0.1","1","10","100","1,000","10,000"])
+        bb.set_ylabel("Likelihood ratio for PVOD (log scale)")
+        bb.set_title("B  Continuous likelihood ratio and the likelihood ratio implied by the cutoff",loc="left",fontsize=8.8,fontweight="bold",pad=9)
+        c.plot(grid,post(lr(grid)),color=blue,lw=1,alpha=.5)
+        for mask,color,mark in [(~y,gray,"o"),(y,blue,"D")]:
+            c.vlines(x[mask],np.minimum(own[mask],binary[mask]),np.maximum(own[mask],binary[mask]),color=color,lw=.6,alpha=.7)
+            c.scatter(x[mask],binary[mask],facecolors="white",edgecolors=orange,s=20,marker=mark,lw=1,zorder=3)
+            c.scatter(x[mask],own[mask],c=color,s=20,marker=mark,zorder=4)
+        c.axvline(cut,color=orange,ls=(0,(5,3)),lw=1.5)
+        c.text(80,96,"Filled: model-estimated probability for the measured value\n"
+               "Open: probability implied by the cutoff label\n"
+               f"Differ by >10 points in {counts[0]} of {len(x)} patients:\n"
+               f"{counts[1]} within the observed overlap, {counts[2]} above the highest comparator",
+               va="top",fontsize=7.15,linespacing=1.35)
+        pair=np.array([x[x<cut].max(),x[x>=cut].min()])
+        c.annotate(f"two patients {np.diff(pair)[0]:.0f} pg/ml apart:\n"
+                   f"model estimate {post(lr(pair)).mean():.0f}% for both;\n"
+                   f"the labels imply {post(ln):.0f}% and {post(lp):.0f}%",
+                   xy=(pair.mean(),post(lr(pair)).mean()),xytext=(2300,43),fontsize=7.5,
+                   arrowprops={"arrowstyle":"->","color":"#666666","lw":1})
+        c.set_ylim(-4,104);c.set_yticks([0,20,40,60,80,100],["0%","20%","40%","60%","80%","100%"])
+        c.set_ylabel("Post-test probability of PVOD (%)\nat 10% pretest probability")
+        c.set_xlabel("Plasma GDF15 (pg/ml, log scale)")
+        c.set_title("C  Post-test probability for each patient",loc="left",fontsize=10,fontweight="bold",pad=9)
+        c.set_xticks([100,200,500,1000,2000,5000],["100","200","500","1,000","2,000","5,000"])
+        for ax in axes:ax.tick_params(axis="x",which="minor",labelbottom=False)
+        # Keep the pipeline's historical basename, plus submission filenames.
+        fig.savefig(figures_dir/"figure1_lr_curve.pdf",metadata={"CreationDate":None})
+        fig.savefig(figures_dir/"figure1_lr_curve.png",dpi=180)
+        fig.savefig(figures_dir/"GDF15_Figure1.tif",dpi=600,pil_kwargs={"compression":"tiff_lzw"})
+        fig.savefig(figures_dir/"GDF15_Figure1.pdf",metadata={"CreationDate":None})
         plt.close(fig)
+    report={"seed":meta["seed"],"requested":4000,"finite":len(co),"separated":9,
+            "coefficient_file_sha256":hashlib.sha256(coefpath.read_bytes()).hexdigest(),
+            "observed_bounds":[float(low),float(high)],"discrepancies_gt10":counts,
+            "bootstrap":"Archived ordinary logistic finite fits; no new resampling",
+            "lr1_ci":np.percentile(10**((offset-co[:,0])/co[:,1]),[2.5,97.5]).tolist(),
+            "lr10_ci":np.percentile(10**((np.log(10)+offset-co[:,0])/co[:,1]),[2.5,97.5]).tolist()}
+    (figures_dir/"figure1_validation.json").write_text(json.dumps(report,indent=2)+"\n")
+
+if __name__=="__main__":
+    import argparse
+    p=argparse.ArgumentParser()
+    p.add_argument("--results-dir",type=Path,default=Path(__file__).resolve().parents[1]/"results")
+    p.add_argument("--figures-dir",type=Path,default=Path(__file__).resolve().parents[1]/"figures")
+    p.add_argument("--workbook",type=Path,default=None)
+    args=p.parse_args()
+    draw(args.results_dir,args.figures_dir,args.workbook)
