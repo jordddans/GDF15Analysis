@@ -186,29 +186,26 @@ def write_captions(results):
     negative_lr = (cases < threshold['published_cutoff']).mean() / (comparators < threshold['published_cutoff']).mean()
 
     captions = {
-        "figure1_caption.md": f"""# Figure 1. Plasma GDF15 reported as a threshold and as continuous evidence.
+        "figure1_caption.md": f"""# Figure 1. Plasma GDF15 reported as a cutoff and as continuous evidence.
 
 (A) Observed concentrations in {main['n']} patients: {counts['PVOD']} PVOD,
-{counts['IPAH']} IPAH and {counts['HPAH']} HPAH. Vertical bars mark medians.
-(B) Ordinary logistic regression on log10 GDF15, with study sampling log-odds
-subtracted to give a likelihood ratio. The pointwise 95% band uses {figure1_bootstrap.N_BOOT:,}
-requested stratified resamples (seed {figure1_bootstrap.SEED}): 3,991 finite fits and
-9 separated resamples excluded. The band narrows in the tail after these exclusions.
-The empirical cutoff rule assigns LR {negative_lr:.2f} below
-{threshold['published_cutoff']:,.0f} pg/mL and {example['cutoff_positive_lr']:.1f} at or above it.
-Both observed support boundaries are marked: {support['pvod_min_gdf15']:,.0f} pg/mL
-(lowest PVOD) and {support['comparator_max_gdf15']:,.1f} pg/mL (highest comparator).
-Beyond either boundary the curve is broken and the band is lighter.
-(C) Every plotted patient is observed in the published source. Filled points show
-model-derived post-test probability and open points show the cutoff-rule probability,
-both at 10% pre-test probability; joining lines show their difference. The adjacent
-observed IPAH and PVOD patients from Table 1 remain the centerpiece. Shapes distinguish
-PVOD from comparators. No hypothetical patients are added.
-
-{figure1_bootstrap.METHODS}
-
-Source: Prabhakar et al., J Clin Invest 2026;136(2):e199159, published supporting
-workbook Fig_1a (equivalent cleaned alias GDF15-1).
+{counts['IPAH']} IPAH and {counts['HPAH']} HPAH. Bars mark medians.
+The dashed vertical line marks the published cutoff of 1,658 pg/ml.
+(B) Ordinary logistic regression on log10 GDF15 converted to a likelihood ratio
+by subtracting the study sampling log-odds. The pointwise 95% band uses 4,000
+stratified bootstrap resamples, seed 20260907: 3,991 finite fits and 9 excluded
+for separation. The curve is solid within the observed overlap
+(861–1,809.5 pg/ml, shaded) and dashed outside it on both sides.
+The empirical cutoff assigns LR {negative_lr:.2f} below 1,658 pg/ml and
+{example['cutoff_positive_lr']:.1f} at or above it.
+(C) Filled markers show model-estimated post-test probabilities and open markers
+show probabilities implied by the cutoff, at 10% pretest probability.
+The approaches differ by more than 10 percentage points in 34 of 166 patients:
+17 within the observed overlap and 17 above the highest comparator concentration.
+The two observed measurements approximately 1 pg/ml apart both give model
+estimates of 22%, while their cutoff labels imply 2% and 76%.
+These regional counts are asserted against the source observations in make_figure1.draw.
+Source: Prabhakar et al., J Clin Invest 2026;136(2):e199159, supporting workbook Fig_1a.
 """,
 
         "figure2_caption.md": f"""# Figure 2. The same model fitted against each comparator separately.
