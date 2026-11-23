@@ -1,0 +1,29 @@
+{
+  "title": "GDF15Analysis: continuous likelihood ratio analysis of plasma GDF15 for PVOD",
+  "upload_type": "software",
+  "description": "Analysis code and reproducibility materials for the study \"Continuous Likelihood Ratio Analysis Refines Plasma GDF15 as a Diagnostic Biomarker for Pulmonary Veno-Occlusive Disease\". The analysis compares plasma GDF15 in pulmonary veno-occlusive disease with idiopathic and heritable pulmonary arterial hypertension. Archived Figure 1 bootstrap results use seed 20260907, with 4,000 requested resamples, 3,991 accepted fits, and 9 complete-separation exclusions.",
+  "creators": [
+    {
+      "name": "Smith, Jordan"
+    },
+    {
+      "name": "Prabhakar, Amit"
+    },
+    {
+      "name": "DesJardin, Jacqueline T."
+    },
+    {
+      "name": "Lagna, Giorgio"
+    },
+    {
+      "name": "Hata, Akiko"
+    }
+  ],
+  "keywords": [
+    "GDF15",
+    "PVOD",
+    "likelihood ratio",
+    "pulmonary veno-occlusive disease",
+    "reproducible research"
+  ]
+}
